@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Stock</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Wilson's investment</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>  <!--invoke the home method-->
+            <li><a href="{{ url_for('etf') }}">ETF</a></li>
+            <li><a href="{{ url_for('plot_VIG') }}">VIG_ETF</a></li>
+            <li><a href="{{ url_for('plot_mdb') }}">MongoDB</a></li>
+            <li><a href="{{ url_for('plot_AMZN') }}">Amazon</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+        {%block content%}  <!--this layout.html is base html page-->
+        {%endblock%}       <!--child html are home.html, eft.html-->
+    </div>
+  </body>
+</html>
