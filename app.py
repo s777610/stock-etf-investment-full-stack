@@ -67,7 +67,7 @@ def plot_AMZN():
     cdn_js = result[4]
     current_price = result[5]
     return render_template(f"plot_{name}.html", script1=script1, div1=div1, cdn_css=cdn_css,
-                           cdn_js=cdn_js, current_price=current_price)  # pass all data to plot_mongodb.html
+                           cdn_js=cdn_js, current_price=current_price)
 
 @app.route('/plot/VIG')
 def plot_VIG():
@@ -79,7 +79,20 @@ def plot_VIG():
     cdn_js = result[4]
     current_price = result[5]
     return render_template(f"plot_{name}.html", script1=script1, div1=div1, cdn_css=cdn_css,
-                           cdn_js=cdn_js, current_price=current_price)  # pass all data to plot_mongodb.html
+                           cdn_js=cdn_js, current_price=current_price)
+
+@app.route('/plot/VOO')
+def plot_VOO():
+    result = create_plot("VOO_ETF", "VOO")
+    name = result[0]
+    script1 = result[1]
+    div1 = result[2]
+    cdn_css = result[3]
+    cdn_js = result[4]
+    current_price = result[5]
+    return render_template(f"plot_{name}.html", script1=script1, div1=div1, cdn_css=cdn_css,
+                           cdn_js=cdn_js, current_price=current_price)
+
 
 
 @app.route('/')
