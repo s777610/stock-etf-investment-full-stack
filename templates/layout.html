@@ -3,6 +3,10 @@
   <head>
       <title>Stock</title>
       <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
@@ -11,8 +15,8 @@
         <h1 class="logo">Wilson's investment</h1>
         <strong><nav>
           <ul class="menu">
-            <li><a href="{{ url_for('home') }}">Home</a></li>  <!--invoke the home method-->
-            <li><a href="{{ url_for('etf') }}">ETF</a></li>
+            <li style="font-size:24px" class="glyphicon glyphicon-home"><a href="{{ url_for('home') }}">Home</a></li>  <!--invoke the home method-->
+            <li class="fa fa-line-chart" style="font-size:24px"><a href="{{ url_for('etf') }}">ETF</a></li>
             <li><a href="{{ url_for('plot_VOO') }}">VOO_ETF</a></li>
             <li><a href="{{ url_for('plot_VIG') }}">VIG_ETF</a></li>
             <li><a href="{{ url_for('plot_MDB') }}">MongoDB</a></li>
