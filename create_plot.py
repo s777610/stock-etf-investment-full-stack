@@ -1,5 +1,4 @@
 
-
 from pandas_datareader import data
 import fix_yahoo_finance as yf
 import datetime
@@ -12,8 +11,8 @@ def create_plot(name, ticker):
     # Using yahoo API
     yf.pdr_override()
 
-    name = name
-    ticker = ticker
+    #name = name
+    #ticker = ticker
     # from 3 months ago to now
     start = datetime.datetime.now() - datetime.timedelta(days=365)
     end = datetime.datetime.now()
@@ -44,16 +43,22 @@ def create_plot(name, ticker):
 
     # 4 parameter, x-axis(datetime), y-axis, width(milliseconds in this case), height
     p.rect(df.index[df.Status == "Increase"], df.Middle[df.Status == "Increase"],
-           hours_12, df.Height[df.Status == "Increase"], fill_color='#CCFFFF', line_color='black')
+           hours_12, df.Height[df.Status == "Increase"],
+           fill_color='#CCFFFF', line_color='black')
     p.rect(df.index[df.Status == "Decrease"], df.Middle[df.Status == "Decrease"],
-           hours_12, df.Height[df.Status == "Decrease"], fill_color='#FF3333', line_color='black')
+           hours_12, df.Height[df.Status == "Decrease"],
+           fill_color='#FF3333', line_color='black')
 
     current_price = df.iloc[-1]["Close"]
+    today_status = df.iloc[-1]["Status"]
+    if today_status == "Increase":
+        name_color = "green"
+    else:
+        name_color = "red"
 
     # the source code of JS and html, which is tuple(len=2)
     # script1 is JS, div1 is html, both type are string
     script1, div1 = components(p)
     cdn_js = CDN.js_files[0]  # js_files is a list of bokeh source code
     cdn_css = CDN.css_files[0]  # css_files is a list of bokeh source code
-    result = [name, script1, div1, cdn_css, cdn_js, current_price]
-    return result
+    return name, script1, div1, cdn_css, cdn_js, current_price, name_color
