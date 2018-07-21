@@ -11,8 +11,6 @@ def create_plot(name, ticker):
     # Using yahoo API
     yf.pdr_override()
 
-    #name = name
-    #ticker = ticker
     # from 3 months ago to now
     start = datetime.datetime.now() - datetime.timedelta(days=365)
     end = datetime.datetime.now()

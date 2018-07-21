@@ -17,7 +17,8 @@
         <strong><nav>
           <ul class="menu">
             <li style="font-size:24px" class="glyphicon glyphicon-home"><a href="{{ url_for('home') }}">Home</a></li>  <!--invoke the home method-->
-            <li class="fa fa-line-chart" style="font-size:24px"><a href="{{ url_for('etf') }}">ETF</a></li>
+              <li class="fa fa-line-chart" style="font-size:24px"><a href="{{ url_for('etf') }}">ETF</a></li>
+              <li class="fa fa-line-chart" style="font-size:24px"><a href="{{ url_for('stock') }}">Stock</a></li>
             <li><a href="{{ url_for('plot_VOO') }}">VOO_ETF</a></li>
             <li><a href="{{ url_for('plot_VIG') }}">VIG_ETF</a></li>
             <li><a href="{{ url_for('plot_MDB') }}">MongoDB</a></li>

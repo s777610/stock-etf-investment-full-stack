@@ -1,0 +1,16 @@
+
+{%extends "layout.html"%}
+{%block content%}
+
+    <div class="about">
+        <h1>My ETF Investment</h1>
+        <p>ETF stand for exchange-traded fund. <br>
+            ETF is a marketable security that tracks an index, a commodity, bonds, or a basket of assets like an index fund.</p>
+    </div>
+    <div class="list-group">
+    {% for security in securitys %}
+        <a href="{{ url_for('plot_security', name=security.name, ticker=security.ticker) }}" class="list-group-item"></a>
+            <h4 style="color:blue" class="list-group-item-title">{{ security.name}}</h4>
+        {% endfor %}
+    </div>
+{%endblock%}
