@@ -6,9 +6,17 @@
 
     <div class="about">
         <h1>{{ company_name }}</h1>
-        <h1 style="color: {{name_color}};">{{ current_price }} <small>USD</small></h1>
+
+        {% if today_status == 'Increase' %}
+            <h1 class="fa fa-arrow-up" style="color: {{name_color}};font-size:48px">{{ current_price }} <small>USD</small></h1>
+        {% else %}
+            <h1 class="fa fa-arrow-down" style="color: {{name_color}};font-size:48px">{{ current_price }} <small>USD</small></h1>
+        {% endif %}
         <p>NYSEARCA: {{ ticker }}</p>
     </div>
 {{script1 | safe}}
 {{div1 | safe}}
 {%endblock%}
+
+
+style="font-size:48px;color:red"

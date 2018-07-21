@@ -61,4 +61,4 @@ def create_plot(name, ticker):
     script1, div1 = components(p)
     cdn_js = CDN.js_files[0]  # js_files is a list of bokeh source code
     cdn_css = CDN.css_files[0]  # css_files is a list of bokeh source code
-    return name, script1, div1, cdn_css, cdn_js, current_price, name_color
+    return name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status
