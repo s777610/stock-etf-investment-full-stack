@@ -47,7 +47,8 @@ def create_plot(name, ticker):
            hours_12, df.Height[df.Status == "Decrease"],
            fill_color='#FF3333', line_color='black')
 
-    current_price = df.iloc[-1]["Close"]
+    current_price = df.iloc[-1]["Close"].round(2)
+
     today_status = df.iloc[-1]["Status"]
     if today_status == "Increase":
         name_color = "green"

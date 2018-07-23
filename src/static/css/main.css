@@ -10,7 +10,7 @@ body {
  */
 
 header {
-  background-color: #DFB887;
+  background-color: dimgray;
   height: 35px;
   width: 100%;
   opacity: .9;
@@ -18,10 +18,10 @@ header {
 }
 
 header h1.logo {
+  font-family:Impact, Helvetica, Arial, sans-serif;
   margin: 0;
-  font-size: 1.7em;
+  font-size: 2.0em;
   color: #fff;
-  text-transform: uppercase;
   float: left;
 }
 
@@ -85,7 +85,7 @@ h3 {
 }
 
 .menu li a {
-  color: #444;
+  color: #fff;
   text-decoration: none;
 }
 
