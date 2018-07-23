@@ -12,7 +12,7 @@ def create_plot(name, ticker):
     yf.pdr_override()
 
     # from 3 months ago to now
-    start = datetime.datetime.now() - datetime.timedelta(days=365)
+    start = datetime.datetime.now() - datetime.timedelta(days=180)
     end = datetime.datetime.now()
     df = data.get_data_yahoo(ticker, start=start, end=end)
 
@@ -54,9 +54,12 @@ def create_plot(name, ticker):
     else:
         name_color = "red"
 
+    time_string = df.index[-1].strftime('%m/%d/%Y')
+    last_updated = time_string
+
     # the source code of JS and html, which is tuple(len=2)
     # script1 is JS, div1 is html, both type are string
     script1, div1 = components(p)
     cdn_js = CDN.js_files[0]  # js_files is a list of bokeh source code
     cdn_css = CDN.css_files[0]  # css_files is a list of bokeh source code
-    return name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status
+    return name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status, last_updated

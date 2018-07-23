@@ -8,10 +8,11 @@ app = Flask(__name__)
 
 @app.route('/plot/<string:ticker>/<string:name>')
 def plot_security(name, ticker):
-    company_name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status = create_plot(name, ticker)
+    company_name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status, last_updated = create_plot(name, ticker)
     return render_template("plot_stock.html", script1=script1, div1=div1, cdn_css=cdn_css,
                            cdn_js=cdn_js, current_price=current_price, name_color=name_color,
-                           company_name=company_name, ticker=ticker, today_status=today_status)
+                           company_name=company_name, ticker=ticker, today_status=today_status,
+                           last_updated=last_updated)
 
 @app.route('/')
 def home():
@@ -20,7 +21,14 @@ def home():
 
 @app.route('/etf/')
 def etf():
-    securitys = [Security("Vanguard Dividend Appreciation ETF", "VIG"), Security("Vanguard 500 Index Fund", "VOO")]
+    #securitys = Security.get_etfs()
+    securitys = [Security("Vanguard Dividend Appreciation ETF", "VIG"),
+                 Security("Vanguard 500 Index Fund", "VOO"),
+                 Security("Vanguard FTSE Pacific ETF", "VPL"),
+                 Security("Vanguard Total Stock Market ETF", "VTI"),
+                 Security("Vanguard Value ETF", "VTV"),
+                 Security("Vanguard Growth ETF", "VUG"),
+                 Security("Vanguard High Dividend Yield ETF", "VYM")]
     return render_template("eft.html", securitys=securitys)
 
 
