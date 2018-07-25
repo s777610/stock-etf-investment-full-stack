@@ -39,6 +39,10 @@ header h1.logo:hover {
   margin: 0 auto;
 }
 
+div.jumbotron {
+  font-family:Impact, Helvetica, Arial, sans-serif;
+}
+
 div.home {
   padding: 10px 0 30px 0;
   background-color: #E6E6FA;
