@@ -41,7 +41,7 @@ header h1.logo:hover {
 
 
 div.jumbotron {
-  font-family:Impact, Helvetica, Arial, sans-serif;
+  font-family:Arial Black, Helvetica, Arial, sans-serif;
 }
 
 div.home {
@@ -60,6 +60,24 @@ div.etf {
           border-radius: 6px;
 }
 
+
+div.card {
+  margin-bottom: 50px;
+  margin-left: 50px;
+
+}
+
+
+div.card-header button.btn{
+  font-family:Arial Black, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+
+}
+
+div.card div.collapse div.card-body {
+    font-family:Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
 
 h2 {
   font-size: 3em;
