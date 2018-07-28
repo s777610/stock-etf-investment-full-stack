@@ -1,34 +1,36 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #060;
-}
 
 /*
  * Formatting the header area
  */
 
-header {
-  background-color: dimgray;
-  height: 40px;
-  width: 100%;
-  opacity: .9;
-  margin-bottom: 15px;
+
+
+header div {
+  text-align: center;
+  background: url("http://zavrel.net/background.jpg");
+  background-size: cover;
+  color: white;
 }
 
-header h1.logo {
+div img {
+  width: 160px;
+  margin-left: auto;
+  margin-right: 350px;
+
+  border: 7px solid white;
+  border-radius: 20px;
+        }
+
+
+header div h1.logo {
   font-family:Impact, Helvetica, Arial, sans-serif;
-  margin: 0;
-  font-size: 2.0em;
+  font-size: 3.0em;
   color: #fff;
   float: left;
+  margin-top: 8px;
+  margin-left: 5px;
 }
 
-header h1.logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
 
 /*
  * Center the body content
@@ -44,21 +46,7 @@ div.jumbotron {
   font-family:Arial Black, Helvetica, Arial, sans-serif;
 }
 
-div.home {
-  padding: 10px 0 30px 0;
-  background-color: #E6E6FA;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
 
-div.etf {
-  padding: 10px 0 30px 0;
-  background-color: #E6E6FA;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
 
 
 div.card {
@@ -66,6 +54,7 @@ div.card {
   margin-left: 50px;
 
 }
+
 
 
 div.card-header i.fa button.btn {
@@ -79,37 +68,44 @@ div.card div.collapse div.card-body {
     font-size: 18px;
 }
 
-h2 {
-  font-size: 3em;
-  margin-top: 40px;
-  text-align: center;
-  letter-spacing: -2px;
-}
 
-h3 {
-  font-size: 1.7em;
-  font-weight: 100;
-  margin-top: 30px;
-  text-align: center;
-  letter-spacing: -1px;
-  color: #999;
-}
 
-.menu {
-  float: right;
+
+ul.menu {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
   margin-top: 8px;
-}
+        }
 
-.menu li {
-  display: inline;
-}
 
-.menu li + li {
+
+ul.menu li + li {
   margin-left: 35px;
 }
+
+
+ul.menu li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+
 
 .menu li a {
   color: #fff;
   text-decoration: none;
 }
 
+div.table-responsive {
+  margin-bottom: 80px;
+}
+
+div.plot {
+  margin-bottom: 80px;
+}
+
+
+ul.bottom {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  margin-bottom: auto;
+}

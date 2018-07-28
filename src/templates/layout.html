@@ -8,50 +8,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-        div.fixed {
-            position: fixed;
-            top: 50px;
-            right: 0;
-            width: 200px;}
-    </style>
   </head>
 
   <body>
 
-  <div class="fixed">
-        <div id="google_translate_element"></div>
-
-        <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-        </script>
-
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  </div>
-
     <header>
-      <div class="container">
-        <h1 class="logo">Wilson's Blog</h1>
-        <strong><nav>
-          <ul class="menu">
-              <li style="font-size:24px" class="glyphicon glyphicon-home"><a href="{{ url_for('home') }}">Home</a></li>
-              <li class="fa fa-facebook-square" style="font-size:24px"><a href="https://www.facebook.com/profile.php?id=100000339745920">Facebook</a></li>
-              <li class="fa fa-linkedin-square" style="font-size:24px"><a href="https://www.linkedin.com/in/weichenghung/">LinkedIn</a></li>
-              <li class="fa fa-github" style="font-size:24px"><a href="https://github.com/s777610">GitHub</a></li>
-              <li class="fa fa-line-chart" style="font-size:24px"><a href="{{ url_for('etf') }}">ETF</a></li>
-              <li class="fa fa-line-chart" style="font-size:24px"><a href="{{ url_for('stock') }}">Stock</a></li>
-              <li class="fa fa-file-text-o" style="font-size:24px"><a href="https://s777610.github.io/resume/">Resume</a></li>
+      <div>
 
+          <h1 class="logo">Wilson's Blog</h1>
+
+          <br>
+          <img src="https://user-images.githubusercontent.com/35472776/42259943-5b241fea-7f17-11e8-861c-412becf1d44b.jpg">
+          <br>
+          <br>
+        <strong>
+            <nav>
+          <ul class="menu">
+              <li class="fa fa-home" style="font-size:24px"><a href="{{ url_for('home') }}"> Home</a></li>
+              <li class="fa fa-facebook-square" style="font-size:24px"><a href="https://www.facebook.com/profile.php?id=100000339745920"> Facebook</a></li>
+              <li class="fa fa-linkedin-square" style="font-size:24px"><a href="https://www.linkedin.com/in/weichenghung/"> LinkedIn</a></li>
+              <li class="fa fa-github" style="font-size:24px"><a href="https://github.com/s777610"> GitHub</a></li>
+              <li class="fa fa-line-chart" style="font-size:24px"><a href="{{ url_for('etf') }}"> ETF</a></li>
+              <li class="fa fa-line-chart" style="font-size:24px"><a href="{{ url_for('stock') }}"> Stock</a></li>
+              <li class="fa fa-file-text-o" style="font-size:24px"><a href="https://s777610.github.io/resume/"> Resume</a></li>
           </ul>
-        </nav></strong>
+            </nav>
+        </strong>
+
       </div>
     </header>
+
+
+
     <div class="container">
         {%block content%}  <!--this layout.html is base html page-->
         {%endblock%}       <!--child html are home.html, eft.html-->
     </div>
+    <ul class="bottom">
+        <br>
+    </ul>
   </body>
 </html>

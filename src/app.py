@@ -29,7 +29,7 @@ def etf():
                  Security("Vanguard Value ETF", "VTV"),
                  Security("Vanguard Growth ETF", "VUG"),
                  Security("Vanguard High Dividend Yield ETF", "VYM")]
-    return render_template("eft.html", securitys=securitys)
+    return render_template("eft.html", securitys=securitys)  # pass security object to eft.html
 
 
 @app.route('/stock/')
