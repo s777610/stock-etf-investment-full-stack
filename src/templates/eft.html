@@ -19,6 +19,7 @@
                   <th>Open</th>
                   <th>Close</th>
                   <th>Status</th>
+                  <th>P/L %</th>
                   <th>Last Updated</th>
                 </tr>
               </thead>
@@ -31,11 +32,19 @@
                   <td>{{ security.name}}</td>
                   <td>{{ security.open}}</td>
                   <td>{{ security.close}}</td>
+
                   {% if security.today_status == 'Increase' %}
                   <td style="color: forestgreen">{{ security.today_status}}</td>
                   {% else %}
                   <td style="color: red">{{ security.today_status}}</td>
                   {% endif %}
+
+                  {% if security.cum_return > 0 %}
+                  <td style="color: forestgreen">{{ security.cum_return}}</td>
+                  {% else %}
+                  <td style="color: red">{{ security.cum_return}}</td>
+                  {% endif %}
+
                   <td>{{ security.last_updated }}</td>
                 </tr>
               {% endfor %}

@@ -21,20 +21,21 @@ def home():
 
 @app.route('/etf/')
 def etf():
-    #securitys = Security.get_etfs()
-    securitys = [Security("Vanguard Dividend Appreciation ETF", "VIG"),
-                 Security("Vanguard 500 Index Fund", "VOO"),
-                 Security("Vanguard FTSE Pacific ETF", "VPL"),
-                 Security("Vanguard Total Stock Market ETF", "VTI"),
-                 Security("Vanguard Value ETF", "VTV"),
-                 Security("Vanguard Growth ETF", "VUG"),
-                 Security("Vanguard High Dividend Yield ETF", "VYM")]
+    # securitys = Security.get_etfs()
+    securitys = [Security("Vanguard Dividend Appreciation ETF", "VIG", 83.621112),
+                 Security("Vanguard 500 Index Fund", "VOO", 249.830589),
+                 Security("Vanguard FTSE Pacific ETF", "VPL", 73.861586),
+                 Security("Vanguard Total Stock Market ETF", "VTI", 134.610321),
+                 Security("Vanguard Value ETF", "VTV", 101.89723),
+                 Security("Vanguard Growth ETF", "VUG", 136.481548),
+                 Security("Vanguard High Dividend Yield ETF", "VYM", 84.706677)]
     return render_template("eft.html", securitys=securitys)  # pass security object to eft.html
 
 
 @app.route('/stock/')
 def stock():
-    securitys = [Security("Amazon Inc.", "AMZN"), Security("Mongodb Inc", "MDB")]
+    securitys = [Security("Amazon Inc.", "AMZN", 1169.959),
+                 Security("Mongodb Inc", "MDB", 59.1745)]
     return render_template("stock.html", securitys=securitys)
 
 

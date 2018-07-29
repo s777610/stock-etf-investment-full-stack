@@ -4,14 +4,17 @@ import datetime
 
 
 class Security(object):
-    def __init__(self, name, ticker, current_price=None, today_status=None, open=None, close=None, last_updated=None):
+    def __init__(self, name, ticker, trade_price, current_price=None, today_status=None, open=None, close=None, last_updated=None):
         self.name = name
         self.ticker = ticker
+        self.trade_price = trade_price
         self.current_price = None
         self.today_status = None
         self.open = None
         self.close = None
         self.last_updated = None
+        self.daily_return = None
+        self.cum_return = None
         yf.pdr_override()
         start = datetime.datetime.now() - datetime.timedelta(days=4)
         end = datetime.datetime.now()
@@ -39,4 +42,8 @@ class Security(object):
         df["Status"] = [inc_dec(close, open) for close, open in zip(df.Close, df.Open)]
         self.today_status = df.iloc[-1]["Status"]
 
+        # daily return
+        self.daily_return = df['Close'].pct_change(1)
+        # cumulative return
+        self.cum_return = (((df.iloc[-1]['Close'] / self.trade_price) - 1) * 100).round(2)
 
