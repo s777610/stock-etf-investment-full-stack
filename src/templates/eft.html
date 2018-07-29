@@ -28,7 +28,7 @@
               {% for security in securitys %}
               <tr>
                   <td>{{ security.ticker}}</td>
-                  <td><a href="{{ url_for('plot_security', name=security.name, ticker=security.ticker) }}">Click here</a></td>
+                  <td><a href="{{ url_for('plot_security', name=security.name, ticker=security.ticker, daily_return=security.daily_return, cum_return=security.cum_return) }}">Click here</a></td>
                   <td>{{ security.name}}</td>
                   <td>{{ security.open}}</td>
                   <td>{{ security.close}}</td>

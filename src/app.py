@@ -6,13 +6,13 @@ from src.models.security import Security
 app = Flask(__name__)
 
 
-@app.route('/plot/<string:ticker>/<string:name>')
-def plot_security(name, ticker):
+@app.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
+def plot_security(name, ticker, daily_return, cum_return):
     company_name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status, last_updated = create_plot(name, ticker)
     return render_template("plot_stock.html", script1=script1, div1=div1, cdn_css=cdn_css,
                            cdn_js=cdn_js, current_price=current_price, name_color=name_color,
                            company_name=company_name, ticker=ticker, today_status=today_status,
-                           last_updated=last_updated)
+                           last_updated=last_updated, daily_return=daily_return, cum_return=cum_return)
 
 @app.route('/')
 def home():
@@ -40,5 +40,5 @@ def stock():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=4883)
+    app.run(debug=True, port=4881)
 

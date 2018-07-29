@@ -13,6 +13,12 @@
             <h1 class="fa fa-arrow-down" style="color: {{name_color}};font-size:48px">{{ current_price }} <small>USD</small></h1>
         {% endif %}
         <p>NYSEARCA: {{ ticker }}</p>
+
+
+        <p>Daily Return: {{ daily_return }}</p>
+
+        <p style="font-size: 30px">Cumulative Return: {{ cum_return }} %</p>
+
         <p>Last Updated: {{ last_updated }}</p>
     </div>
 <div class="plot">
