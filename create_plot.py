@@ -5,6 +5,7 @@ import datetime
 from bokeh.plotting import figure, show, output_file
 from bokeh.embed import components
 from bokeh.resources import CDN  # content delivery network
+from bokeh.models import HoverTool, ColumnDataSource
 
 
 def create_plot(name, ticker):
@@ -34,18 +35,27 @@ def create_plot(name, ticker):
     p = figure(x_axis_type='datetime', width=1000, height=300, sizing_mode='scale_width')
     p.title.text = f"{name} Candlestick Chart"
     p.grid.grid_line_alpha = 0.3  # alpha is level of transparent
+
     hours_12 = 12 * 60 * 60 * 1000  # millisconds
 
     # 4 parameter, x value of high point, y value of high point, x value of low point, y value of low point
-    p.segment(df.index, df.High, df.index, df.Low, color="Black")
+    p.segment(df.index, df.High, df.index, df.Low, color="Black", name='segment')
+
+    # for hover
+    col_data_src1 = ColumnDataSource(df[df.Status == 'Increase'])
+    col_data_src2 = ColumnDataSource(df[df.Status == 'Decrease'])
 
     # 4 parameter, x-axis(datetime), y-axis, width(milliseconds in this case), height
-    p.rect(df.index[df.Status == "Increase"], df.Middle[df.Status == "Increase"],
-           hours_12, df.Height[df.Status == "Increase"],
-           fill_color='#CCFFFF', line_color='black')
-    p.rect(df.index[df.Status == "Decrease"], df.Middle[df.Status == "Decrease"],
-           hours_12, df.Height[df.Status == "Decrease"],
-           fill_color='#FF3333', line_color='black')
+    p.rect('Date', 'Middle', hours_12,
+           'Height', fill_color='green', line_color='black',
+           source=col_data_src1, name='Increase')
+
+    p.rect('Date', 'Middle', hours_12,
+           'Height', fill_color='red', line_color='black',
+           source=col_data_src2, name='Decrease')
+
+    hover = HoverTool(names=["Increase", "Decrease"], tooltips=[('Open', '@Open'), ('Close', '@Close'), ('High', '@High'), ('Low', '@Low')])
+    p.add_tools(hover)
 
     current_price = df.iloc[-1]["Close"].round(2)
 
