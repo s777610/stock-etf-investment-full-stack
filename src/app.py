@@ -1,6 +1,6 @@
 
 from flask import Flask, render_template
-from create_plot import create_plot
+from src.common.create_plot import create_plot
 from src.models.security import Security
 
 app = Flask(__name__)
@@ -40,5 +40,5 @@ def stock():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=4881)
+    app.run(debug=True, port=4889)
 
