@@ -4,6 +4,7 @@ from src.common.create_plot import create_plot
 from src.models.security import Security
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'mysecretkey'
 
 
 @app.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
