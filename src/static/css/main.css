@@ -67,6 +67,8 @@ div.card {
 div.card-header i.fa button.btn {
   font-family:Arial Black, Helvetica, Arial, sans-serif;
   font-size: 24px;
+  color: black;
+  text-shadow: -6px 5px 10px rgba(50,113,201,0.55);
 
 }
 
