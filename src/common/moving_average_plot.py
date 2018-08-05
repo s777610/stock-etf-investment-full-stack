@@ -29,7 +29,7 @@ def moving_average_plot(name, ticker):
     p.legend.location = "top_left"
     p.legend.click_policy="hide"
 
-    script1, div1 = components(p)
-    cdn_js = CDN.js_files[0]  # js_files is a list of bokeh source code
-    cdn_css = CDN.css_files[0]  # css_files is a list of bokeh source code
-    return script1, div1, cdn_css, cdn_js
+    script2, div2 = components(p)
+    cdn_js2 = CDN.js_files[0]  # js_files is a list of bokeh source code
+    cdn_css2 = CDN.css_files[0]  # css_files is a list of bokeh source code
+    return script2, div2, cdn_css2, cdn_js2
