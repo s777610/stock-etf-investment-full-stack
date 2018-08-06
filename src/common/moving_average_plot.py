@@ -14,13 +14,13 @@ def moving_average_plot(name, ticker):
     start = datetime.datetime.now() - datetime.timedelta(days=6*30)
     end = datetime.datetime.now()
 
-    df = data.get_data_yahoo("AMZN", start=start, end=end)
+    df = data.get_data_yahoo(ticker, start=start, end=end)
 
     df['Close: 7 Day Mean'] = df['Close'].rolling(window=7).mean()
     df['Close: 14 Day Mean'] = df['Close'].rolling(window=14).mean()
 
     p = figure(width=500, height=250, x_axis_type="datetime", sizing_mode='scale_width')
-    p.title.text="Moving Average"
+    p.title.text = f"{name} Moving Average"
 
     p.line(df.index, df["Close"], color="red", alpha=0.5, line_width=2, legend="Close")
     p.line(df.index, df["Close: 7 Day Mean"], color="Orange", alpha=0.5, line_width=2, legend="7 Day Mean")

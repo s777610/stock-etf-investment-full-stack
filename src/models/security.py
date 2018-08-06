@@ -4,7 +4,7 @@ import datetime
 
 
 class Security(object):
-    def __init__(self, name, ticker, trade_price, current_price=None, today_status=None, open=None, close=None, last_updated=None):
+    def __init__(self, name, ticker, trade_price):
         self.name = name
         self.ticker = ticker
         self.trade_price = trade_price
@@ -26,8 +26,6 @@ class Security(object):
 
         time_string = df.index[-1].strftime('%m/%d/%Y')
         self.last_updated = time_string
-
-        # self.current_price = df.iloc[-1]["Close"]
 
         # get new columns, Status
         def inc_dec(close, open):
