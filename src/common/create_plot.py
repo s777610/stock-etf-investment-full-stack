@@ -2,10 +2,21 @@
 from pandas_datareader import data
 import fix_yahoo_finance as yf
 import datetime
-from bokeh.plotting import figure, show, output_file
+from bokeh.plotting import figure
 from bokeh.embed import components
 from bokeh.resources import CDN  # content delivery network
 from bokeh.models import HoverTool, ColumnDataSource
+
+
+# get new colums, Status
+def inc_dec(close, open):
+    if close > open:
+        value = "Increase"
+    elif close < open:
+        value = "Decrease"
+    else:
+        value = "Equal"
+    return value
 
 
 def create_plot(name, ticker):
@@ -16,16 +27,6 @@ def create_plot(name, ticker):
     start = datetime.datetime.now() - datetime.timedelta(days=180)
     end = datetime.datetime.now()
     df = data.get_data_yahoo(ticker, start=start, end=end)
-
-    # get new colums, Status
-    def inc_dec(close, open):
-        if close > open:
-            value = "Increase"
-        elif close < open:
-            value = "Decrease"
-        else:
-            value = "Equal"
-        return value
 
     # create new columns in order to plot
     df["Status"] = [inc_dec(close, open) for close, open in zip(df.Close, df.Open)]
@@ -73,4 +74,5 @@ def create_plot(name, ticker):
     script1, div1 = components(p)
     cdn_js = CDN.js_files[0]  # js_files is a list of bokeh source code
     cdn_css = CDN.css_files[0]  # css_files is a list of bokeh source code
+
     return name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status, last_updated

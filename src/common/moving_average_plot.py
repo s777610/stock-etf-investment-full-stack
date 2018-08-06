@@ -1,7 +1,7 @@
 from pandas_datareader import data
 import fix_yahoo_finance as yf
 import datetime
-from bokeh.plotting import figure, show, output_file
+from bokeh.plotting import figure
 from bokeh.embed import components
 from bokeh.resources import CDN  # content delivery network
 
