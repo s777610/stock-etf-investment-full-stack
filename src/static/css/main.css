@@ -118,3 +118,10 @@ ul.bottom {
   background: rgba(0, 0, 0, 0.4);
   margin-bottom: auto;
 }
+
+div.backtotop {
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+  font-family:Arial Black, Helvetica, Arial, sans-serif;
+}

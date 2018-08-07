@@ -5,7 +5,7 @@
 <script type="text/javascript" src={{cdn_js | safe}}></script>
 
     <div class="about">
-        <h1>{{ company_name }}</h1>
+        <h1 id="top">{{ company_name }}</h1>
 
         {% if today_status == 'Increase' %}
             <h1 class="fa fa-arrow-up" style="color: {{name_color}};font-size:48px">{{ current_price }} <small>USD</small></h1>
@@ -33,6 +33,12 @@
 {{script2 | safe}}
 {{div2 | safe}}
 </div>
+
+
+<div class="backtotop">
+    <p><a href="#top">Back to top</a></p>
+</div>
+
 {%endblock%}
 
 
