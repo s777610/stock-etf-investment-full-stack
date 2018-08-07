@@ -19,7 +19,7 @@ def moving_average_plot(name, ticker):
     df['Close: 7 Day Mean'] = df['Close'].rolling(window=7).mean()
     df['Close: 14 Day Mean'] = df['Close'].rolling(window=14).mean()
 
-    p = figure(width=500, height=250, x_axis_type="datetime", sizing_mode='scale_width')
+    p = figure(width=1000, height=300, x_axis_type="datetime", sizing_mode='scale_width')
     p.title.text = f"{name} Moving Average"
 
     p.line(df.index, df["Close"], color="red", alpha=0.5, line_width=2, legend="Close")
