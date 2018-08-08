@@ -99,6 +99,11 @@ ul.menu li {
   padding: 0px 10px 0px 10px;
 }
 
+ul.menu li:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 3px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 30px #FFF
+}
+
 
 .menu li a {
   color: #fff;
