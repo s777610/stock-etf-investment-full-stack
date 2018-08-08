@@ -3,12 +3,15 @@
  * Formatting the header area
  */
 
-
+body {
+  margin: 0;
+  padding: 0;
+}
 
 
 #demotext {
 color: #fff;
-text-shadow: 0 0 3px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18
+text-shadow: 0 0 3px #FFF, 0 0 10px #FFF, 0 0 15px #FFF
 }
 
 
@@ -43,14 +46,14 @@ header div h1.logo {
  * Center the body content
  */
 
-.container {
-  width: 1200px;
+div.container {
+  width: 1000px;
   margin: 0 auto;
 }
 
 
 div.jumbotron {
-  font-family:Arial Black, Helvetica, Arial, sans-serif;
+  font-family:"Comic Sans MS", cursive, sans-serif;
 }
 
 
@@ -88,9 +91,7 @@ ul.menu {
 
 
 
-ul.menu li + li {
-  margin-left: 35px;
-}
+
 
 
 ul.menu li {
@@ -105,18 +106,20 @@ ul.menu li {
 }
 
 div.table-responsive {
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 
 div.plot {
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 
 
 ul.bottom {
-  padding: 20px;
+  padding: 30px;
   background: rgba(0, 0, 0, 0.4);
   margin-bottom: auto;
+  position: relative;
+  bottom: 1px;
 }
 
 div.backtotop {
