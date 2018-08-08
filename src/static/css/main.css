@@ -114,17 +114,23 @@ div.plot {
 }
 
 
-ul.bottom {
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.4);
-  margin-bottom: auto;
-  position: relative;
-  bottom: 1px;
-}
+
 
 div.backtotop {
   font-size: 20px;
   margin: auto;
   text-align: center;
   font-family:Arial Black, Helvetica, Arial, sans-serif;
+}
+
+
+div.footer {
+   padding: 30px;
+   position: relative;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.4);
+   color: white;
+   text-align: center;
 }
