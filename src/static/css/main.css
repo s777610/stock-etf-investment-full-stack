@@ -15,14 +15,14 @@ text-shadow: 0 0 3px #FFF, 0 0 10px #FFF, 0 0 15px #FFF
 }
 
 
-header div {
+header {
   text-align: center;
   background: url("http://zavrel.net/background.jpg");
   background-size: cover;
   color: white;
 }
 
-div img {
+header img {
   width: 160px;
   margin-left: auto;
   margin-right: 350px;
@@ -32,13 +32,37 @@ div img {
         }
 
 
-header div h1.logo {
+header h1.logo {
   font-family:"Comic Sans MS", cursive, sans-serif;
   font-size: 3.0em;
   color: #fff;
   float: left;
   margin-top: 8px;
   margin-left: 5px;
+}
+
+
+ul.menu {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
+        }
+
+
+ul.menu li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+
+ul.menu li:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 3px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 30px #FFF;
+}
+
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
 }
 
 
@@ -66,7 +90,6 @@ div.card {
 }
 
 
-
 div.card-header i.fa button.btn {
   font-family:Arial Black, Helvetica, Arial, sans-serif;
   font-size: 24px;
@@ -82,34 +105,6 @@ div.card div.collapse div.card-body {
 
 
 
-
-ul.menu {
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.2);
-  margin-top: 8px;
-        }
-
-
-
-
-
-
-ul.menu li {
-  display: inline;
-  padding: 0px 10px 0px 10px;
-}
-
-ul.menu li:hover {
-  text-decoration: underline;
-  text-shadow: 0 0 3px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 30px #FFF
-}
-
-
-.menu li a {
-  color: #fff;
-  text-decoration: none;
-}
-
 div.table-responsive {
   margin-bottom: 120px;
 }
@@ -117,8 +112,6 @@ div.table-responsive {
 div.plot {
   margin-bottom: 120px;
 }
-
-
 
 
 div.backtotop {

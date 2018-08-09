@@ -6,7 +6,8 @@ from bokeh.plotting import figure
 from bokeh.embed import components
 from bokeh.resources import CDN  # content delivery network
 from bokeh.models import HoverTool, ColumnDataSource
-
+from src.common.moving_average_plot import moving_average_plot
+from src.common.daily_volume import plot_volume
 
 # get new colums, Status
 def inc_dec(close, open):
@@ -26,7 +27,10 @@ def create_plot(name, ticker):
     # from 3 months ago to now
     start = datetime.datetime.now() - datetime.timedelta(days=180)
     end = datetime.datetime.now()
+
     df = data.get_data_yahoo(ticker, start=start, end=end)
+    script2, div2 = moving_average_plot(df)
+    script3, div3 = plot_volume(df)
 
     # create new columns in order to plot
     df["Status"] = [inc_dec(close, open) for close, open in zip(df.Close, df.Open)]
@@ -75,4 +79,4 @@ def create_plot(name, ticker):
     cdn_js = CDN.js_files[0]  # js_files is a list of bokeh source code
     cdn_css = CDN.css_files[0]  # css_files is a list of bokeh source code
 
-    return name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status, last_updated
+    return name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status, last_updated, script2, div2, script3, div3
