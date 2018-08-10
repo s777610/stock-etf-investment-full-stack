@@ -1,4 +1,5 @@
 from bokeh.plotting import figure
+
 from bokeh.models import HoverTool, ColumnDataSource
 from bokeh.embed import components
 from bokeh.resources import CDN  # content delivery network
@@ -12,7 +13,9 @@ def plot_volume(df):
 
     p = figure(width=1000, height=300, x_axis_type="datetime", sizing_mode='scale_width')
     p.title.text = "Volume of stock traded each day"
+
     p.line("Date", "Volume", color="blue", alpha=0.5, line_width=2, source=cds)
+    p.circle("Date", "Volume", fill_color="#0b3da0", size=4, source=cds)
 
     hover = HoverTool(tooltips=[("Volume", "@Volume"), ("Date", "@Date_string")])
     p.add_tools(hover)
