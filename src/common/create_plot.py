@@ -52,11 +52,11 @@ def create_plot(name, ticker):
 
     # 4 parameter, x-axis(datetime), y-axis, width(milliseconds in this case), height
     p.rect('Date', 'Middle', hours_12,
-           'Height', fill_color='green', line_color='black',
+           'Height', fill_color='green', line_color='green',
            source=col_data_src1, name='Increase')
 
     p.rect('Date', 'Middle', hours_12,
-           'Height', fill_color='red', line_color='black',
+           'Height', fill_color='red', line_color='red',
            source=col_data_src2, name='Decrease')
 
     hover = HoverTool(names=["Increase", "Decrease"], tooltips=[('Open', '@Open'), ('Close', '@Close'), ('High', '@High'), ('Low', '@Low')])
