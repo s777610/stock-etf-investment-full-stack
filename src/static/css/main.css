@@ -56,6 +56,7 @@ ul.menu {
 ul.menu li {
   display: inline;
   padding: 0px 10px 0px 10px;
+  font-size:24px;
 }
 
 ul.menu li:hover {
