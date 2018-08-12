@@ -137,3 +137,21 @@ div.footer {
    color: white;
    text-align: center;
 }
+
+/*
+ * ETFs
+ */
+
+.toggler { width: 500px; height: 170px; position: relative; }
+#button { padding: .5em 1em;
+          text-decoration: none;
+          margin: 10px;}
+#effect { width: 400px; height: 150px; padding: 0.4em; position: relative; background: #fff; }
+#effect h3 { margin: 0; padding: 0.4em; text-align: center; font-size: 20px}
+
+.newClass {
+    font-size: 150%;
+}
+div.toggler div#effect p {
+    font-size: 70%;
+}
