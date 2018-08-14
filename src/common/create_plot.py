@@ -20,7 +20,7 @@ def inc_dec(close, open):
     return value
 
 
-def create_plot(name, ticker):
+def create_plot(ticker, name=None):
     # Using yahoo API
     yf.pdr_override()
 
@@ -38,7 +38,7 @@ def create_plot(name, ticker):
     df["Height"] = abs(df.Close - df.Open)
 
     p = figure(x_axis_type='datetime', width=1000, height=300, sizing_mode='scale_width')
-    p.title.text = f"{name} Candlestick Chart"
+    p.title.text = "Candlestick Chart"
     p.grid.grid_line_alpha = 0.3  # alpha is level of transparent
 
     hours_12 = 12 * 60 * 60 * 1000  # millisconds
