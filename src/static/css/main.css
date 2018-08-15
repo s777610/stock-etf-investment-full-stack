@@ -14,7 +14,7 @@ body {
 
 header {
   text-align: center;
-  background: url("http://zavrel.net/background.jpg");
+  background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg");
   background-size: cover;
   color: white;
 }
@@ -31,6 +31,8 @@ header img#picture {
   border: 7px solid white;
   border-radius: 20px;
         }
+
+
 
 
 
@@ -154,7 +156,7 @@ div.footer {
    right: 0;
    bottom: 0;
    width: 100%;
-   background-color: rgba(0, 0, 0, 0.4);
+   background-color: #0B6071;
    color: white;
    text-align: center;
 }
