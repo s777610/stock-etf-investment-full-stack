@@ -1,13 +1,14 @@
 
-from pandas_datareader import data
-import fix_yahoo_finance as yf
+from pandas_datareader import data as dataread
+import pandas as pd
+pd.core.common.is_list_like = pd.api.types.is_list_like
 import datetime
-from bokeh.plotting import figure
-from bokeh.embed import components
-from bokeh.resources import CDN  # content delivery network
-from bokeh.models import HoverTool, ColumnDataSource
+import plotly
+import plotly.graph_objs as go
+import fix_yahoo_finance as yf
 from src.common.moving_average_plot import moving_average_plot
 from src.common.daily_volume import plot_volume
+
 
 # get new colums, Status
 def inc_dec(close, open):
@@ -28,40 +29,33 @@ def create_plot(ticker, name=None):
     start = datetime.datetime.now() - datetime.timedelta(days=180)
     end = datetime.datetime.now()
 
-    df = data.get_data_yahoo(ticker, start=start, end=end)
-    script2, div2 = moving_average_plot(df)
-    script3, div3 = plot_volume(df)
+    df = dataread.get_data_yahoo(ticker, start=start, end=end)
+
+    trace = go.Candlestick(x=df.index,
+                           open=df.Open,
+                           high=df.High,
+                           low=df.Low,
+                           close=df.Close)
+    data = [trace]
+    layout = go.Layout(title='Candlestick Chart')
+
+    div1 = plotly.offline.plot({"data": data,
+                                "layout": layout},
+                               include_plotlyjs=False,
+                               output_type='div',
+                               link_text="",
+                               show_link="False")
+
+    div2 = moving_average_plot(df)
+    div3 = plot_volume(df)
 
     # create new columns in order to plot
     df["Status"] = [inc_dec(close, open) for close, open in zip(df.Close, df.Open)]
     df["Middle"] = (df.Open + df.Close) / 2
     df["Height"] = abs(df.Close - df.Open)
 
-    p = figure(x_axis_type='datetime', width=1000, height=300, sizing_mode='scale_width')
-    p.title.text = "Candlestick Chart"
-    p.grid.grid_line_alpha = 0.3  # alpha is level of transparent
-
-    hours_12 = 12 * 60 * 60 * 1000  # millisconds
-
-    # 4 parameter, x value of high point, y value of high point, x value of low point, y value of low point
-    p.segment(df.index, df.High, df.index, df.Low, color="Black", name='segment')
-
-    # for hover
-    col_data_src1 = ColumnDataSource(df[df.Status == 'Increase'])
-    col_data_src2 = ColumnDataSource(df[df.Status == 'Decrease'])
-
-    # 4 parameter, x-axis(datetime), y-axis, width(milliseconds in this case), height
-    p.rect('Date', 'Middle', hours_12,
-           'Height', fill_color='green', line_color='green',
-           source=col_data_src1, name='Increase')
-
-    p.rect('Date', 'Middle', hours_12,
-           'Height', fill_color='red', line_color='red',
-           source=col_data_src2, name='Decrease')
-
-    hover = HoverTool(names=["Increase", "Decrease"], tooltips=[('Open', '@Open'), ('Close', '@Close'), ('High', '@High'), ('Low', '@Low')])
-    p.add_tools(hover)
-
+    time_string = df.index[-1].strftime('%m/%d/%Y')
+    last_updated = time_string
     current_price = df.iloc[-1]["Close"].round(2)
 
     today_status = df.iloc[-1]["Status"]
@@ -70,13 +64,5 @@ def create_plot(ticker, name=None):
     else:
         name_color = "red"
 
-    time_string = df.index[-1].strftime('%m/%d/%Y')
-    last_updated = time_string
+    return name, current_price, name_color, today_status, last_updated, div1, div2, div3
 
-    # the source code of JS and html, which is tuple(len=2)
-    # script1 is JS, div1 is html, both type are string
-    script1, div1 = components(p)
-    cdn_js = CDN.js_files[0]  # js_files is a list of bokeh source code
-    cdn_css = CDN.css_files[0]  # css_files is a list of bokeh source code
-
-    return name, script1, div1, cdn_css, cdn_js, current_price, name_color, today_status, last_updated, script2, div2, script3, div3
