@@ -191,7 +191,26 @@ div#gdp_div {
     font-family:"Comic Sans MS", cursive, sans-serif;
 }
 
+
+
+
+/*
+ * email
+ */
+
 div#emailform {
+    font-family:Arial Black, Helvetica, Arial, sans-serif;
     margin: 0 auto 50px auto;
     width: 50%;
+}
+
+
+div#emailform div.form-group input{
+
+    font-family: Tahoma, Helvetica, Arial, sans-serif;
+}
+
+div#emailform div.form-group textarea{
+
+    font-family: Tahoma, Helvetica, Arial, sans-serif;
 }
