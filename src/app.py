@@ -51,7 +51,7 @@ def search():
                            ticker=ticker, today_status=today_status,
                            last_updated=last_updated)
         except:
-            return render_template("search.html", text="Please enter a valid ticker.")
+            return render_template("search.html", text="Could not find the security, please enter a valid ticker.")
 
 
 if __name__ == "__main__":

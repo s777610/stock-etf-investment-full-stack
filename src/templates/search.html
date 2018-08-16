@@ -5,7 +5,10 @@
 <script type="text/javascript" src={{cdn_js | safe}}></script>
 
     <div>
-        <h1 style="color: red"><strong>{{ text }}</strong></h1>
+        {% if text %}
+        <div style="text-align: center; font-size: 20px" class="alert alert-danger" role="alert">{{ text }}</div>
+
+        {% else %}
         <p id="top">NYSEARCA: {{ ticker }}</p>
 
         {% if today_status == 'Increase' %}
@@ -15,9 +18,11 @@
         {% endif %}
 
 
+
         <p>Daily Return: {{ daily_return }} %</p>
 
         <p>Last Updated: {{ last_updated }}</p>
+        {% endif %}
     </div>
 
 
