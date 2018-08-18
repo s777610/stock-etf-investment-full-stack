@@ -3,6 +3,17 @@ import fix_yahoo_finance as yf
 import datetime
 
 
+# get new columns, Status
+def inc_dec(close, open):
+    if close > open:
+        value = "Increase"
+    elif close < open:
+        value = "Decrease"
+    else:
+        value = "Equal"
+    return value
+
+
 class Security(object):
     def __init__(self, name, ticker, trade_price):
         self.name = name
@@ -18,7 +29,6 @@ class Security(object):
         yf.pdr_override()
         start = datetime.datetime.now() - datetime.timedelta(days=4)
         end = datetime.datetime.now()
-
         df = data.get_data_yahoo(self.ticker, start=start, end=end)
 
         self.open = df.iloc[-1]["Open"].round(2)
@@ -26,16 +36,6 @@ class Security(object):
 
         time_string = df.index[-1].strftime('%m/%d/%Y')
         self.last_updated = time_string
-
-        # get new columns, Status
-        def inc_dec(close, open):
-            if close > open:
-                value = "Increase"
-            elif close < open:
-                value = "Decrease"
-            else:
-                value = "Equal"
-            return value
 
         df["Status"] = [inc_dec(close, open) for close, open in zip(df.Close, df.Open)]
         self.today_status = df.iloc[-1]["Status"]
