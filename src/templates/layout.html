@@ -42,6 +42,7 @@
 
           <ul class="menu">
               <li class="fa fa-home draggable"><a href="{{ url_for('home') }}"> Home</a></li>
+              <li class="fa fa-home draggable"><a href="{{ url_for('about') }}"> About</a></li>
               <li class="fa fa-facebook-square"><a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> Facebook</a></li>
               <li class="fa fa-linkedin-square"><a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> LinkedIn</a></li>
               <li class="fa fa-github"><a href="https://github.com/s777610" target="_blank"> GitHub</a></li>
@@ -69,7 +70,7 @@
 
     <div class="container">
         {%block content%}  <!--this layout.html is base html page-->
-        {%endblock%}       <!--child html are home.html, eft.html-->
+        {%endblock%}       <!--child html are about.html, eft.html-->
     </div>
 
 

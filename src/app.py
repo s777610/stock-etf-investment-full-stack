@@ -16,9 +16,15 @@ def plot_security(name, ticker, daily_return, cum_return):
                            last_updated=last_updated, daily_return=daily_return, cum_return=cum_return,
                            div1=div1, div2=div2, div3=div3)
 
+
 @app.route('/')
 def home():
     return render_template("home.html")
+
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
 
 
 @app.route('/etf/')
@@ -55,5 +61,5 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=4880)
+    app.run(debug=True, port=4881)
 

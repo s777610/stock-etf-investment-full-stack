@@ -1,111 +1,94 @@
-{%extends "layout.html"%}
-{%block content%}
+<!DOCTYPE html>
+<html id="html-home">
+  <head>
+      <title>Stock</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <div id="top" class="jumbotron">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  </head>
+
+
+  <body id="home-body">
+
+
+<img id="logo-home" src="https://user-images.githubusercontent.com/35472776/44018392-1ff9ba6e-9ecb-11e8-8a52-3843390d75dd.png" alt = "Test Image">
+
+
+
+
+        <div id="search_form">
+            <p style="color: #FFFFFF">Looking for chart?</p>
+            <form class="form-inline" action = "{{url_for('search')}}" method='POST'>
+            <input class="form-control mr-sm-2" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
+            <button class="btn btn-success" type="submit"> Search </button>
+          </form>
+        </div>
+
+
+
+          <div class="clear-float"></div>
+
+
+
+<ul class="menu" id="home-menu">
+    <li class="fa fa-home"><a href="{{ url_for('home') }}"> Home</a></li>
+    <li class="fa fa-address-book"><a href="{{ url_for('about') }}"> About</a></li>
+    <li class="fa fa-facebook-square"><a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> Facebook</a></li>
+    <li class="fa fa-linkedin-square"><a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> LinkedIn</a></li>
+    <li class="fa fa-github"><a href="https://github.com/s777610" target="_blank"> GitHub</a></li>
+    <li class="fa fa-line-chart"><a href="{{ url_for('etf') }}"> ETF</a></li>
+    <li class="fa fa-line-chart"><a href="{{ url_for('stock') }}"> Stock</a></li>
+    <li class="fa fa-file-text-o"><a href="https://s777610.github.io/resume/"> Resume</a></li>
+</ul>
+
+<div class="container" id="home-welcome">
         <h1 style="font-size: 25px;"><strong>Welcome to my personal blog!</strong></h1>
         <p>I am a software developer and a stock investor.</p>
         <p>I list most of stocks and ETFs I am holding on this site.</p>
         <p>Feel free to explore my site!</p>
-    </div>
-
-
-<div class="accordion" id="accordionExample">
-
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-          <i class="fa fa-hand-o-right">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          About Me:
-        </button>
-          </i>
-      </h5>
-    </div>
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-          Currently, I am a graduate student of IT department at California Lutheran University.<br>
-          I have experience of web development, SQL database, NoSQL database, data analysis, and data visualization.<br>
-          I usually spend most of my spare time for taking the online course to improve my coding skills.<br>
-          <br>
-          On the other hand, I am crazy about stock markets.<br>
-          Normally, I read financial books and do research on stock/ETF investments every single day.<br>
-          I have been investing in Taiwan stock market for a while.<br>
-          However, I decided to allocate my asset widely by investing in low-cost ETFs a few years ago.<br>
-          Therefore, I consistently invest in ETFs launched by Vanguard Group.<br>
-          Feel free to take a look at my investments.<br>
-      </div>
-    </div>
-
-      <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-          <i class="fa fa-hand-o-right">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-           My Conception of Stock Investment:
-        </button>
-          </i>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-          Basically, I am an index investor. Index investing is a strategy which is designed to match a market instead of beating it. I believe that after costs and taxes, index investors are able to beat average active investors in a market. Therefore, the majority of my investments are ETFs launched by Vanguard Group. I think that Vanguard Group provides high-quality, low-cost ETFs. Typically, I investing in ETFs is more interested in a diversified portfolio and want to keep my investment for a long period of time. However, I keep roughly 10% of my portfolio in the individual stock, which I am familiar with.
-      </div>
-    </div>
-
-      <div class="card-header" id="headingThree">
-      <h5 class="mb-0">
-          <i class="fa fa-hand-o-right">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-           Cost of Investment:
-        </button>
-          </i>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-          I think that costs can effects investment returns significantly even though the costs seem low. Investors cannot ignore the power of compounding of costs along with investment returns. In addition, no matter investors' assets increase or decrease, they must pay an annual fee. In other words, investors not only lose the annual fee they pay but also lose growing money might have had for years into the future. In short, investors should not ignore costs because the costs of investment are extremely harmful to investments.
-
-      </div>
-    </div>
-
-      <div class="card-header" id="headingFour">
-      <h5 class="mb-0">
-          <i class="fa fa-hand-o-right">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-           Asset allocation:
-        </button>
-          </i>
-      </h5>
-    </div>
-    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-      <div class="card-body">
-          The purpose of the implement of asset allocation is to balance risk versus reward by adjusting the percentage of each asset in the portfolio. In my opinion, there is no "perfect" asset allocation for everyone. It depends on what your goal is and what kind of asset you familiar with. In short, you have to start with the big picture instead of details. For me, I am allocating my assets by continent. There is an interactive-app for world GDP below, feel free to play around. We can see United States have highest GDP. There is why I allocate most of my asset within United States.
-          <br>
-          <br>
-          <br>
-      </div>
-    </div>
-
-  </div>
+        <br>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('about') }}" role="button"> Explore !!</a>
+        <a class="btn btn-success btn-lg" id="email-button" role="button">Contact Me</a>
 </div>
 
-    <div class="clear-float"></div>
 
 
-    <div id="gdp_div">
-        <h2>Here is an interactive map for world GDP(Gross Domestic Product).</h2>
-        <iframe id="gdp_map" frameborder="0" src="https://s777610.github.io/2017_world_GDP_map/">
-            <p>Your browser does not support iframes.</p>
-        </iframe>
-    </div>
+<script>
+$(document).ready(function() {
+$(function() {
+$( "#dialog" ).dialog({
+autoOpen: false
+});
+});
+$("#email-button").click(function(){
+$( "#dialog" ).dialog( "open" );
+})
+})
+</script>
 
 
 
 
 
+<div class="clear-float"></div>
+
+<div id="footer-home">
+  <p>&copy; 2018 Wei Cheng, Hung</p>
+</div>
 
 
+<div class="barrier"></div>
 
-<div id="emailform">
+<div id="dialog">
     <h2>Contact Me</h2>
     <form action="https://formspree.io/s777610@gmail.com" method="POST">
 
@@ -129,9 +112,10 @@
         <input class="btn btn-outline-info" type="reset">
         </div>
     </form>
-
 </div>
 
+  </body>
+</html>
 
 
 
@@ -140,11 +124,9 @@
 
 
 
-<div class="backtotop">
-    <p><a href="#top">Back to top</a></p>
-</div>
 
 
 
 
-{%endblock%}
+
+
