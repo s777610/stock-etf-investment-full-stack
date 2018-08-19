@@ -66,7 +66,8 @@
 $(document).ready(function() {
 $(function() {
 $( "#dialog" ).dialog({
-autoOpen: false
+autoOpen: false,
+modal: true
 });
 });
 $("#email-button").click(function(){
@@ -94,7 +95,7 @@ $( "#dialog" ).dialog( "open" );
 
       <div class="form-group">
         <label for="sender_email">Your Email address</label>
-        <input type="email" class="form-control" id="sender_email" placeholder="Your email" name="_replyto" required>
+        <input type="email" class="form-control" id="sender_email" placeholder="example@gmail.com" name="_replyto" required autofocus>
       </div>
 
       <div class="form-group">
