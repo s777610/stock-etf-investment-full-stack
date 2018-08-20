@@ -270,3 +270,7 @@ ul#home-menu {
 div.barrier {
     margin-top: 100px;
 }
+
+div.hidden {
+    display: none;
+}
