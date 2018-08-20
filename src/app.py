@@ -51,6 +51,7 @@ def search():
     if request.method == 'POST':
         try:
             ticker = request.form["ticker"]
+            ticker = ticker.upper()
             name, current_price, name_color, today_status, last_updated, div1, div2, div3 = create_plot(ticker)
             return render_template("search.html", div1=div1, div2=div2, div3=div3,
                            current_price=current_price, name_color=name_color,

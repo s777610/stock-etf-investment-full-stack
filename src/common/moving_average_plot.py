@@ -4,8 +4,8 @@ import plotly.graph_objs as go
 
 
 def moving_average_plot(df):
-    df['Close: 7 Day Mean'] = df['Close'].rolling(window=7).mean()
-    df['Close: 14 Day Mean'] = df['Close'].rolling(window=14).mean()
+    df['Close: 7 Day Mean'] = df['close'].rolling(window=7).mean()
+    df['Close: 14 Day Mean'] = df['close'].rolling(window=14).mean()
 
     trace_high = go.Scatter(
         x=df.index,

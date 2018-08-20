@@ -1,5 +1,4 @@
-from pandas_datareader import data
-import fix_yahoo_finance as yf
+from pandas_datareader import data as dataread
 import datetime
 
 
@@ -13,7 +12,6 @@ def inc_dec(close, open):
         value = "Equal"
     return value
 
-
 class Security(object):
     def __init__(self, name, ticker, trade_price):
         self.name = name
@@ -26,23 +24,23 @@ class Security(object):
         self.last_updated = None
         self.daily_return = None
         self.cum_return = None
-        yf.pdr_override()
         start = datetime.datetime.now() - datetime.timedelta(days=4)
         end = datetime.datetime.now()
-        df = data.get_data_yahoo(self.ticker, start=start, end=end)
 
-        self.open = df.iloc[-1]["Open"].round(2)
-        self.close = df.iloc[-1]["Close"].round(2)
+        df = dataread.DataReader(ticker, data_source='iex', start=start, end=end)
 
-        time_string = df.index[-1].strftime('%m/%d/%Y')
-        self.last_updated = time_string
+        self.open = df.iloc[-1]["open"].round(2)
+        self.close = df.iloc[-1]["close"].round(2)
 
-        df["Status"] = [inc_dec(close, open) for close, open in zip(df.Close, df.Open)]
+        time = df.index[-1]
+        self.last_updated = time
+
+        df["Status"] = [inc_dec(close, open) for close, open in zip(df.close, df.open)]
         self.today_status = df.iloc[-1]["Status"]
 
         # daily return
-        self.daily_return = (df['Close'].pct_change(1)[-1]).round(3)
+        self.daily_return = (df['close'].pct_change(1)[-1]).round(3)
         # cumulative return
-        self.cum_return = (((df.iloc[-1]['Close'] / self.trade_price) - 1) * 100).round(2)
+        self.cum_return = (((df.iloc[-1]['close'] / self.trade_price) - 1) * 100).round(2)
 
 

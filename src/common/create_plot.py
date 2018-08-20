@@ -5,7 +5,6 @@ pd.core.common.is_list_like = pd.api.types.is_list_like
 import datetime
 import plotly
 import plotly.graph_objs as go
-import fix_yahoo_finance as yf
 from src.common.moving_average_plot import moving_average_plot
 from src.common.daily_volume import plot_volume
 
@@ -22,20 +21,18 @@ def inc_dec(close, open):
 
 
 def create_plot(ticker, name=None):
-    # Using yahoo API
-    yf.pdr_override()
 
     # from 3 months ago to now
     start = datetime.datetime.now() - datetime.timedelta(days=180)
     end = datetime.datetime.now()
 
-    df = dataread.get_data_yahoo(ticker, start=start, end=end)
+    df = dataread.DataReader(ticker, data_source='iex', start=start, end=end)
 
     trace = go.Candlestick(x=df.index,
-                           open=df.Open,
-                           high=df.High,
-                           low=df.Low,
-                           close=df.Close)
+                           open=df.open,
+                           high=df.high,
+                           low=df.low,
+                           close=df.close)
     data = [trace]
     layout = go.Layout(title='Candlestick Chart')
 
@@ -50,13 +47,13 @@ def create_plot(ticker, name=None):
     div3 = plot_volume(df)
 
     # create new columns in order to plot
-    df["Status"] = [inc_dec(close, open) for close, open in zip(df.Close, df.Open)]
-    df["Middle"] = (df.Open + df.Close) / 2
-    df["Height"] = abs(df.Close - df.Open)
+    df["Status"] = [inc_dec(close, open) for close, open in zip(df.close, df.open)]
+    df["Middle"] = (df.open + df.close) / 2
+    df["Height"] = abs(df.close - df.open)
 
-    time_string = df.index[-1].strftime('%m/%d/%Y')
-    last_updated = time_string
-    current_price = df.iloc[-1]["Close"].round(2)
+    last_updated = df.index[-1]
+
+    current_price = df.iloc[-1]["close"].round(2)
 
     today_status = df.iloc[-1]["Status"]
     if today_status == "Increase":
