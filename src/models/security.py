@@ -12,6 +12,7 @@ def inc_dec(close, open):
         value = "Equal"
     return value
 
+
 class Security(object):
     def __init__(self, name, ticker, trade_price):
         self.name = name

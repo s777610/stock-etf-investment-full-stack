@@ -1,7 +1,8 @@
 
-from pandas_datareader import data as dataread
+
 import pandas as pd
 pd.core.common.is_list_like = pd.api.types.is_list_like
+from pandas_datareader import data as dataread
 import datetime
 import plotly
 import plotly.graph_objs as go
