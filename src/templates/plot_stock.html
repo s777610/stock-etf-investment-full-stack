@@ -4,7 +4,7 @@
 
 <script type="text/javascript" src={{cdn_js | safe}}></script>
 
-    <div class="about">
+    <div class="container-plot">
         <h1 id="top">{{ company_name }}</h1>
 
         {% if today_status == 'Increase' %}
@@ -22,7 +22,7 @@
         </p>
 
         <p>Last Updated: {{ last_updated }}</p>
-    </div>
+
 
 
 <div class="plot">
@@ -34,6 +34,7 @@
     <br>
 {{div3|safe}}
 </div>
+    </div>
 
 
 <div class="backtotop">

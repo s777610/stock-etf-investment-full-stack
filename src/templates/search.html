@@ -4,13 +4,13 @@
 
 <script type="text/javascript" src={{cdn_js | safe}}></script>
 
-    <div>
+    <div class="container-plot">
         {% if text %}
         <div style="text-align: center; font-size: 20px" class="alert alert-danger" role="alert">{{ text }}</div>
         <div class="barrier"></div>
         <div class="barrier"></div>
         {% else %}
-        <p id="top">NYSEARCA: {{ ticker }}</p>
+        <p id="top" style="font-size: 20px">NYSEARCA: {{ ticker }}</p>
 
         {% if today_status == 'Increase' %}
             <h1 class="fa fa-arrow-up" style="color: {{name_color}};font-size:48px">{{ current_price }} <small>USD</small></h1>
@@ -19,12 +19,9 @@
         {% endif %}
 
 
-
-        <p>Daily Return: {{ daily_return }} %</p>
-
         <p>Last Updated: {{ last_updated }}</p>
         {% endif %}
-    </div>
+
 
 
 <div class="plot">
@@ -40,6 +37,7 @@
 {{div3 | safe}}
 </div>
 
+    </div>
 
 <div class="backtotop">
     <p><a href="#top">Back to top</a></p>
