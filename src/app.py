@@ -22,6 +22,10 @@ def home():
     return render_template("home.html")
 
 
+@app.route('/resume')
+def resume():
+    return render_template("resume.html")
+
 @app.route('/about')
 def about():
     return render_template("about.html")
@@ -59,6 +63,10 @@ def search():
                            last_updated=last_updated)
         except:
             return render_template("search.html", text="Could not find the security, please enter a valid ticker.")
+
+
+
+
 
 
 if __name__ == "__main__":

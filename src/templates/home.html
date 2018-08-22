@@ -42,12 +42,9 @@
 <ul class="menu" id="home-menu">
     <li class="fa fa-home"><a href="{{ url_for('home') }}"> Home</a></li>
     <li class="fa fa-address-book"><a href="{{ url_for('about') }}"> About</a></li>
-    <li class="fa fa-facebook-square"><a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> Facebook</a></li>
-    <li class="fa fa-linkedin-square"><a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> LinkedIn</a></li>
-    <li class="fa fa-github"><a href="https://github.com/s777610" target="_blank"> GitHub</a></li>
     <li class="fa fa-line-chart"><a href="{{ url_for('etf') }}"> ETF</a></li>
     <li class="fa fa-line-chart"><a href="{{ url_for('stock') }}"> Stock</a></li>
-    <li class="fa fa-file-text-o"><a href="https://s777610.github.io/resume/"> Resume</a></li>
+    <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> Resume</a></li>
 </ul>
 
 <div class="container" id="home-welcome">
@@ -83,7 +80,12 @@ $( "#dialog" ).dialog( "open" );
 <div class="clear-float"></div>
 
 <div id="footer-home">
-  <p>&copy; 2018 Wei Cheng, Hung</p>
+  <ul class="social">
+      <li> <a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> <i class="fa fa-facebook-square"></i></a></li>
+      <li> <a href="https://github.com/s777610" target="_blank"> <i class="fa fa-github"></i></a></li>
+      <li> <a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> <i class="fa fa-linkedin-square"></i> </a></li>
+  </ul>
+  <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
 </div>
 
 
@@ -119,17 +121,3 @@ $( "#dialog" ).dialog( "open" );
 
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

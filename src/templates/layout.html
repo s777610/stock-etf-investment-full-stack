@@ -16,14 +16,10 @@
 
   </head>
 
-  <body id="body">
+  <body>
 
     <header>
 <img id="logo_light" src="https://user-images.githubusercontent.com/35472776/44018392-1ff9ba6e-9ecb-11e8-8a52-3843390d75dd.png" alt = "Test Image">
-          <!--    <h1 id="demotext" class="logo">Wilson's Blog</h1>  -->
-
-
-
         <div id="search_form">
             <p>Looking for chart?</p>
             <form class="form-inline" action = "{{url_for('search')}}" method='POST'>
@@ -32,23 +28,17 @@
           </form>
         </div>
 
-
-
           <div class="clear-float"></div>
 
-          <img id="picture" src="https://user-images.githubusercontent.com/35472776/42259943-5b241fea-7f17-11e8-861c-412becf1d44b.jpg">
           <br>
           <br>
 
           <ul class="menu">
               <li class="fa fa-home draggable"><a href="{{ url_for('home') }}"> Home</a></li>
               <li class="fa fa-home draggable"><a href="{{ url_for('about') }}"> About</a></li>
-              <li class="fa fa-facebook-square"><a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> Facebook</a></li>
-              <li class="fa fa-linkedin-square"><a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> LinkedIn</a></li>
-              <li class="fa fa-github"><a href="https://github.com/s777610" target="_blank"> GitHub</a></li>
               <li class="fa fa-line-chart"><a href="{{ url_for('etf') }}"> ETF</a></li>
               <li class="fa fa-line-chart"><a href="{{ url_for('stock') }}"> Stock</a></li>
-              <li class="fa fa-file-text-o"><a href="https://s777610.github.io/resume/"> Resume</a></li>
+              <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> Resume</a></li>
           </ul>
 
     </header>
@@ -75,7 +65,14 @@
 
 
   <footer class="footer">
-  <p>&copy; 2018 Wei Cheng, Hung</p>
+      <ul class="social">
+          <li> <a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> <i class="fa fa-facebook-square"></i></a></li>
+          <li> <a href="https://github.com/s777610" target="_blank"> <i class="fa fa-github"></i></a></li>
+          <li> <a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> <i class="fa fa-linkedin-square"></i> </a></li>
+
+      </ul>
+  <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
+
 </footer>
   </body>
 </html>
