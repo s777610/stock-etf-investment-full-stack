@@ -31,8 +31,8 @@ img.picture {
 
 header img#logo_light {
   float: left;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 0;
+  margin-left: 0;
   width:300px;
   height:150px;
 }
@@ -173,6 +173,7 @@ footer.footer {
    background-color: #0B6071;
    color: white;
    text-align: center;
+    z-index: 1;
 }
 
 ul.social li {
@@ -284,8 +285,8 @@ div#emailform div.form-group textarea{
 
 img#logo-home {
   float: left;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 0;
+  margin-left: 0;
   width:300px;
   height:150px;
 }
@@ -358,12 +359,15 @@ div.content-guide {
     right: 10px;
     bottom: 80px;
     width: 200px;
+    z-index: 2;
+
 }
 
 div.content-guide a {
     background-color: #0B6071;
     color: #FFFFFF;
     font-weight: bold;
+    opacity: 0.9
 
 }
 div.content-guide a:hover {
