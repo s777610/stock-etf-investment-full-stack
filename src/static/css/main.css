@@ -176,6 +176,10 @@ footer.footer {
     z-index: 1;
 }
 
+ul.social {
+    padding: 0;
+}
+
 ul.social li {
     text-align: center;
     display: inline;
