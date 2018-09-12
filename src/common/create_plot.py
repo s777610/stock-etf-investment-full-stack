@@ -49,8 +49,8 @@ def create_plot(ticker, name=None):
 
     # create new columns in order to plot
     df["Status"] = [inc_dec(close, open) for close, open in zip(df.close, df.open)]
-    df["Middle"] = (df.open + df.close) / 2
-    df["Height"] = abs(df.close - df.open)
+    #df["Middle"] = (df.open + df.close) / 2
+    #df["Height"] = abs(df.close - df.open)
 
     last_updated = df.index[-1]
 

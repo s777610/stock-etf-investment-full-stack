@@ -45,3 +45,5 @@ class Security(object):
         self.cum_return = (((df.iloc[-1]['close'] / self.trade_price) - 1) * 100).round(2)
 
 
+
+

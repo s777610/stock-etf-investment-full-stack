@@ -65,10 +65,6 @@ def search():
             return render_template("search.html", text="Could not find the security, please enter a valid ticker.")
 
 
-
-
-
-
 if __name__ == "__main__":
     app.run(debug=True, port=4883)
 
