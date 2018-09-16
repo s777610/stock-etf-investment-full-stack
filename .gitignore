@@ -113,7 +113,8 @@ venv
 .dmypy.json
 dmypy.jso
 
-
+# DS_Store
+.DS_Store
 
 # gudie conda
 conda_guide.txt
