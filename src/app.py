@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 @app.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
 def plot_security(name, ticker, daily_return, cum_return):

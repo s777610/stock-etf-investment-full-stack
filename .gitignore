@@ -111,4 +111,10 @@ venv
 # mypy
 .mypy_cache/
 .dmypy.json
-dmypy.json
+dmypy.jso
+
+
+
+# gudie conda
+conda_guide.txt
+
