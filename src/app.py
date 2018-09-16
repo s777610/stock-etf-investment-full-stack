@@ -1,8 +1,9 @@
 
 from flask import Flask, render_template, request
-from src.common.create_plot import create_plot
-from src.models.security import Security
-from src.common.name_scraper import scrape_name
+from common.create_plot import create_plot
+from models.security import Security
+from common.name_scraper import scrape_name
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)

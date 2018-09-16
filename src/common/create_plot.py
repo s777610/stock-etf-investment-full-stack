@@ -6,8 +6,8 @@ from pandas_datareader import data as dataread
 import datetime
 import plotly
 import plotly.graph_objs as go
-from src.common.moving_average_plot import moving_average_plot
-from src.common.daily_volume import plot_volume
+from common.moving_average_plot import moving_average_plot
+from common.daily_volume import plot_volume
 
 
 # get new colums, Status
