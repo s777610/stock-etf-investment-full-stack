@@ -6,11 +6,11 @@ from common.name_scraper import scrape_name
 from flask_sqlalchemy import SQLAlchemy
 
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'mysecretkey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+application = Flask(__name__)
+application.config['SECRET_KEY'] = 'mysecretkey'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
-@app.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
+@application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
 def plot_security(name, ticker, daily_return, cum_return):
     name, current_price, name_color, today_status, last_updated, div1, div2, div3 = create_plot(ticker, name)
     return render_template("plot_stock.html",  current_price=current_price, name_color=name_color,
@@ -18,22 +18,22 @@ def plot_security(name, ticker, daily_return, cum_return):
                            last_updated=last_updated, daily_return=daily_return, cum_return=cum_return,
                            div1=div1, div2=div2, div3=div3)
 
-   
-@app.route('/')
+
+@application.route('/')
 def home():
     return render_template("home.html")
 
 
-@app.route('/resume')
+@application.route('/resume')
 def resume():
     return render_template("resume.html")
 
-@app.route('/about')
+@application.route('/about')
 def about():
     return render_template("about.html")
 
 
-@app.route('/etf/')
+@application.route('/etf/')
 def etf():
     securitys = [Security("Vanguard Dividend Appreciation ETF", "VIG", 83.621112),
                  Security("Vanguard 500 Index Fund", "VOO", 249.830589),
@@ -45,14 +45,14 @@ def etf():
     return render_template("eft.html", securitys=securitys)  # pass security object to eft.html
 
 
-@app.route('/stock/')
+@application.route('/stock/')
 def stock():
     securitys = [Security("Amazon Inc.", "AMZN", 1169.959),
                  Security("Mongodb Inc", "MDB", 59.1745)]
     return render_template("stock.html", securitys=securitys)
 
 
-@app.route("/search", methods=['POST'])
+@application.route("/search", methods=['POST'])
 def search():
     if request.method == 'POST':
         try:
@@ -69,4 +69,4 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=4882)
+    application.run(debug=True, port=4882)
