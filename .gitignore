@@ -116,6 +116,11 @@ dmypy.jso
 # DS_Store
 .DS_Store
 
+# db
+site.db
+
 # gudie conda
 conda_guide.txt
+
+
 

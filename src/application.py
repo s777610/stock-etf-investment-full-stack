@@ -8,8 +8,26 @@ from flask_sqlalchemy import SQLAlchemy
 
 application = Flask(__name__)
 application.config['SECRET_KEY'] = 'mysecretkey'
+
+#############################
+"""
+to create db, go to terminal and activate env,
+open python
+from application import db
+db.create_all() # create site.db file
+from application import Security
+security_1 = Security(name='Vanguard Dividend Appreciation ETF', ticker='VIG', purchase_price=83.621112)
+db.session.add(security_1)
+db.session.commit()
+
+Security.query.all()
+Security.query.first()
+Security.query.filter_by(ticker='VIG').all()
+security_1 is a object
+security_1.name # 'Vanguard Dividend Appreciation ETF'
+"""
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-db = SQLAlchemy(app)
+db = SQLAlchemy(application)
 
 class Security(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -18,7 +36,7 @@ class Security(db.Model):
     purchase_price = db.Column(db.Float, unique=False, nullable=False)
 
     def __repr__(self):
-        return f"Security: {self.name}, ticker: {self.ticker}, purchase at: {self.purchase_price}"
+        return f"Security_name: {self.name}, ticker: {self.ticker}, purchase at: {self.purchase_price}"
 
 
 
