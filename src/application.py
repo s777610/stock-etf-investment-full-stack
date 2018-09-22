@@ -9,6 +9,18 @@ from flask_sqlalchemy import SQLAlchemy
 application = Flask(__name__)
 application.config['SECRET_KEY'] = 'mysecretkey'
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+db = SQLAlchemy(app)
+
+class Security(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), unique=True, nullable=False)
+    ticker = db.Column(db.String(20), unique=True, nullable=False)
+    purchase_price = db.Column(db.Float, unique=False, nullable=False)
+
+    def __repr__(self):
+        return f"Security: {self.name}, ticker: {self.ticker}, purchase at: {self.purchase_price}"
+
+
 
 @application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
 def plot_security(name, ticker, daily_return, cum_return):
