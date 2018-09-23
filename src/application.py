@@ -10,30 +10,17 @@ application = Flask(__name__)
 application.config['SECRET_KEY'] = 'mysecretkey'
 
 #############################
-"""
-to create db, go to terminal and activate env,
-open python
-from application import db
-db.create_all() # create site.db file
-from application import Security
-security_1 = Security(name='Vanguard Dividend Appreciation ETF', ticker='VIG', purchase_price=83.621112)
-db.session.add(security_1)
-db.session.commit()
 
-Security.query.all()
-Security.query.first()
-Security.query.filter_by(ticker='VIG').all()
-security_1 is a object
-security_1.name # 'Vanguard Dividend Appreciation ETF'
-"""
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(application)
 
-class Security(db.Model):
+class Security_db(db.Model):
+    __tablename__ = "security"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True, nullable=False)
     ticker = db.Column(db.String(20), unique=True, nullable=False)
     purchase_price = db.Column(db.Float, unique=False, nullable=False)
+    type = db.Column(db.Integer, unique=False, nullable=False) # ETF 1, Stock 2
 
     def __repr__(self):
         return f"Security_name: {self.name}, ticker: {self.ticker}, purchase at: {self.purchase_price}"
@@ -65,21 +52,20 @@ def about():
 
 @application.route('/etf/')
 def etf():
-    securitys = [Security("Vanguard Dividend Appreciation ETF", "VIG", 83.621112),
-                 Security("Vanguard 500 Index Fund", "VOO", 249.830589),
-                 Security("Vanguard FTSE Pacific ETF", "VPL", 73.861586),
-                 Security("Vanguard Total Stock Market ETF", "VTI", 134.610321),
-                 Security("Vanguard Value ETF", "VTV", 101.89723),
-                 Security("Vanguard Growth ETF", "VUG", 136.481548),
-                 Security("Vanguard High Dividend Yield ETF", "VYM", 84.706677)]
-    return render_template("eft.html", securitys=securitys)  # pass security object to eft.html
+    securities_list = []
+    securities = Security_db.query.filter_by(type=1).all()
+    for security in securities:
+        securities_list.append(Security(security.name, security.ticker, security.purchase_price))
+    return render_template("eft.html", securitys=securities_list)  # pass security object to eft.html
 
 
 @application.route('/stock/')
 def stock():
-    securitys = [Security("Amazon Inc.", "AMZN", 1169.959),
-                 Security("Mongodb Inc", "MDB", 59.1745)]
-    return render_template("stock.html", securitys=securitys)
+    securities_list = []
+    securities = Security_db.query.filter_by(type=2).all()
+    for security in securities:
+        securities_list.append(Security(security.name, security.ticker, security.purchase_price))
+    return render_template("stock.html", securitys=securities_list)
 
 
 @application.route("/search", methods=['POST'])
