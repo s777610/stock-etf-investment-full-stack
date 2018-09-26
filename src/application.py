@@ -12,6 +12,7 @@ application.config['SECRET_KEY'] = 'mysecretkey'
 #############################
 
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(application)
 
 class Security_db(db.Model):

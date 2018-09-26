@@ -18,16 +18,8 @@ class Security(object):
         self.name = name
         self.ticker = ticker
         self.trade_price = trade_price
-        self.current_price = None
-        self.today_status = None
-        self.open = None
-        self.close = None
-        self.last_updated = None
-        self.daily_return = None
-        self.cum_return = None
         start = datetime.datetime.now() - datetime.timedelta(days=4)
         end = datetime.datetime.now()
-
         df = dataread.DataReader(ticker, data_source='iex', start=start, end=end)
 
         self.open = df.iloc[-1]["open"].round(2)
@@ -46,4 +38,4 @@ class Security(object):
 
 
 
-
+        
