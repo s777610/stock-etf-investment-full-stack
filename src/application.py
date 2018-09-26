@@ -2,8 +2,10 @@
 from flask import Flask, render_template, request
 from common.create_plot import create_plot
 from models.security import Security
+# from models.plot import Plot
 from common.name_scraper import scrape_name
 from flask_sqlalchemy import SQLAlchemy
+
 
 
 application = Flask(__name__)
