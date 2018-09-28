@@ -8,23 +8,23 @@ It uses Flask as framework to build the web.
 
 
 # Guide of Conda env
-1.Create conda env
+1.Create conda env\n
 conda create -n stockenv
 
-2.Activate env
+2.Activate env\n
 source activate stockenv
 
-3.Install package from requirements
+3.Install package from requirements\n
 conda install --yes --file requirements.txt
 
-4.Deactivate env
+4.Deactivate env\n
 source deactivate
 
-5.Remove env
+5.Remove env\n
 conda remove --name stockenv
 
-6.Check conda env
+6.Check conda env\n
 conda info --envs
 
-7.Check all package
+7.Check all package\n
 conda list
