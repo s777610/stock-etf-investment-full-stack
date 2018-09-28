@@ -1,6 +1,6 @@
 
 from flask import Flask, render_template, request
-from common.create_plot import create_plot
+# from common.create_plot import create_plot
 from models.security import Security
 from models.plot import Plot
 from common.name_scraper import scrape_name
@@ -68,11 +68,8 @@ def search():
             ticker = request.form["ticker"]
             ticker = ticker.upper()
             security_name = scrape_name(ticker)
-            name, current_price, name_color, today_status, last_updated, div1, div2, div3 = create_plot(ticker)
-            return render_template("search.html", div1=div1, div2=div2, div3=div3,
-                           current_price=current_price, name_color=name_color,
-                           ticker=ticker, today_status=today_status,
-                           last_updated=last_updated, security_name=security_name)
+            plot = Plot(ticker, security_name)
+            return render_template("search.html", plot=plot)
         except:
             return render_template("search.html", text="Could not find the security, please enter a valid ticker.")
 

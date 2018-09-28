@@ -1,3 +1,5 @@
+import pandas as pd
+pd.core.common.is_list_like = pd.api.types.is_list_like
 from pandas_datareader import data as dataread
 import datetime
 
@@ -14,7 +16,7 @@ def inc_dec(close, open):
 
 
 class Security(object):
-    def __init__(self, name, ticker, trade_price):
+    def __init__(self, name, ticker, trade_price): # should add type, in order to match database
         self.name = name
         self.ticker = ticker
         self.trade_price = trade_price
