@@ -42,8 +42,8 @@
 <ul class="menu" id="home-menu">
     <li class="fa fa-home"><a href="{{ url_for('home') }}"> Home</a></li>
     <li class="fa fa-address-book"><a href="{{ url_for('about') }}"> About</a></li>
-    <li class="fa fa-line-chart"><a href="{{ url_for('etf') }}"> ETF</a></li>
-    <li class="fa fa-line-chart"><a href="{{ url_for('stock') }}"> Stock</a></li>
+    <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='etf') }}"> ETF</a></li>
+    <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> Stock</a></li>
     <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> Resume</a></li>
 </ul>
 

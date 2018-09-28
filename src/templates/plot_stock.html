@@ -3,15 +3,15 @@
 
 
     <div class="container-plot">
-        <h1 id="top">{{ company_name }}</h1>
+        <h1 id="top">{{ plot.name }}</h1>
 
-        {% if today_status == 'Increase' %}
-            <h1 class="fa fa-arrow-up" style="color: {{name_color}};font-size:48px">{{ current_price }} <small>USD</small></h1>
+        {% if plot.today_status == 'Increase' %}
+            <h1 class="fa fa-arrow-up" style="color: {{name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
         {% else %}
-            <h1 class="fa fa-arrow-down" style="color: {{name_color}};font-size:48px">{{ current_price }} <small>USD</small></h1>
+            <h1 class="fa fa-arrow-down" style="color: {{name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
         {% endif %}
 
-        <p>NYSEARCA: {{ ticker }}</p>
+        <p>NYSEARCA: {{ plot.ticker }}</p>
 
         <p>Daily Return: {{ daily_return }} %</p>
 
@@ -23,13 +23,13 @@
 
 
 <div class="plot">
-{{div1|safe}}
+{{plot.div1|safe}}
     <br>
     <br>
-{{div2|safe}}
+{{plot.div2|safe}}
     <br>
     <br>
-{{div3|safe}}
+{{plot.div3|safe}}
 </div>
     </div>
 

@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request
 from common.create_plot import create_plot
 from models.security import Security
-# from models.plot import Plot
+from models.plot import Plot
 from common.name_scraper import scrape_name
 from flask_sqlalchemy import SQLAlchemy
 
@@ -29,14 +29,11 @@ class Security_db(db.Model):
         return f"Security_name: {self.name}, ticker: {self.ticker}, purchase at: {self.purchase_price}"
 
 
-
 @application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
 def plot_security(name, ticker, daily_return, cum_return):
-    name, current_price, name_color, today_status, last_updated, div1, div2, div3 = create_plot(ticker, name)
-    return render_template("plot_stock.html",  current_price=current_price, name_color=name_color,
-                           company_name=name, ticker=ticker, today_status=today_status,
-                           last_updated=last_updated, daily_return=daily_return, cum_return=cum_return,
-                           div1=div1, div2=div2, div3=div3)
+    # name, current_price, name_color, today_status, last_updated, div1, div2, div3 = create_plot(ticker, name)
+    plot = Plot(ticker, name)
+    return render_template("plot_stock.html", plot=plot, daily_return=daily_return, cum_return=cum_return)
 
 
 @application.route('/')
@@ -53,22 +50,16 @@ def about():
     return render_template("about.html")
 
 
-@application.route('/etf/')
-def etf():
+@application.route('/securitieslist/<string:type>')
+def securitieslist(type):
     securities_list = []
-    securities = Security_db.query.filter_by(type=1).all()
+    if type == 'stock':
+        securities = Security_db.query.filter_by(type=2).all()
+    else:
+        securities = Security_db.query.filter_by(type=1).all()
     for security in securities:
         securities_list.append(Security(security.name, security.ticker, security.purchase_price))
-    return render_template("eft.html", securitys=securities_list)  # pass security object to eft.html
-
-
-@application.route('/stock/')
-def stock():
-    securities_list = []
-    securities = Security_db.query.filter_by(type=2).all()
-    for security in securities:
-        securities_list.append(Security(security.name, security.ticker, security.purchase_price))
-    return render_template("stock.html", securitys=securities_list)
+    return render_template("securities_list.html", securitys=securities_list, type=type)
 
 
 @application.route("/search", methods=['POST'])

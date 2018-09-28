@@ -63,3 +63,5 @@ class Plot(object):
             name_color = "red"
         self.name_color = name_color
     # get new colums, Status
+
+plot = Plot("VIG", "VIG_name")

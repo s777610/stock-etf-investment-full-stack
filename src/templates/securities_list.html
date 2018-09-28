@@ -2,7 +2,6 @@
 {%extends "layout.html"%}
 {%block content%}
 
-
 <script>
   $( function() {
     var state = true;
@@ -39,27 +38,33 @@
   });
 
   </script>
-
 <div class="container-portfolio">
-    <div class="toggler">
+<div class="toggler">
       <div id="effect" class="ui-widget-content ui-corner-all">
+        {% if type == 'stock' %}
+        <h3 class="ui-widget-header ui-corner-all">Definition of 'Stock'</h3>
+        <p>
+            A stock (also known as "shares" and "equity) is a type of security that signifies ownership in a corporation and represents a claim on part of the corporation's assets and earnings. There are two main types of stock: common and preferred. I keep roughly 10% of my portfolio in the individual stock.
+        </p>
+        {% else %}
         <h3 class="ui-widget-header ui-corner-all">Definition of 'ETF'</h3>
         <p>ETF stand for exchange-traded fund. <br>
             ETF is a marketable security that tracks an index, a commodity, bonds, or a basket of assets like an index fund. Unlike mutual funds, an ETF trades like a common stock on a stock exchange. ETFs experience price changes throughout the day as they are bought and sold. ETFs typically have higher daily liquidity and lower fees than mutual fund shares, making them an attractive alternative for individual investors.
         </p>
+        {% endif %}
       </div>
-    </div>
-
+</div>
 <div class="clear-float"></div>
-
 <button id="button" class="ui-state-default ui-corner-all">Read</button>
 
 
-    <div>
-        <h1>My ETF Investment</h1>
-    </div>
-
-
+<div>
+  {% if type == 'stock' %}
+    <h1>My Stock Investment</h1>
+  {% else %}
+    <h1>My ETF Investment</h1>
+  {% endif %}
+</div>
 
     <div class="table-responsive">
             <table class="table table-striped table-sm">
@@ -84,7 +89,6 @@
                   <td>{{ security.name}}</td>
                   <td>{{ security.open}}</td>
                   <td>{{ security.close}}</td>
-
                   {% if security.today_status == 'Increase' %}
                   <td style="color: forestgreen">{{ security.today_status}}</td>
                   {% else %}
