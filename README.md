@@ -6,23 +6,25 @@ Next, it analyzes data by using pandas, and store data into DataFrame.
 Then, it uses plotly to plot interative chart on the web and shows some information.
 It uses Flask as framework to build the web.
 
-# Create conda env
+
+# Guide of Conda env
+1.Create conda env
 conda create -n stockenv
 
-# Activate env
+2.Activate env
 source activate stockenv
 
-# Install package from requirements
+3.Install package from requirements
 conda install --yes --file requirements.txt
 
-# Deactivate env
+4.Deactivate env
 source deactivate
 
-# Remove env
+5.Remove env
 conda remove --name stockenv
 
-# Check conda env
+6.Check conda env
 conda info --envs
 
-# Check all package
+7.Check all package
 conda list
