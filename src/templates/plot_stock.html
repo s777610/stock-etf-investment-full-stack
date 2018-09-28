@@ -6,9 +6,9 @@
         <h1 id="top">{{ plot.name }}</h1>
 
         {% if plot.today_status == 'Increase' %}
-            <h1 class="fa fa-arrow-up" style="color: {{name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
+            <h1 class="fa fa-arrow-up" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
         {% else %}
-            <h1 class="fa fa-arrow-down" style="color: {{name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
+            <h1 class="fa fa-arrow-down" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
         {% endif %}
 
         <p>NYSEARCA: {{ plot.ticker }}</p>

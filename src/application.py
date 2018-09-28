@@ -31,7 +31,6 @@ class Security_db(db.Model):
 
 @application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
 def plot_security(name, ticker, daily_return, cum_return):
-    # name, current_price, name_color, today_status, last_updated, div1, div2, div3 = create_plot(ticker, name)
     plot = Plot(ticker, name)
     return render_template("plot_stock.html", plot=plot, daily_return=daily_return, cum_return=cum_return)
 

@@ -35,7 +35,3 @@ class Security(object):
         self.daily_return = (df['close'].pct_change(1)[-1]).round(3)
         # cumulative return
         self.cum_return = (((df.iloc[-1]['close'] / self.trade_price) - 1) * 100).round(2)
-
-
-
-        
