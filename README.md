@@ -8,25 +8,28 @@ Then, it uses plotly to plot interative chart on the web and shows some informat
 It uses Flask as framework to build the web.
 
 
-## Guide of Conda env
+## Installation
 1.Create conda env
 ```
 conda create -n stockenv
 ```
 2.Activate env
+```
 source activate stockenv
-
+```
 3.Install package from requirements
+```
 conda install --yes --file requirements.txt
-
+```
 4.Deactivate env
+```
 source deactivate
-
-5.Remove env
-conda remove --name stockenv
-
-6.Check conda env
+```
+5.Check conda env
+```
 conda info --envs
-
-7.Check all package
+```
+6.Check all package
+```
 conda list
+```
