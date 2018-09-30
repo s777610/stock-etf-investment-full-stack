@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from models.plot import Plot
-from common.name_scraper import scrape_name
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -32,25 +31,15 @@ def about():
 
 @application.route('/securitieslist/<string:type>')
 def securitieslist(type):
-    securities_list = []
-    if type == 'stock':
-        securities = Security.query.filter_by(type=2).all()
-    else:
-        securities = Security.query.filter_by(type=1).all()
-    for security in securities:
-        securities_list.append(Security(security.name, security.ticker, security.purchase_price))
+    securities_list = Security.find_securities(type)
     return render_template("securities_list.html", securitys=securities_list, type=type)
 
 
 @application.route("/search", methods=['POST'])
 def search():
     if request.method == 'POST':
-        ticker = request.form["ticker"]
-        ticker = ticker.upper()
-        try:
-            security_name = scrape_name(ticker)
-        except:
-            security_name = None
+        ticker = request.form["ticker"].upper()
+        security_name = Security.scrape_security_name(ticker)
         try:
             plot = Plot(ticker, security_name)
             return render_template("search.html", plot=plot)
