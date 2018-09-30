@@ -2,7 +2,7 @@ import pandas as pd
 pd.core.common.is_list_like = pd.api.types.is_list_like
 from pandas_datareader import data as dataread
 import datetime
-
+from application import db
 
 # get new columns, Status
 def inc_dec(close, open):
@@ -15,7 +15,14 @@ def inc_dec(close, open):
     return value
 
 
-class Security(object):
+class Security(db.Model):
+    __tablename__ = "security"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), unique=True, nullable=False)
+    ticker = db.Column(db.String(20), unique=True, nullable=False)
+    purchase_price = db.Column(db.Float, unique=False, nullable=False)
+    type = db.Column(db.Integer, unique=False, nullable=False) # ETF 1, Stock 2
+
     def __init__(self, name, ticker, trade_price): # should add type, in order to match database
         self.name = name
         self.ticker = ticker
