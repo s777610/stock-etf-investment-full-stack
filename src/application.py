@@ -12,16 +12,15 @@ application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(application)
 
 
-@application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
-def plot_security(name, ticker, daily_return, cum_return):
-    plot = Plot(ticker, name)
-    return render_template("plot_stock.html", plot=plot, daily_return=daily_return, cum_return=cum_return)
-
 
 @application.route('/')
 def home():
     return render_template("home.html")
 
+@application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
+def plot_security(name, ticker, daily_return, cum_return):
+    plot = Plot(ticker, name)
+    return render_template("plot_stock.html", plot=plot, daily_return=daily_return, cum_return=cum_return)
 
 @application.route('/resume')
 def resume():
@@ -30,7 +29,6 @@ def resume():
 @application.route('/about')
 def about():
     return render_template("about.html")
-
 
 @application.route('/securitieslist/<string:type>')
 def securitieslist(type):
@@ -47,10 +45,13 @@ def securitieslist(type):
 @application.route("/search", methods=['POST'])
 def search():
     if request.method == 'POST':
+        ticker = request.form["ticker"]
+        ticker = ticker.upper()
         try:
-            ticker = request.form["ticker"]
-            ticker = ticker.upper()
             security_name = scrape_name(ticker)
+        except:
+            security_name = None
+        try:
             plot = Plot(ticker, security_name)
             return render_template("search.html", plot=plot)
         except:
