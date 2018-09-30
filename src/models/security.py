@@ -4,16 +4,6 @@ from pandas_datareader import data as dataread
 import datetime
 from application import db
 
-# get new columns, Status
-def inc_dec(close, open):
-    if close > open:
-        value = "Increase"
-    elif close < open:
-        value = "Decrease"
-    else:
-        value = "Equal"
-    return value
-
 
 class Security(db.Model):
     __tablename__ = "security"
@@ -33,14 +23,17 @@ class Security(db.Model):
 
         self.open = df.iloc[-1]["open"].round(2)
         self.close = df.iloc[-1]["close"].round(2)
-
-        time = df.index[-1]
-        self.last_updated = time
-
-        df["Status"] = [inc_dec(close, open) for close, open in zip(df.close, df.open)]
-        self.today_status = df.iloc[-1]["Status"]
-
-        # daily return
+        self.last_updated = df.index[-1]
+        self.today_status = self.check_status(df.close[-1], df.open[-1])
         self.daily_return = (df['close'].pct_change(1)[-1]).round(3)
-        # cumulative return
         self.cum_return = (((df.iloc[-1]['close'] / self.trade_price) - 1) * 100).round(2)
+
+    @staticmethod
+    def check_status(close, open):
+        if close > open:
+            value = "Increase"
+        elif close < open:
+            value = "Decrease"
+        else:
+            value = "Equal"
+        return value
