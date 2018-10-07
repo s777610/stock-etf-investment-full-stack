@@ -122,5 +122,4 @@ site.db
 # gudie conda
 conda_guide.txt
 
-
-
+.DS_Store

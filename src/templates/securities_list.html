@@ -2,42 +2,8 @@
 {%extends "layout.html"%}
 {%block content%}
 
-<script>
-  $( function() {
-    var state = true;
-    $( "#button" ).on( "click", function() {
-      if ( state ) {
-        $( "#effect" ).animate({
-          backgroundColor: "#5E5E5E",
-          color: "#fff",
-          width: 900,
-          height: 150
-        }, 1000 );
-      } else {
-        $( "#effect" ).animate({
-          backgroundColor: "#fff",
-          color: "#000",
-          width: 900,
-          height: 100
-        }, 1000 );
-      }
-      state = !state;
-    });
-  } );
+<script src="/static/js/main.js"></script>
 
-  $( function() {
-      var state = true;
-      $("#button").on("click", function () {
-        if ( state ) {
-            $("#effect").addClass("newClass");
-        } else {
-            $( "#effect" ).removeClass( "newClass" );
-        }
-        state = !state;
-      });
-  });
-
-  </script>
 <div class="container-portfolio">
 <div class="toggler">
       <div id="effect" class="ui-widget-content ui-corner-all">
