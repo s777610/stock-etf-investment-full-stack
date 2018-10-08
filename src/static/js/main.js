@@ -12,10 +12,10 @@ $(document).ready(function() {
     });
   });
 
-  $("#email-button").click(function(){s
+$("#email-button").click(function(){
     $( "#dialog" ).dialog( "open" );
   })
-})
+});
 
 
 // securities_list.html

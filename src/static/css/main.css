@@ -308,7 +308,55 @@ html#html-home body#home-body {
     background: none;
 }
 
+.animation-left {
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards; /* 0% will not be applied before animation starts */
+}
+.animation-right {
+  animation-name: moveInRight;
+  animation-duration: 2s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards; /* 0% will not be applied before animation starts */
+}
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-200px); /*from left move in*/
+    }
+    40% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: translateX(30px);
+        transform: rotate(-10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0); /* mean look like right now*/
+    }
+}
 
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(200px); /*from left move in*/
+    }
+    40% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: translateX(-30px);
+        transform: rotate(-10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0); /* mean look like right now*/
+    }
+}
 
 
 
