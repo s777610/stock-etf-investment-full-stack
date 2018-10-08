@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Stock</title>
+      <title>Wilson's Investment</title>
       <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
             <p>Looking for chart?</p>
             <form class="form-inline" action = "{{url_for('search')}}" method='POST'>
             <input class="form-control mr-sm-2" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
-            <button class="btn btn-success" type="submit"> Search </button>
+            <button class="btn btn-success btn-effect" type="submit"> Search </button>
           </form>
         </div>
 
