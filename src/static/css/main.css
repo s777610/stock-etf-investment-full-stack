@@ -15,7 +15,8 @@ body {
 
 header {
   text-align: center;
-  background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg");
+  /*background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg");*/
+  background: url("../image/home-image.jpg");
   background-size: cover;
   color: white;
 }
@@ -319,7 +320,8 @@ img#logo-home {
 
 
 html#html-home {
-  background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg") no-repeat center center fixed;
+  /*background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg") no-repeat center center fixed;*/
+  background: url("../image/home-image.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
