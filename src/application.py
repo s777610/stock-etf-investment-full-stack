@@ -31,6 +31,7 @@ def about():
 
 @application.route('/securitieslist/<string:type>')
 def securitieslist(type):
+    from models.security import Security
     securities_list = Security.find_securities(type)
     return render_template("securities_list.html", securitys=securities_list, type=type)
 
@@ -38,6 +39,7 @@ def securitieslist(type):
 @application.route("/search", methods=['POST'])
 def search():
     if request.method == 'POST':
+        from models.security import Security
         ticker = request.form["ticker"].upper()
         security_name = Security.scrape_security_name(ticker)
         try:
@@ -48,5 +50,5 @@ def search():
 
 
 if __name__ == "__main__":
-    from models.security import Security
+    #from models.security import Security
     application.run(debug=True, port=4882)

@@ -122,7 +122,7 @@ div.container-resume {
 }
 
 div.container-portfolio {
-  width: 900px;
+  width: 1000px;
   margin: 0 auto;
 }
 
@@ -161,7 +161,8 @@ div.card div.collapse div.card-body {
  * stock and etf table
  */
 div.table-responsive {
-  margin-bottom: 120px;
+  margin-bottom: 130px;
+
 }
 
 /*
@@ -169,6 +170,7 @@ div.table-responsive {
  */
 div.plot {
   margin-bottom: 120px;
+  font-size: 110%
 }
 
 
