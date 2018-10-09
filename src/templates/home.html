@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="html-home">
+<html class="html-home">
   <head>
       <title>Wilson's Investment</title>
       <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
@@ -16,15 +16,15 @@
   </head>
 
 
-  <body id="home-body">
+  <body>
 
 
-<img id="logo-home" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png" alt = "Test Image">
+<img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png" alt = "Test Image">
 
 
 
 
-        <div id="search_form">
+        <div class="search_form">
             <p style="color: #FFFFFF">Looking for chart?</p>
             <form class="form-inline" action = "{{url_for('search')}}" method='POST'>
             <input class="form-control mr-sm-2" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
@@ -38,7 +38,7 @@
 
 
 
-<ul class="menu" id="home-menu">
+<ul class="menu">
     <li class="fa fa-home"><a href="{{ url_for('home') }}"> Home</a></li>
     <li class="fa fa-address-book"><a href="{{ url_for('about') }}"> About</a></li>
     <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='etf') }}"> ETF</a></li>
@@ -46,7 +46,7 @@
     <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> Resume</a></li>
 </ul>
 
-<div class="container" id="home-welcome">
+<div class="container home-welcome">
         <h1 class="animation-left" style="font-size: 25px;"><strong>Wilson's investing blog!</strong></h1> <!--what google look for-->
         <p class="animation-right">I am a software developer and a stock investor.</p>
         <p class="animation-left">I list most of stocks and ETFs I am holding on this site.</p>
@@ -67,14 +67,14 @@
 
 <div class="clear-float"></div>
 
-<div id="footer-home">
+<footer class="footer-home">
   <ul class="social">
       <li> <a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> <i class="fa fa-facebook-square"></i></a></li>
       <li> <a href="https://github.com/s777610" target="_blank"> <i class="fa fa-github"></i></a></li>
       <li> <a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> <i class="fa fa-linkedin-square"></i> </a></li>
   </ul>
   <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
-</div>
+</footer>
 
 
 

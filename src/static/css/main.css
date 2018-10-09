@@ -29,8 +29,7 @@ img.picture {
   border-radius: 20px;
         }
 
-
-header img#logo_light {
+img.logo {
   float: left;
   margin-top: 0;
   margin-left: 0;
@@ -39,16 +38,17 @@ header img#logo_light {
 }
 
 
+
 /*
  * search_form
  */
-div#search_form {
+.search_form {
   float: right;
   margin-top: 10px;
   margin-right: 10px;
 }
 
-div#search_form p {
+.search_form p {
     font-family:"Comic Sans MS", cursive, sans-serif;
     font-size: 18px;
 }
@@ -73,13 +73,13 @@ div#search_form p {
 }
 
 
-/*
- * menu
- */
+
 ul.menu {
   padding: 10px;
   background: rgba(0, 0, 0, 0.5);
   margin-top: 8px;
+  color: white;
+  text-align: center;
         }
 
 
@@ -100,6 +100,14 @@ ul.menu li:hover {
   text-decoration: none;
 }
 
+.home-welcome {
+    font-family:"Arial Black", Gadget, sans-serif;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+
 
 /*
  * Center the body content
@@ -114,8 +122,6 @@ div.container-about {
   width: 800px;
   margin: 0 auto;
 }
-
-
 
 div.container-resume {
   width: 800px;
@@ -185,7 +191,7 @@ div.backtotop {
 /*
  * footer-layout
  */
-footer.footer {
+footer {
    padding: 15px;
    position: relative;
    left: 0;
@@ -198,16 +204,18 @@ footer.footer {
     z-index: 1;
 }
 
+footer.footer-home {
+    position: fixed;
+    border-top: 2px solid black;
+}
+
 ul.social {
     padding: 0;
 }
 
 ul.social li {
-    text-align: center;
     display: inline;
-    color: white;
     font-size: 30px;
-
 }
 
 ul.social li a i {
@@ -219,21 +227,7 @@ ul.social li a i:hover {
     text-shadow: 0 0 3px #FFF, 0 0 15px #FFF, 0 0 30px #FFF;
 }
 /*
- * footer-home
- */
-div#footer-home {
- padding: 15px;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #0B6071;
-   color: white;
-   text-align: center;
-    position: fixed;
-    border-top: 2px solid black;
 
-}
 
 
 
@@ -262,22 +256,18 @@ div.toggler div#effect p {
 /*
  * gdp map
  */
-
-div#gdp_div {
+.gdp_div {
     width: 900px;
     margin: 0 auto;
     text-align: center;
 }
-
-div#gdp_div h2{
+.gdp_div h2{
     font-size: 30px;
     font-family:"Arial Black", Gadget, sans-serif;
 }
-
-div#gdp_div iframe#gdp_map {
+.gdp_map {
     width: 900px;
     height: 600px;
-
 }
 
 
@@ -285,20 +275,16 @@ div#gdp_div iframe#gdp_map {
 /*
  * email
  */
-
-div#emailform {
+.emailform {
     font-family:Arial Black, Helvetica, Arial, sans-serif;
     margin: 0 auto 50px auto;
-    width: 40%;
+    width: 500px;
 }
-
-
-div#emailform div.form-group input{
+.emailform div.form-group input{
 
     font-family: Tahoma, Helvetica, Arial, sans-serif;
 }
-
-div#emailform div.form-group textarea{
+.emailform div.form-group textarea{
 
     font-family: Tahoma, Helvetica, Arial, sans-serif;
 }
@@ -309,17 +295,11 @@ div#emailform div.form-group textarea{
 
 
 
-img#logo-home {
-  float: left;
-  margin-top: 0;
-  margin-left: 0;
-  width:300px;
-  height:150px;
-}
 
 
 
-html#html-home {
+
+.html-home {
   /*background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg") no-repeat center center fixed;*/
   background: url("../image/home-image.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -327,7 +307,7 @@ html#html-home {
   -o-background-size: cover;
   background-size: cover;
 }
-html#html-home body#home-body {
+.html-home body {
     background: none;
 }
 
@@ -383,18 +363,7 @@ html#html-home body#home-body {
 
 
 
-div#home-welcome {
-    font-family:"Arial Black", Gadget, sans-serif;
-    text-align: center;
-    color: #FFFFFF;
-    font-size: 20px;
-}
 
-ul#home-menu {
-    color: white;
-    text-align: center;
-
-}
 
 div.barrier {
     margin-top: 100px;
@@ -409,18 +378,18 @@ div.hidden {
  * resume
  */
 
-div#resume {
+.resume {
     font-family: "Times New Roman", Times, serif;
 
 }
-div#resume h2 {
+.resume h2 {
     font-weight: bold;
     text-shadow: -6px 5px 10px rgba(50,113,201,0.55);
 }
-div#resume h3 {
+.resume h3 {
     font-weight: bold;
 }
-div#resume ul {
+.resume ul {
     font-size: 20px;
 }
 
