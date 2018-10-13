@@ -378,14 +378,22 @@ div.hidden {
  * resume
  */
 
+.move-heading {
+    font-weight: bold;
+    text-shadow: -6px 5px 10px rgba(50,113,201,0.55);
+    transition: all .2s;
+    display: inline-block;
+}
+.move-heading:hover {
+    transform: skewY(2deg) skewX(2deg) scale(1.1);
+    text-shadow: 5px 10px 20px rgba(10, 53, 114, 0.9);
+}
+
 .resume {
     font-family: "Times New Roman", Times, serif;
 
 }
-.resume h2 {
-    font-weight: bold;
-    text-shadow: -6px 5px 10px rgba(50,113,201,0.55);
-}
+
 .resume h3 {
     font-weight: bold;
 }
