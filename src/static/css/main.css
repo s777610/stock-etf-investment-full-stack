@@ -54,7 +54,7 @@ img.logo {
 }
 
 
-.btn-effect:link,
+.btn-effect,
 .btn-effect:visited {
     text-transform: uppercase;
     text-decoration: none;
@@ -64,7 +64,7 @@ img.logo {
 
 .btn-effect:hover {
     transform: translateY(-3px); /*move up*/
-    box-shadow: 0 20px 20px rgba(0,0,0,0.9);
+    box-shadow: 0 15px 20px rgba(0,0,0,0.8);
 }
 
 .btn-effect:active {
