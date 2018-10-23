@@ -1,0 +1,42 @@
+// *,
+// *::after,
+// *::before {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: inherit;
+// }
+
+// html {
+//     font-size: 62.5%;
+// }
+
+body {
+  //box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+div.container {
+  width: auto;
+  margin: 0 auto;
+}
+
+div.container-about {
+  width: 800px;
+  margin: 0 auto;
+}
+
+div.container-resume {
+  width: 800px;
+  margin: 0 auto;
+}
+
+div.container-portfolio {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+div.container-plot {
+  width: 900px;
+  margin: 0 auto;
+}

@@ -1,0 +1,27 @@
+img.picture {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 7px solid #0B6071;
+    border-radius: 20px;
+}
+
+div.content-guide {
+    position: fixed;
+    right: 10px;
+    bottom: 80px;
+    width: 200px;
+    z-index: 2;
+
+}
+
+div.content-guide a {
+    background-color: #0B6071;
+    color: #FFFFFF;
+    font-weight: bold;
+    opacity: 0.9
+
+}
+div.content-guide a:hover {
+    text-decoration: underline;
+}

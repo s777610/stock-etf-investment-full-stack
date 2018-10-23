@@ -1,111 +1,118 @@
 <!DOCTYPE html>
 <html class="html-home">
-  <head>
-      <title>Wilson's Investment</title>
-      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<head>
+  <title>Wilson's Investment</title>
+  <link rel="shortcut icon" type="image/png" href="../static/image/w.png">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-  </head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-
-  <body>
-
-
-<img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png" alt = "Test Image">
+</head>
 
 
+<body>
 
 
-        <div class="search_form">
-            <p style="color: #FFFFFF">Looking for chart?</p>
-            <form class="form-inline" action = "{{url_for('search')}}" method='POST'>
-            <input class="form-control mr-sm-2" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
-            <button class="btn btn-success btn-effect" type="submit"> Search </button>
-          </form>
-        </div>
+  <img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png"
+    alt="Test Image">
 
 
 
-          <div class="clear-float"></div>
+
+  <div class="search_form">
+    <p style="color: #FFFFFF">Looking for chart?</p>
+    <form class="form-inline" action="{{url_for('search')}}" method='POST'>
+      <input class="form-control mr-sm-2" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
+      <button class="btn btn-success btn-effect" type="submit"> Search </button>
+    </form>
+  </div>
 
 
 
-<ul class="menu">
+  <div class="clear-float"></div>
+
+
+
+  <ul class="menu">
     <li class="fa fa-home"><a href="{{ url_for('home') }}"> Home</a></li>
     <li class="fa fa-address-book"><a href="{{ url_for('about') }}"> About</a></li>
     <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='etf') }}"> ETF</a></li>
     <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> Stock</a></li>
     <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> Resume</a></li>
-</ul>
+  </ul>
 
-<div class="container home-welcome">
-        <h1 class="animation-left" style="font-size: 25px;"><strong>Wilson's investing blog!</strong></h1> <!--what google look for-->
-        <p class="animation-right">I am a software developer and a stock investor.</p>
-        <p class="animation-left">I list most of stocks and ETFs I am holding on this site.</p>
-        <p class="animation-right">Feel free to explore my site!</p>
-        <br>
-        <a class="btn btn-primary btn-lg btn-effect" href="{{ url_for('about') }}" role="button"> Explore !!</a>
-        <a class="btn btn-success btn-lg btn-effect" id="email-button" role="button">Contact Me</a>
-</div>
-
-
-
-<script src="/static/js/main.js"></script>
+  <div class="container home-welcome">
+    <h1 class="animation-left" style="font-size: 25px;"><strong>Wilson's investing blog!</strong></h1>
+    <!--what google look for-->
+    <p class="animation-right">I am a software developer and a stock investor.</p>
+    <p class="animation-left">I list most of stocks and ETFs I am holding on this site.</p>
+    <p class="animation-right">Feel free to explore my site!</p>
+    <br>
+    <a class="btn btn-primary btn-lg btn-effect" href="{{ url_for('about') }}" role="button"> Explore !!</a>
+    <a class="btn btn-success btn-lg btn-effect" id="email-button" role="button">Contact Me</a>
+  </div>
 
 
 
+  <script src="/static/js/main.js"></script>
 
 
 
-<div class="clear-float"></div>
 
-<footer class="footer-home">
-  <ul class="social">
+
+
+  <div class="clear-float"></div>
+
+  <footer class="footer-home">
+    <ul class="social">
       <li> <a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> <i class="fa fa-facebook-square"></i></a></li>
       <li> <a href="https://github.com/s777610" target="_blank"> <i class="fa fa-github"></i></a></li>
-      <li> <a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> <i class="fa fa-linkedin-square"></i> </a></li>
-  </ul>
-  <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
-</footer>
+      <li> <a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> <i class="fa fa-linkedin-square"></i>
+        </a></li>
+    </ul>
+    <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
+  </footer>
 
 
 
 
-<div class="hidden">
-<div id="dialog">
-    <h2>Contact Me</h2>
-    <form action="https://formspree.io/s777610@gmail.com" method="POST">
-
-      <div class="form-group">
-        <label for="sender_email">Your Email address</label>
-        <input type="email" class="form-control" id="sender_email" placeholder="example@gmail.com" name="_replyto" required autofocus>
-      </div>
-
-      <div class="form-group">
-        <label for="sender_email">Subject</label>
-          <input type="text" class="form-control" name="_subject" required>
-      </div>
-
-      <div class="form-group">
-        <label for="textarea">Content</label>
-        <textarea class="form-control" id="textarea" rows="3" name="message" required></textarea>
-      </div>
+  <div class="hidden">
+    <div id="dialog">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/s777610@gmail.com" method="POST">
 
         <div class="form-group">
-        <input class="btn btn-info" type="submit" value="Send">
-        <input class="btn btn-outline-info" type="reset">
+          <label for="sender_email">Your Email address</label>
+          <input type="email" class="form-control" id="sender_email" placeholder="example@gmail.com" name="_replyto"
+            required autofocus>
         </div>
-    </form>
-</div>
-</div>
 
-  </body>
+        <div class="form-group">
+          <label for="sender_email">Subject</label>
+          <input type="text" class="form-control" name="_subject" required>
+        </div>
+
+        <div class="form-group">
+          <label for="textarea">Content</label>
+          <textarea class="form-control" id="textarea" rows="3" name="message" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <input class="btn btn-info" type="submit" value="Send">
+          <input class="btn btn-outline-info" type="reset">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
 </html>

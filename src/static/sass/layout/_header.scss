@@ -1,0 +1,52 @@
+header {
+    text-align: center;
+    /*background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg");*/
+    background: url("../image/home-image.jpg");
+    background-size: cover;
+    color: white;
+}
+
+img.logo {
+    float: left;
+    margin-top: 0;
+    margin-left: 0;
+    width:300px;
+    height:150px;
+}
+
+.search_form {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+  
+.search_form p {
+      font-family:"Comic Sans MS", cursive, sans-serif;
+      font-size: 18px;
+}
+
+ul.menu {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 8px;
+    color: white;
+    text-align: center;
+}
+  
+  
+ul.menu li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    font-size:24px;
+}
+  
+ul.menu li:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 3px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 30px #FFF;
+}
+  
+  
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}

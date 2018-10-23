@@ -1,171 +1,20 @@
-body {
-    margin: 0 auto;
-    padding: 0;
-  }
+@import "layout/header";
+
+@import "pages/home";
+
+@import "base/utilities";
+@import "base/base"; 
+@import "base/animations";
+
+@import "components/guide";
+@import "components/btn";
+@import "components/map";
+@import "components/contact";
+@import "components/card";
   
-  
-  .clear-float {
-      clear:both;
-  }
-  
-  /*
-   * header area
-   */
-  
-  
-  header {
-    text-align: center;
-    /*background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg");*/
-    background: url("../image/home-image.jpg");
-    background-size: cover;
-    color: white;
-  }
-  
-  
-  
-  img.picture {
-    width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 7px solid #0B6071;
-    border-radius: 20px;
-          }
-  
-  img.logo {
-    float: left;
-    margin-top: 0;
-    margin-left: 0;
-    width:300px;
-    height:150px;
-  }
-  
-  
-  
-  /*
-   * search_form
-   */
-  .search_form {
-    float: right;
-    margin-top: 10px;
-    margin-right: 10px;
-  }
-  
-  .search_form p {
-      font-family:"Comic Sans MS", cursive, sans-serif;
-      font-size: 18px;
-  }
-  
-  
-  .btn-effect,
-  .btn-effect:visited {
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all .2s; /*time of transform*/
-  }
-  
-  
-  .btn-effect:hover {
-      transform: translateY(-3px); /*move up*/
-      box-shadow: 0 15px 20px rgba(0,0,0,0.8);
-  }
-  
-  .btn-effect:active {
-      transform: translateY(-1px);
-      box-shadow: 0 5px 10px rgba(0,0,0,0.9);
-  }
-  
-  
-  
-  ul.menu {
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    margin-top: 8px;
-    color: white;
-    text-align: center;
-          }
-  
-  
-  ul.menu li {
-    display: inline;
-    padding: 0px 10px 0px 10px;
-    font-size:24px;
-  }
-  
-  ul.menu li:hover {
-    text-decoration: underline;
-    text-shadow: 0 0 3px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 30px #FFF;
-  }
-  
-  
-  .menu li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .home-welcome {
-      font-family:"Arial Black", Gadget, sans-serif;
-      text-align: center;
-      color: #FFFFFF;
-      font-size: 20px;
-  }
-  
-  
-  
-  /*
-   * Center the body content
-   */
-  
-  div.container {
-    width: auto;
-    margin: 0 auto;
-  }
-  
-  div.container-about {
-    width: 800px;
-    margin: 0 auto;
-  }
-  
-  div.container-resume {
-    width: 800px;
-    margin: 0 auto;
-  }
-  
-  div.container-portfolio {
-    width: 1000px;
-    margin: 0 auto;
-  }
-  
-  div.container-plot {
-    width: 900px;
-    margin: 0 auto;
-  }
-  
-  
-  /*
-   * card
-   */
-  div.card {
-    margin-bottom: 50px;
-    margin-left: 50px;
-  
-  }
-  
-  
-  div.card-header i.fa button.btn {
-    font-family:Arial Black, Helvetica, Arial, sans-serif;
-    font-size: 24px;
-    color: black;
-    text-shadow: -6px 5px 10px rgba(50,113,201,0.55);
-  
-  }
-  
-  div.card div.collapse div.card-body {
-      font-family:Tahoma, Helvetica, Arial, sans-serif;
-      font-size: 18px;
-  }
-  
-  
-  
+
+
+ 
   /*
    * stock and etf table
    */
@@ -255,125 +104,12 @@ body {
   }
   
   
-  /*
-   * gdp map
-   */
-  .gdp_div {
-      width: 900px;
-      margin: 0 auto;
-      text-align: center;
-  }
-  .gdp_div h2{
-      font-size: 30px;
-      font-family:"Arial Black", Gadget, sans-serif;
-  }
-  .gdp_map {
-      width: 900px;
-      height: 600px;
-  }
   
   
   
-  /*
-   * email
-   */
-  .emailform {
-      font-family:Arial Black, Helvetica, Arial, sans-serif;
-      margin: 0 auto 50px auto;
-      width: 500px;
-  }
-  .emailform div.form-group input{
+
+
   
-      font-family: Tahoma, Helvetica, Arial, sans-serif;
-  }
-  .emailform div.form-group textarea{
-  
-      font-family: Tahoma, Helvetica, Arial, sans-serif;
-  }
-  
-  /*
-   * home
-   */
-  
-  
-  
-  
-  
-  
-  
-  .html-home {
-    /*background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg") no-repeat center center fixed;*/
-    background: url("../image/home-image.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  .html-home body {
-      background: none;
-  }
-  
-  .animation-left {
-    animation-name: moveInLeft;
-    animation-duration: 2s;
-    animation-delay: 0.1s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: backwards; /* 0% will not be applied before animation starts */
-  }
-  .animation-right {
-    animation-name: moveInRight;
-    animation-duration: 2s;
-    animation-delay: 0.1s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: backwards; /* 0% will not be applied before animation starts */
-  }
-  @keyframes moveInLeft {
-      0% {
-          opacity: 0;
-          transform: translateX(-200px); /*from left move in*/
-      }
-      40% {
-          transform: rotate(10deg);
-      }
-      80% {
-          transform: translateX(30px);
-          transform: rotate(-10deg);
-      }
-      100% {
-          opacity: 1;
-          transform: translate(0); /* mean look like right now*/
-      }
-  }
-  
-  @keyframes moveInRight {
-      0% {
-          opacity: 0;
-          transform: translateX(200px); /*from left move in*/
-      }
-      40% {
-          transform: rotate(10deg);
-      }
-      80% {
-          transform: translateX(-30px);
-          transform: rotate(-10deg);
-      }
-      100% {
-          opacity: 1;
-          transform: translate(0); /* mean look like right now*/
-      }
-  }
-  
-  
-  
-  
-  
-  div.barrier {
-      margin-top: 100px;
-  }
-  
-  div.hidden {
-      display: none;
-  }
   
   
   /*
@@ -403,30 +139,7 @@ body {
       font-size: 20px;
   }
   
-  /*
-   * content-guide
-   */
-  
-  
-  div.content-guide {
-      position: fixed;
-      right: 10px;
-      bottom: 80px;
-      width: 200px;
-      z-index: 2;
-  
-  }
-  
-  div.content-guide a {
-      background-color: #0B6071;
-      color: #FFFFFF;
-      font-weight: bold;
-      opacity: 0.9
-  
-  }
-  div.content-guide a:hover {
-      text-decoration: underline;
-  }
+
   
   
   /*
