@@ -1,35 +1,88 @@
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-200px); /*from left move in*/
-    }
-    40% {
-        transform: rotate(10deg);
-    }
-    80% {
-        transform: translateX(30px);
-        transform: rotate(-10deg);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0); /* mean look like right now*/
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-20rem); /*from left move in*/
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: translateX(3rem);
+    transform: rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0); /* mean look like right now*/
+  }
 }
 
 @keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(200px); /*from left move in*/
-    }
-    40% {
-        transform: rotate(10deg);
-    }
-    80% {
-        transform: translateX(-30px);
-        transform: rotate(-10deg);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0); /* mean look like right now*/
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(20rem); /*from left move in*/
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: translateX(-3rem);
+    transform: rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0); /* mean look like right now*/
+  }
+}
+
+
+
+
+/*
+   * stock and etf table
+   */
+div.table-responsive {
+  margin-bottom: 13rem;
+}
+
+
+
+
+
+// etf and stock 
+
+.toggler {
+  width: 50rem;
+  position: relative;
+}
+#button {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin: 2rem;
+}
+
+#effect {
+  width: 90rem;
+  height: 10rem;
+  padding: 0.4rem;
+  position: relative;
+  background: $color-white;
+}
+#effect h3 {
+  margin: 0;
+  padding: 0.4rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.newClass {
+  font-size: 150%;
+}
+div.toggler div#effect p {
+  font-size: 70%;
+}
+
+@media only screen and (max-width: 1200px) {
+  div.table-responsive {
+    margin-bottom: 100rem;
+  }
 }

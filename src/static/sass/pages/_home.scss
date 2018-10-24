@@ -1,33 +1,10 @@
 .html-home {
-    /*background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg") no-repeat center center fixed;*/
-    background: url("../image/home-image.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  .html-home body {
-      background: none;
-  }
-  
-  .animation-left {
-    animation-name: moveInLeft;
-    animation-duration: 2s;
-    animation-delay: 0.1s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: backwards; /* 0% will not be applied before animation starts */
-  }
-  .animation-right {
-    animation-name: moveInRight;
-    animation-duration: 2s;
-    animation-delay: 0.1s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: backwards; /* 0% will not be applied before animation starts */
-  }
-
-  .home-welcome {
-    font-family:"Arial Black", Gadget, sans-serif;
-    text-align: center;
-    color: #FFFFFF;
-    font-size: 20px;
+  background: url("../image/home-image.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.html-home body {
+  background: none;
 }

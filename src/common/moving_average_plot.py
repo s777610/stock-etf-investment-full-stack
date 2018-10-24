@@ -24,7 +24,6 @@ def moving_average_plot(df):
     data = [trace_high, trace_low]
     layout = go.Layout(title='Moving Average')
     div2 = plotly.offline.plot({"data": data, "layout": layout}, include_plotlyjs=False, output_type='div', link_text="",
-                        show_link="False")
+                               show_link="False")
 
     return div2
-

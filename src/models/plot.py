@@ -1,20 +1,25 @@
 import pandas as pd
 pd.core.common.is_list_like = pd.api.types.is_list_like
 from pandas_datareader import data as dataread
-import datetime
-from common.moving_average_plot import moving_average_plot
-from common.daily_volume import plot_volume
 from common.candlestick import candlestick
+from common.daily_volume import plot_volume
+from common.moving_average_plot import moving_average_plot
+import datetime
+
+
 
 # name, current_price, name_color, today_status, last_updated, div1, div2, div3 = create_plot(ticker, name)
 # return name, current_price, name_color, today_status, last_updated, div1, div2, div3
+
+
 class Plot(object):
     def __init__(self, ticker, name):
         self.ticker = ticker
         # from 3 months ago to now
         start = datetime.datetime.now() - datetime.timedelta(days=180)
         end = datetime.datetime.now()
-        df = dataread.DataReader(self.ticker, data_source='iex', start=start, end=end)
+        df = dataread.DataReader(
+            self.ticker, data_source='iex', start=start, end=end)
 
         self.div1 = candlestick(df)
         self.div2 = moving_average_plot(df)
@@ -24,7 +29,7 @@ class Plot(object):
         self.today_status = self.check_status(df.close[-1], df.open[-1])
         self.name_color = self.check_name_color()
         self.name = self.check_name_exist(name)
-        
+
     @staticmethod
     def check_name_exist(name):
         if name == None:

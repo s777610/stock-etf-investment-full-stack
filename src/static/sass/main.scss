@@ -1,9 +1,17 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
 @import "layout/header";
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/navigation";
+
 
 @import "pages/home";
 
+
 @import "base/utilities";
-@import "base/base"; 
+@import "base/base";
 @import "base/animations";
 
 @import "components/guide";
@@ -11,145 +19,8 @@
 @import "components/map";
 @import "components/contact";
 @import "components/card";
-  
-
-
- 
-  /*
-   * stock and etf table
-   */
-  div.table-responsive {
-    margin-bottom: 130px;
-  
-  }
-  
-  /*
-   * plot
-   */
-  div.plot {
-    margin-bottom: 120px;
-    font-size: 110%
-  }
-  
-  
-  div.backtotop {
-    font-size: 20px;
-    margin: 10px auto 20px auto;
-    text-align: center;
-    font-family:Arial Black, Helvetica, Arial, sans-serif;
-  }
-  
-  /*
-   * footer-layout
-   */
-  footer {
-     padding: 15px;
-     position: relative;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     width: 100%;
-     background-color: #0B6071;
-     color: white;
-     text-align: center;
-      z-index: 1;
-  }
-  
-  footer.footer-home {
-      position: fixed;
-      border-top: 2px solid black;
-  }
-  
-  ul.social {
-      padding: 0;
-  }
-  
-  ul.social li {
-      display: inline;
-      font-size: 30px;
-  }
-  
-  ul.social li a i {
-      color: white;
-      padding: 0 10px;
-  }
-  
-  ul.social li a i:hover {
-      text-shadow: 0 0 3px #FFF, 0 0 15px #FFF, 0 0 30px #FFF;
-  }
-  /*
-  
-  
-  
-  
-  
-  
-  /*
-   * ETF and stock animate
-   */
-  
-  .toggler { width: 500px; position: relative; }
-  #button { padding: .5em 1em;
-            text-decoration: none;
-            margin: 20px;}
-  
-  #effect { width: 900px; height: 100px; padding: 0.4em; position: relative; background: #fff; }
-  #effect h3 { margin: 0; padding: 0.4em; text-align: center; font-size: 20px}
-  
-  .newClass {
-      font-size: 150%;
-  }
-  div.toggler div#effect p {
-      font-size: 70%;
-  }
-  
-  
-  
-  
-  
-
-
-  
-  
-  
-  /*
-   * resume
-   */
-  
-  .move-heading {
-      font-weight: bold;
-      text-shadow: -6px 5px 10px rgba(50,113,201,0.55);
-      transition: all .2s;
-      display: inline-block;
-  }
-  .move-heading:hover {
-      transform: skewY(2deg) skewX(2deg) scale(1.1);
-      text-shadow: 5px 10px 20px rgba(10, 53, 114, 0.9);
-  }
-  
-  .resume {
-      font-family: "Times New Roman", Times, serif;
-  
-  }
-  
-  .resume h3 {
-      font-weight: bold;
-  }
-  .resume ul {
-      font-size: 20px;
-  }
-  
-
-  
-  
-  /*
-   * If the browser window is 1200px or smaller, the background color will be lightblue:
-   */
-  @media only screen and (max-width: 1200px) {
-  
-      div.table-responsive {
-          margin-bottom: 1000px;
-      }
-  
-  }
-  
+@import "components/backtotop";
+@import "components/resume";
+@import "components/plot";
+@import "components/search";
+@import "components/welcome";

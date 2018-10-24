@@ -2,39 +2,40 @@
 {%block content%}
 
 
-    <div class="container-plot">
-        {% if text %}
-        <div style="text-align: center; font-size: 20px; margin-bottom: 900px;" class="alert alert-danger" role="alert">{{ text }}</div>
-        {% endif %}
+<div class="container-plot">
+    {% if text %}
+    <div style="text-align: center; font-size: 20px; margin-bottom: 900px;" class="alert alert-danger" role="alert">{{
+        text }}</div>
+    {% endif %}
 
-      {% if plot %}
-        <h1 style="font-size: 30px">{{ plot.name }}</h1>
-        <p id="top" style="font-size: 20px">NYSEARCA: {{ plot.ticker }}</p>
+    {% if plot %}
+    <h1 style="font-size: 30px">{{ plot.name }}</h1>
+    <p id="top" style="font-size: 20px">NYSEARCA: {{ plot.ticker }}</p>
 
-        {% if plot.today_status == 'Increase' %}
-            <h1 class="fa fa-arrow-up" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
-        {% else %}
-            <h1 class="fa fa-arrow-down" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
-        {% endif %}
-        <p>Last Updated: {{ plot.last_updated }}</p>
-
-
+    {% if plot.today_status == 'Increase' %}
+    <h1 class="fa fa-arrow-up" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
+    {% else %}
+    <h1 class="fa fa-arrow-down" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
+    {% endif %}
+    <p>Last Updated: {{ plot.last_updated }}</p>
 
 
-<div class="plot">
 
-{{plot.div1 | safe}}
-    <br>
-    <br>
 
-{{plot.div2 | safe}}
-    <br>
-    <br>
+    <div class="plot">
 
-{{plot.div3 | safe}}
-</div>
+        {{plot.div1 | safe}}
+        <br>
+        <br>
 
+        {{plot.div2 | safe}}
+        <br>
+        <br>
+
+        {{plot.div3 | safe}}
     </div>
+
+</div>
 {% endif %}
 
 <div class="backtotop">

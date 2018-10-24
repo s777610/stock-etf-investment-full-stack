@@ -1,17 +1,16 @@
 .btn-effect,
 .btn-effect:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all .2s; /*time of transform*/
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s; /*time of transform*/
 }
-  
-  
+
 .btn-effect:hover {
-    transform: translateY(-3px); /*move up*/
-    box-shadow: 0 15px 20px rgba(0,0,0,0.8);
+  transform: translateY(.3rem); /*move up*/
+  box-shadow: 0 1.5rem 2rem rgba($color-black, 0.8);
 }
-  
+
 .btn-effect:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 .5rem 1rem rgba($color-black, 0.9);
 }

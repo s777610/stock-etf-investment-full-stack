@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
+
 def scraper(ticker):
     try:
         url = f"https://www.marketwatch.com/investing/stock/{ticker}"

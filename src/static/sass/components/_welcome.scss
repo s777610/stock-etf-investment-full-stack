@@ -1,0 +1,21 @@
+.animation-left {
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-delay: 0.1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards; /* 0% will not be applied before animation starts */
+  }
+  .animation-right {
+    animation-name: moveInRight;
+    animation-duration: 2s;
+    animation-delay: 0.1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards; /* 0% will not be applied before animation starts */
+  }
+  
+  .home-welcome {
+    font-family: "Arial Black", Gadget, sans-serif;
+    text-align: center;
+    color: $color-white;
+    font-size: 20px;
+  }

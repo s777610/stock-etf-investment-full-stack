@@ -1,19 +1,16 @@
 div.card {
-    margin-bottom: 50px;
-    margin-left: 50px;
-  
-  }
-  
-  
-  div.card-header i.fa button.btn {
-    font-family:Arial Black, Helvetica, Arial, sans-serif;
-    font-size: 24px;
-    color: black;
-    text-shadow: -6px 5px 10px rgba(50,113,201,0.55);
-  
-  }
-  
-  div.card div.collapse div.card-body {
-      font-family:Tahoma, Helvetica, Arial, sans-serif;
-      font-size: 18px;
-  }
+  margin-bottom: 5rem;
+  margin-left: 5rem;
+}
+
+div.card-header i.fa button.btn {
+  font-family: Arial, Helvetica, Arial, sans-serif;
+  font-size: 2.4rem;
+  color: black;
+  text-shadow: -.6rem .5rem 1rem rgba($color-text-shadow, 0.55);
+}
+
+div.card div.collapse div.card-body {
+  font-family: Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+}

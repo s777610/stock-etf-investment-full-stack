@@ -1,0 +1,39 @@
+footer {
+  padding: 1.5rem;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $color-main;
+  color: $color-white;
+  text-align: center;
+  z-index: 1;
+}
+
+footer.footer-home {
+  position: fixed;
+  border-top: .2rem solid $color-black;
+}
+
+/*
+   * footer-layout
+   */
+
+ul.social {
+  padding: 0;
+}
+
+ul.social li {
+  display: inline;
+  font-size: 3rem;
+}
+
+ul.social li a i {
+  color: $color-white;
+  padding: 0 1rem;
+}
+
+ul.social li a i:hover {
+  text-shadow: 0 0 .3rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
+}
