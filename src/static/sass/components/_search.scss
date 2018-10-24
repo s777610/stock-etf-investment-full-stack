@@ -1,10 +1,41 @@
-.search_form {
+.search {
     float: right;
     margin-top: 1rem;
     margin-right: 1rem;
+    color: $color-white;
+
+    p {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    &__form {
+      display: inline-block;
+      height: 3.4rem;
+      padding: .6rem 1.2rem;
+      font-size: 1.4rem;
+      border-radius: .4rem;
+      -webkit-box-shadow: inset 0 1px 1px rgba($color-black,.075);
+      box-shadow: inset 0 1px 1px rgba($color-black,.075);
+      
+
+      &_input {
+        background-color: $color-white;
+        border: 1px solid $color-grey-light-2;
+      }
+
+      &_btn {
+        background-color: $color-green-light;
+        border: 1px solid $color-green-dark;
+        transition: all 0.2s;
+        color: inherit;
+
+        &:hover {
+          transform: translateY(-.3rem) scale(1.1); /*move up*/ 
+          box-shadow: 0 2rem 2rem rgba($color-black,0.5);
+        }
+      }
+    }
   }
   
-  .search_form p {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 1.8rem;
-  }

@@ -6,37 +6,27 @@
   <link rel="shortcut icon" type="image/png" href="../static/image/w.png">
   <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   
-
 </head>
 
 
 <body>
-
-
   <img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png"
     alt="Test Image">
 
 
 
 
-  <div class="search_form">
-    <p style="color: #FFFFFF">Looking for chart?</p>
-    <form class="form-inline" action="{{url_for('search')}}" method='POST'>
-      <input class="form-control mr-sm-2" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
-      <button class="btn btn-success btn-effect" type="submit"> Search </button>
+  <div class="search">
+    <p>Looking for chart?</p>
+    <form action="{{url_for('search')}}" method='POST'>
+      <input class="search__form search__form_input" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
+      <button class="search__form search__form_btn" type="submit"> Search </button>
     </form>
   </div>
 
-
-
   <div class="clear-float"></div>
-
-
 
   <ul class="menu">
     <li class="fa fa-home"><a href="{{ url_for('home') }}"> Home</a></li>
@@ -49,7 +39,7 @@
 
   <section class="welcome" id="welcome">
     <div class="welcome__text-box">
-        <h1 class="heading-white animation-left">Wilson's investing blog!</h1>
+        <h1 class="animation-left"><span class="heading-white" >Wilson's investing blog!</span></h1>
         <p class="animation-right">I am a software developer and a stock investor.</p>
         <p class="animation-left">I list most of stocks and ETFs I am holding on this site.</p>
         <p class="animation-right margin-bottom-medium">Feel free to explore my site!</p>
@@ -65,7 +55,7 @@
 
   <div class="clear-float"></div>
 
-  <footer class="footer-home">
+  <footer class="footer footer-home">
     <ul class="social">
       <li> <a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> <i class="fa fa-facebook-square"></i></a></li>
       <li> <a href="https://github.com/s777610" target="_blank"> <i class="fa fa-github"></i></a></li>
@@ -74,6 +64,9 @@
     </ul>
     <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
   </footer>
+
+
+  
 
 
 

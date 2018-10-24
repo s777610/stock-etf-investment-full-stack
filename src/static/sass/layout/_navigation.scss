@@ -1,21 +1,24 @@
 ul.menu {
-    padding: 1rem;
+    padding: 1.3rem;
     background: rgba($color-black, .4);
     margin-top: .8rem;
+    margin-bottom: .3rem;
     color: $color-white;
     text-align: center;
+    transition: all .2s;
+
+    & li {
+      display: inline;
+      padding: 0 1rem 0 1rem;
+      font-size: 2.4rem;
+      transition: all .2s;
+      &:hover {
+        text-decoration: underline;
+        text-shadow: 0 0 .3rem $color-white, 0 0 1rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
+      }
+    }
   }
   
-  ul.menu li {
-    display: inline;
-    padding: 0 1rem 0 1rem;
-    font-size: 2.4rem;
-  }
-  
-  ul.menu li:hover {
-    text-decoration: underline;
-    text-shadow: 0 0 .3rem $color-white, 0 0 1rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
-  }
   
   .menu li a {
     color: $color-white;
