@@ -3,20 +3,6 @@
 $(".draggable").draggable();
 
 
-// home.html
-$(document).ready(function() {
-  $(function() {
-    $( "#dialog" ).dialog({
-      autoOpen: false,
-      modal: true
-    });
-  });
-
-$("#email-button").click(function(){
-    $( "#dialog" ).dialog( "open" );
-  })
-});
-
 
 // securities_list.html
 $( function() {

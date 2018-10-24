@@ -1,11 +1,83 @@
-.emailform {
-  font-family: Arial Black, Helvetica, Arial, sans-serif;
-  margin: 0 auto 5rem auto;
-  width: 50rem;
-}
-.emailform div.form-group input {
-  font-family: Tahoma, Helvetica, Arial, sans-serif;
-}
-.emailform div.form-group textarea {
-  font-family: Tahoma, Helvetica, Arial, sans-serif;
+.contact {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  } 
+
+
+  &__input {
+    font-size: 1.7rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 3px;
+    background-color: rgba($color-white, 0.5);
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    transition: all .3s;
+    //margin: 0 auto;
+
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+        border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    // :: mean thing on the web page, like placeholder
+    &::-webkit-input-placeholder {
+        color: $color-grey-dark;
+    }
+  }
+
+  &__label {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+  }
+
+
+  &__btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    height: 4rem;
+    width: 8rem;
+    border-radius: 10%;
+    display: inline-block;
+    position: relative;
+    margin-right: 2rem;
+    transition: all .2s;
+
+    &__send {
+      background-color: $color-primary;
+      color: $color-white;
+
+
+    }
+
+    &__reset {
+      background-color: $color-white;
+      color: $color-grey-dark;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 2rem 2rem rgba($color-black,0.5);
+      &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+    }
+  }
+  }
+
+  
+
+
 }

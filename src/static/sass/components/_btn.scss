@@ -1,16 +1,43 @@
-.btn-effect,
-.btn-effect:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.2s; /*time of transform*/
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 2rem;
+    transition: all 0.2s;
+  }
+  
+  &--green {
+    background-color: $color-green-light;
+    color: $color-white;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--blue {
+    background-color: $color-blue-light;
+    color: $color-white;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  
+  &:hover {
+    transform: translateY(-.3rem); /*move up*/ 
+    box-shadow: 0 2rem 2rem rgba($color-black,0.5);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,0.3);
+  }
+
 }
 
-.btn-effect:hover {
-  transform: translateY(.3rem); /*move up*/
-  box-shadow: 0 1.5rem 2rem rgba($color-black, 0.8);
-}
 
-.btn-effect:active {
-  transform: translateY(-1px);
-  box-shadow: 0 .5rem 1rem rgba($color-black, 0.9);
-}

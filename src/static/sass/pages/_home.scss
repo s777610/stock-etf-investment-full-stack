@@ -8,3 +8,21 @@
 .html-home body {
   background: none;
 }
+
+
+.welcome {
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-align: center;
+  color: $color-white;
+  font-size: 2rem;
+  position: relative;
+  margin-top: 20vh;
+
+  &__text-box {
+    position: absolute;
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+  }
+}

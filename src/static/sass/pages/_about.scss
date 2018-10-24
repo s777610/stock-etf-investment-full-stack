@@ -1,5 +1,24 @@
-div.container-about {
-    width: 80rem;
-    margin: 0 auto;
+
+.section-card {
+  padding: 14rem 0;
+  background-image: linear-gradient(to right bottom, rgba(189, 239, 223, 0.8), #6cc76c54), url(../image/home-image.jpg);
+  background-size: cover;
+  transform: skewY(-6deg);
+  margin-top: 26rem;
+
+  // select direct child(first child)
+  // .section-card *
+  & > * {
+      transform: skewY(7deg);
   }
+
+}
+
+.section-map {
+    width: 90rem;
+    margin: 10rem auto;
+    text-align: center;
+}
+
+
   

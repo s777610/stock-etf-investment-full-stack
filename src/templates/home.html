@@ -7,13 +7,10 @@
   <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
 
 </head>
 
@@ -48,25 +45,22 @@
     <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> Stock</a></li>
     <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> Resume</a></li>
   </ul>
+  <div class="clear-float"></div>
 
-  <div class="container home-welcome">
-    <h1 class="animation-left" style="font-size: 25px;"><strong>Wilson's investing blog!</strong></h1>
-    <!--what google look for-->
-    <p class="animation-right">I am a software developer and a stock investor.</p>
-    <p class="animation-left">I list most of stocks and ETFs I am holding on this site.</p>
-    <p class="animation-right">Feel free to explore my site!</p>
-    <br>
-    <a class="btn btn-primary btn-lg btn-effect" href="{{ url_for('about') }}" role="button"> Explore !!</a>
-    <a class="btn btn-success btn-lg btn-effect" id="email-button" role="button">Contact Me</a>
-  </div>
+  <section class="welcome" id="welcome">
+    <div class="welcome__text-box">
+        <h1 class="heading-white animation-left">Wilson's investing blog!</h1>
+        <p class="animation-right">I am a software developer and a stock investor.</p>
+        <p class="animation-left">I list most of stocks and ETFs I am holding on this site.</p>
+        <p class="animation-right margin-bottom-medium">Feel free to explore my site!</p>
+        <a class="btn btn--blue" href="{{ url_for('about') }}"> Explore</a>
+        <a class="btn btn--green" href="#popup">Contact Me</a>
+    </div>
+  </section>
 
 
 
   <script src="/static/js/main.js"></script>
-
-
-
-
 
 
   <div class="clear-float"></div>
@@ -84,32 +78,34 @@
 
 
 
-  <div class="hidden">
-    <div id="dialog">
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/s777610@gmail.com" method="POST">
-
-        <div class="form-group">
-          <label for="sender_email">Your Email address</label>
-          <input type="email" class="form-control" id="sender_email" placeholder="example@gmail.com" name="_replyto"
-            required autofocus>
-        </div>
-
-        <div class="form-group">
-          <label for="sender_email">Subject</label>
-          <input type="text" class="form-control" name="_subject" required>
-        </div>
-
-        <div class="form-group">
-          <label for="textarea">Content</label>
-          <textarea class="form-control" id="textarea" rows="3" name="message" required></textarea>
-        </div>
-
-        <div class="form-group">
-          <input class="btn btn-info" type="submit" value="Send">
-          <input class="btn btn-outline-info" type="reset">
-        </div>
+  <div class="popup" id="popup">
+      <div class="popup__content">
+    <div class="popup__form">
+      <form class="contact" action="https://formspree.io/s777610@gmail.com" method="POST">
+        <h2 class="heading-green-dark">Contact Me</h2>
+        <a href="#welcome" class="popup__close">&times;</a>
+    
+          <div class="contact__group">
+            <label class="contact__label" for="sender_email">Email address</label>
+            <input class="contact__input" type="email"  id="sender_email" placeholder="example@gmail.com" name="_replyto" required>
+          </div>
+    
+          <div class="contact__group">
+            <label class="contact__label" for="sender_email">Subject</label>
+            <input class="contact__input" type="text"  name="_subject" required>
+          </div>
+    
+          <div class="contact__group">
+            <label class="contact__label" for="textarea">Content</label>
+            <textarea class="contact__input"  id="textarea" rows="3" name="message" required></textarea>
+          </div>
+    
+          <div class="contact__group">
+            <input class="contact__btn contact__btn__send" type="submit" value="Send">
+            <input class="contact__btn contact__btn__reset" type="reset">
+          </div>
       </form>
+    </div>
     </div>
   </div>
 

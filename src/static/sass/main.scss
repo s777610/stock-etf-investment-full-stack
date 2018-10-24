@@ -1,9 +1,21 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
-@import "base/utilities";
-@import "base/base";
 @import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/backtotop";
+@import "components/btn";
+@import "components/card";
+@import "components/chart";
+@import "components/contact";
+@import "components/guide";
+@import "components/map";
+@import "components/popup";
+@import "components/search";
+@import "components/welcome";
 
 @import "layout/footer";
 @import "layout/grid";
@@ -15,13 +27,3 @@
 @import "pages/plot";
 @import "pages/portfolio";
 @import "pages/resume";
-
-@import "components/guide";
-@import "components/btn";
-@import "components/map";
-@import "components/contact";
-@import "components/card";
-@import "components/backtotop";
-@import "components/chart";
-@import "components/search";
-@import "components/welcome";
