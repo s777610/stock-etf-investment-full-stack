@@ -122,12 +122,20 @@ div.container {
   width: auto;
   margin: 0 auto; }
 
-.heading-white {
-  font-weight: 300;
+.heading-main {
   display: block;
   font-size: 4rem;
   margin-bottom: 2.5rem;
   letter-spacing: .2rem; }
+  .heading-main__white {
+    color: #fff;
+    display: block;
+    text-align: center;
+    text-shadow: -0.6rem 0.5rem 1rem rgba(50, 113, 201, 0.55);
+    transition: all .3s; }
+    .heading-main__white:hover {
+      transform: skewY(2deg) skewX(2deg) scale(1.1);
+      text-shadow: 0.5rem 1rem 2rem rgba(19, 78, 145, 0.9); }
 
 .heading-green-dark {
   display: inline-block;
@@ -278,6 +286,20 @@ div.plot {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0; }
 
+.def {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 1rem 3rem 6rem rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  text-align: center;
+  font-size: 1.8rem;
+  transform: skewX(-12deg); }
+  .def__text {
+    transform: skewX(12deg); }
+
 img.picture {
   width: 20rem;
   margin-left: auto;
@@ -374,7 +396,8 @@ div.content-guide a:hover {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
     .search__form_input {
       background-color: #fff;
-      border: 1px solid #eee; }
+      border: 1px solid #eee;
+      color: #000; }
     .search__form_btn {
       background-color: #7ed56f;
       border: 1px solid #28b485;
@@ -384,6 +407,12 @@ div.content-guide a:hover {
         transform: translateY(-0.3rem) scale(1.1);
         /*move up*/
         box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.5); }
+
+.list {
+  background-color: #fff;
+  margin: 5rem auto;
+  width: 65%;
+  border-radius: 1rem; }
 
 .footer {
   padding: 2rem 0;
@@ -478,7 +507,9 @@ ul.menu {
   background-image: linear-gradient(to right bottom, rgba(189, 239, 223, 0.8), #6cc76c54), url(../image/home-image.jpg);
   background-size: cover;
   transform: skewY(-6deg);
-  margin-top: 26rem; }
+  margin-top: 26rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem; }
   .section-card > * {
     transform: skewY(7deg); }
 
@@ -503,7 +534,8 @@ ul.menu {
   color: #fff;
   font-size: 2rem;
   position: relative;
-  margin-top: 22vh; }
+  margin-top: 22vh;
+  font-weight: 400; }
   .welcome__text-box {
     position: absolute;
     top: 40%;
@@ -515,9 +547,13 @@ div.container-plot {
   width: 90rem;
   margin: 0 auto; }
 
-div.container-portfolio {
-  width: 100rem;
-  margin: 0 auto; }
+.section-def {
+  padding: 14rem 0;
+  background-image: linear-gradient(to right bottom, rgba(189, 239, 223, 0.8), #6cc76c54), url(../image/home-image.jpg);
+  background-size: cover;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  border-radius: 3rem; }
 
 div.container-resume {
   width: 80rem;

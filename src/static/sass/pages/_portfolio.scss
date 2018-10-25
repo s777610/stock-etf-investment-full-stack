@@ -1,4 +1,10 @@
-div.container-portfolio {
-    width: 100rem;
-    margin: 0 auto;
-  }
+.section-def {
+
+  padding: 14rem 0;
+  background-image: linear-gradient(to right bottom, rgba(189, 239, 223, 0.8), #6cc76c54), url(../image/home-image.jpg);
+  background-size: cover;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  border-radius: 3rem;
+
+} 
