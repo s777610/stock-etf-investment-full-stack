@@ -1,15 +1,17 @@
 {%extends "layout.html"%}
 {%block content%}
 
-<div class="content-guide list-group">
+<div class="content-guide">
   <img class="picture" src="https://user-images.githubusercontent.com/35472776/42259943-5b241fea-7f17-11e8-861c-412becf1d44b.jpg">
-  <a class="list-group-item list-group-item-action" href="#computer-skill">Computer Skills</a>
-  <a class="list-group-item list-group-item-action" href="#education">Education</a>
-  <a class="list-group-item list-group-item-action" href="#work-experience">Work Experience</a>
-  <a class="list-group-item list-group-item-action" href="#project-experience">Project Experience</a>
-  <a class="list-group-item list-group-item-action" href="#pro-development">Competition</a>
-  <a class="list-group-item list-group-item-action" href="#popup">Contact Me</a>
+  <a class="content-guide-item" href="#computer-skill">Computer Skills</a>
+  <a class="content-guide-item" href="#education">Education</a>
+  <a class="content-guide-item" href="#work-experience">Work Experience</a>
+  <a class="content-guide-item" href="#project-experience">Project Experience</a>
+  <a class="content-guide-item" href="#pro-development">Competition</a>
+  <a class="content-guide-item" href="#popup">Contact Me</a>
 </div>
+
+
 
 <div class="container-resume">
   <div class="resume">
@@ -21,11 +23,11 @@
     </ul>
     <h3>Programming Language</h3>
     <ul>
-      <li>Python, Java, C, Shell script, Javascript, JQuery, Matlab, SQL, HTML, CSS, PHP, R</li>
+      <li>Python, Java, C, Shell script, Javascript, Matlab, SQL, HTML, CSS, PHP, R</li>
     </ul>
     <h3>Application & Framework</h3>
     <ul>
-      <li>AWS, Microsoft Visual Studio, Git, Flask, MySQL Workbench, MongoDB, Heroku, AWS</li>
+      <li>AWS, React, Vue, JQuery, SASS, Git, Flask, MySQL Workbench, MongoDB, Heroku, AWS</li>
     </ul>
 
     <br>
@@ -46,7 +48,7 @@
     <h2 class="move-heading" id="work-experience">WORK EXPERIENCE</h2>
     <hr>
 
-    <h2 class="move-heading">Web Scraping Engineer</h2>
+    <h3>Web Scraping Engineer</h2>
     <h3>Tap Series, Westlake, California</h3>
     <ul>
       <li>In charge of scraping financial data from several websites with python.</li><br>
@@ -54,14 +56,14 @@
       <li>Assessment of SQL query.</li><br>
     </ul>
 
-    <h2 class="move-heading">Back-End Web Developer</h2>
+    <h3>Back-End Web Developer</h2>
     <h3>Locomotives, Changhua, Taiwan</h3>
     <ul>
       <li>In charge of SQL database and backend website development.</li><br>
       <li>Working on customer data visualization with python.</li><br>
     </ul>
 
-    <h2 class="move-heading">Technical Support</h2>
+    <h3>Technical Support</h2>
     <h3>Internationale Begegnung in Gemeinschaftsdiensten e.v, Germany</h3>
     <ul>
       <li>Working on set up audio equipment.</li>
@@ -223,7 +225,7 @@
 
 
 <div class="backtotop">
-  <p><a href="#top">Back to top</a></p>
+    <a href="#top" class="btn btn--backtop">Back to top</a>
 </div>
 
 {%endblock%}

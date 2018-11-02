@@ -1,16 +1,39 @@
 
-div.container-resume {
-  width: 80rem;
-  margin: 0 auto;
+.container-resume {
+  width: 120rem;
+  margin: 3rem auto;
+
+  @include respond(phone) {
+    width: auto;
+  }
 }
   
   .resume {
     font-family: "Times New Roman", Times, serif;
+
+    @include respond(phone) {
+      margin-left: 1rem;
+    }
+    
+    h2 {
+      font-size: 3.5rem;
+      margin-top: 5.5rem;
+
+      @include respond(phone) {
+        font-size: 3rem;
+        margin-top: 2rem;
+      }    
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 2.5rem;
+      margin-top: 1.5rem;
+    }
+
+    ul {
+      font-size: 2.5rem;
+      padding: .5rem 3rem;
+    }
   }
   
-  .resume h3 {
-    font-weight: bold;
-  }
-  .resume ul {
-    font-size: 2rem;
-  }

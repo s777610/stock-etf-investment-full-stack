@@ -1,4 +1,4 @@
-ul.menu {
+.menu {
     padding: 1.3rem;
     background: rgba($color-black, .4);
     margin-top: .8rem;
@@ -15,6 +15,12 @@ ul.menu {
       &:hover {
         text-decoration: underline;
         text-shadow: 0 0 .3rem $color-white, 0 0 1rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
+      }
+
+      @include respond(phone) {
+        display: inline-block;
+        padding: 0 1rem 0 1rem;
+        margin-bottom: 0.5rem;
       }
     }
   }

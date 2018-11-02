@@ -1,4 +1,15 @@
-div.container-plot {
+.container-plot {
     width: 90rem;
     margin: 0 auto;
+    font-size: 3rem;
+
+    @include respond(phone) {
+      font-size: 2rem;
+    }
+
+    .plot-info {
+      padding: 4rem;
+      margin: 0 auto;
+      text-align: center;
+    }
   }

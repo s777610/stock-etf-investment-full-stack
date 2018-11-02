@@ -4,22 +4,70 @@ img.picture {
   margin-right: auto;
   border: .7rem solid $color-main;
   border-radius: 2rem;
+
+  @include respond(phone) {
+    display: none;
+  }
 }
 
-div.content-guide {
+.content-guide {
   position: fixed;
   right: 1rem;
   bottom: 8rem;
   width: 20rem;
   z-index: 2;
+  padding-left: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-decoration: none;
+
+  @include respond(phone) {
+    border: solid $color-main;
+    border-radius: .5rem;
+    width: 10rem;
+    right: 0rem;
+  }
+
+  & a {
+    background-color: $color-main;
+    color: $color-white;
+    font-weight: bold;
+    opacity: 0.9;
+    text-decoration: none;
+    font-size: 3rem;
+
+    @include respond(phone) {
+      font-size: 2.2rem;
+      padding: 1rem 0rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      outline: 0;
+    }
+
+    &:active {
+      outline: 0;
+    }
+  }
+
+  &-item {
+    position: relative;
+    display: block;
+    padding: 1rem 1.5rem;
+    background-color: $color-white;
+    border: .1rem solid $color-primary-dark;
+    transition: all .2s;
+
+    &:focus,
+    &:hover, {
+      color: $color-main;
+      text-decoration: none;
+      background-color: $color-white;
+    }
+  }
 }
 
-div.content-guide a {
-  background-color: $color-main;
-  color: $color-white;
-  font-weight: bold;
-  opacity: 0.9;
-}
-div.content-guide a:hover {
-  text-decoration: underline;
-}
+
+
+

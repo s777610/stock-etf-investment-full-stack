@@ -1,12 +1,12 @@
 {%extends "layout.html"%}
 {%block content%}
 
-<div class="content-guide list-group">
+<div class="content-guide">
   <img class="picture" src="https://user-images.githubusercontent.com/35472776/42259943-5b241fea-7f17-11e8-861c-412becf1d44b.jpg">
-  <a class="list-group-item list-group-item-action" href="#about_me">About Me</a>
-  <a class="list-group-item list-group-item-action" href="#invest">Investment</a>
-  <a class="list-group-item list-group-item-action" href="#gdp_div">GDP Map</a>
-  <a class="list-group-item list-group-item-action" href="#popup">Contact Me</a>
+  <a class="content-guide-item" href="#about_me">About Me</a>
+  <a class="content-guide-item" href="#invest">Investment</a>
+  <a class="content-guide-item map-item" href="#gdp_div">GDP Map</a>
+  <a class="content-guide-item" href="#popup">Contact Me</a>
 </div>
 
 
@@ -50,7 +50,7 @@
                   <i class="card-box__icon icon-basic-heart"></i>
                   <h3 class="heading-tertiary u-margin-bottom-small">Asset allocation</h3>
                   <p class="card-box__text">
-                      The purpose of the implement of asset allocation is to balance risk versus reward by adjusting the percentage of each asset in the portfolio. In my opinion, there is no "perfect" asset allocation for everyone. It depends on what your goal is and what kind of asset you familiar with. In short, you have to start with the big picture instead of details. For me, I am allocating my assets by continent. There is an interactive-app for world GDP below, feel free to play around. We can see United States have highest GDP. There is why I allocate most of my asset within United States.
+                      The purpose of the implement of asset allocation is to balance risk versus reward by adjusting the percentage of each asset in the portfolio. In my opinion, there is no "perfect" asset allocation for everyone. It depends on what your goal is and what kind of asset you familiar with. In short, you have to start with the big picture instead of details. For me, I am allocating my assets by continent. If your screen is width enough, there is an interactive-app for world GDP below, feel free to play around with it. We can see United States have highest GDP. There is why I allocate most of my asset within United States.
                   </p>
               </div>
           </div>
@@ -62,7 +62,7 @@
 
 <section class="section-map" id="gdp_div">
   <h2 class="move-heading">Here is an interactive map for world GDP<br>(Gross Domestic Product).</h2>
-  <iframe class="gdp_map" frameborder="0" src="https://s777610.github.io/2017_world_GDP_map/">
+  <iframe class="map" frameborder="0" src="https://s777610.github.io/2017_world_GDP_map/">
     <p>Your browser does not support iframes.</p>
   </iframe>
 </section>
@@ -71,7 +71,7 @@
 
 
 <div class="backtotop">
-    <p><a href="#top">Back to top</a></p>
+    <a href="#top" class="btn btn--backtop">Back to top</a>
 </div>
 
 

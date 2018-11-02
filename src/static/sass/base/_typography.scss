@@ -10,6 +10,7 @@
         text-align: center;
         text-shadow: -.6rem .5rem 1rem rgba($color-text-shadow, 0.55);
         transition: all .3s;
+        font-size: 4rem;
 
         &:hover {
             transform: skewY(2deg) skewX(2deg) scale(1.1);
@@ -23,6 +24,9 @@
     font-weight: bold;
     margin-bottom: 4rem;
     color: $color-main;
+    @include respond(phone) {
+        margin-bottom: 2rem;
+    }
 }
 
 .move-heading {

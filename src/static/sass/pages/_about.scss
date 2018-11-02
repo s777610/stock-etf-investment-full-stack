@@ -8,19 +8,44 @@
   margin-right: 1.5rem;
   margin-left: 1.5rem;
 
+
+  @include respond(phone) {
+    padding: 3rem 0;
+    background-size: 100%;
+    transform: skewY(0);
+    margin-top: -.5rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
   // select direct child(first child)
   // .section-card *
   & > * {
       transform: skewY(7deg);
-  }
-
+      @include respond(phone) {
+        transform: skewY(0);
+      }
+    }
 }
 
 .section-map {
     width: 90rem;
     margin: 10rem auto;
     text-align: center;
+    font-size: 3rem;
+
+    @include respond(phone) {
+        display: none;
+    }
+
+    .map {
+        width: 90rem;
+        height: 60rem;
+    }
 }
 
-
-  
+.map-item {
+    @include respond(phone) {
+        display: none;
+    }
+}

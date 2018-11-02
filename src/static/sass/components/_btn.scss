@@ -26,6 +26,14 @@
       background-color: $color-white;
     }
   }
+
+  &--backtop {
+    background-color: $color-main;
+    color: $color-white;
+    &::after {
+      background-color: $color-white;
+    }
+  }
   
   &:hover {
     transform: translateY(-.3rem); /*move up*/ 

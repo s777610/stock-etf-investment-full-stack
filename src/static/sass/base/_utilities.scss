@@ -7,6 +7,9 @@
 }
 .margin-bottom-medium {
   margin-bottom: 4rem;
+  @include respond(phone) {
+    margin-top: 2rem;
+}
 }
 .margin-bottom-big {
   margin-bottom: 8rem;
@@ -14,6 +17,9 @@
 
 .margin-top-top {
   margin-top: 8rem;
+  @include respond(phone) {
+    margin-top: 4rem;
+}
 }
 .margin-top-huge {
   margin-top: 10rem;
@@ -21,6 +27,10 @@
 
 div.barrier {
   margin-top: 10rem;
+
+  @include respond(phone) {
+    display: none;
+}
 }
 
 

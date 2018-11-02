@@ -1,6 +1,65 @@
 .list {
-    background-color: $color-white;
+    background-color: rgba($color-white, .8);
     margin: 5rem auto;
     width: 65%;
     border-radius: 1rem;
+
+
+    @include respond(phone) {
+        margin: 2rem auto;
+        width: 96%;
+    }
+}
+
+
+div.table-responsive {
+    margin-bottom: 13rem;
+}
+
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+
+
+table {
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: table;
+    border-collapse: separate;
+    border-color: $color-grey-dark;
+    font-size: 1.7rem;
+
+    @include respond(phone) {
+        font-size: 1.5rem;
+    }
+}
+
+.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
+    border-top: 0;
+}
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: .2rem solid $color-grey-dark;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: .8rem;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: .1rem solid $color-grey-dark;
+}
+
+th {
+    text-align: left;
 }
