@@ -22,8 +22,12 @@ def moving_average_plot(df):
         opacity=0.8)
 
     data = [trace_high, trace_low]
-    layout = go.Layout(title='Moving Average')
-    div2 = plotly.offline.plot({"data": data, "layout": layout}, include_plotlyjs=False, output_type='div', link_text="",
-                               show_link="False")
+    layout = go.Layout(title='Moving Average',yaxis=go.layout.YAxis(automargin=True))
+    div2 = plotly.offline.plot({"data": data, 
+                                "layout": layout}, 
+                                include_plotlyjs=False, 
+                                output_type='div', 
+                                link_text="",
+                                show_link="False")
 
     return div2

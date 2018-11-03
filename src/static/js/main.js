@@ -4,6 +4,7 @@ $(".draggable").draggable();
 
 
 
+
 // securities_list.html
 $( function() {
   var state = true;

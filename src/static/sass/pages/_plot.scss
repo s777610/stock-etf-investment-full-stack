@@ -3,6 +3,8 @@
     margin: 0 auto;
     font-size: 3rem;
 
+    
+
     @include respond(phone) {
       font-size: 2rem;
     }

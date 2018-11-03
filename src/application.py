@@ -18,7 +18,7 @@ def home():
 @application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
 def plot_security(name, ticker, daily_return, cum_return):
     plot = Plot(ticker, name)
-    return render_template("plot_stock.html", plot=plot, daily_return=daily_return, cum_return=cum_return)
+    return render_template("plot.html", plot=plot, daily_return=daily_return, cum_return=cum_return)
 
 
 @application.route('/resume')
@@ -46,9 +46,9 @@ def search():
         security_name = Security.scrape_security_name(ticker)
         try:
             plot = Plot(ticker, security_name)
-            return render_template("search.html", plot=plot)
+            return render_template("plot.html", plot=plot)
         except:
-            return render_template("search.html", text="Could not find the security, please enter a valid ticker.")
+            return render_template("plot.html", text="Could not find the security, please enter a valid ticker.")
 
 
 if __name__ == "__main__":

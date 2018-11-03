@@ -9,7 +9,7 @@ def candlestick(df):
                            low=df.low,
                            close=df.close)
     data = [trace]
-    layout = go.Layout(title='Candlestick Chart')
+    layout = go.Layout(title='Candlestick',yaxis=go.layout.YAxis(automargin=True))
     div1 = plotly.offline.plot({"data": data,
                                 "layout": layout},
                                include_plotlyjs=False,
@@ -17,3 +17,7 @@ def candlestick(df):
                                link_text="",
                                show_link="False")
     return div1
+
+
+
+
