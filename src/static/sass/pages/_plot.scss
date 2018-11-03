@@ -1,3 +1,14 @@
+.phone-plot {
+  width: auto;
+  @include respond(phone) {
+    width: 100rem;
+  }
+
+  // @include respond(tab-port) {
+  //   width: 81rem;
+  // }
+}
+
 .container-plot {
     width: 90rem;
     margin: 0 auto;

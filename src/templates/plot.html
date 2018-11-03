@@ -1,50 +1,97 @@
-{%extends "layout.html"%}
-{%block content%}
+<!DOCTYPE html>
+<html>
 
+<head>
+    <link rel="shortcut icon" type="image/png" href="../static/image/w.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson's Investment</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
 
-<section class="container-plot">
-    <div class="plot-info">
-        {% if text %}
-            <div style="text-align: center; font-size: 20px; margin-bottom: 900px;" class="alert alert-danger" role="alert">{{ text }}</div>
-        {% endif %}
+<body>
 
-        {% if plot %}
-            {% if plot.name %}
-                <h1 class="move-heading margin-bottom-medium">{{ plot.name }}</h1>
+    <header class="phone-plot">
+        <img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png"alt="Test Image">
+            
+        <div class="search">
+            <p>Looking for chart?</p>
+            <form action="{{url_for('search')}}" method='POST'>
+                <input class="search__form search__form_input" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
+                <button class="search__form search__form_btn" type="submit"> Search </button>
+            </form>
+        </div>
+
+        <div class="clear-float"></div>
+    
+        <ul class="menu">
+            <li class="fa fa-home"><a href="{{ url_for('home') }}"> Home</a></li>
+            <li class="fa fa-home"><a href="{{ url_for('about') }}"> About</a></li>
+            <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='etf') }}"> ETF</a></li>
+            <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> Stock</a></li>
+            <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> Resume</a></li>
+        </ul>
+    </header>
+
+    <script src="/static/js/main.js"></script>
+
+    <section class="container-plot">
+        <div class="plot-info">
+            {% if text %}
+                <div style="text-align: center; font-size: 20px; margin-bottom: 900px;" class="alert alert-danger" role="alert">{{ text }}</div>
             {% endif %}
 
-            <p id="top">NYSEARCA: {{ plot.ticker }}</p>
-            {% if plot.today_status == 'Increase' %}
-                <h1 class="fa fa-arrow-up" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
-            {% else %}
-                <h1 class="fa fa-arrow-down" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
-            {% endif %}
+            {% if plot %}
+                {% if plot.name %}
+                    <h1 class="move-heading margin-bottom-medium">{{ plot.name }}</h1>
+                {% endif %}
 
-            {% if daily_return %}
-                <p>Daily Return: {{ daily_return }} %</p>
-                <p>Cumulative Return: {{ cum_return }} %</p>
+                <p id="top">NYSEARCA: {{ plot.ticker }}</p>
+                {% if plot.today_status == 'Increase' %}
+                    <h1 class="fa fa-arrow-up" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
+                {% else %}
+                    <h1 class="fa fa-arrow-down" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
+                {% endif %}
+
+                {% if daily_return %}
+                    <p>Daily Return: {{ daily_return }} %</p>
+                    <p>Cumulative Return: {{ cum_return }} %</p>
+                {% endif %}
+                <p>Last Updated: {{ plot.last_updated }}</p>
             {% endif %}
-            <p>Last Updated: {{ plot.last_updated }}</p>
-        {% endif %}
+        </div>
+
+        <div class="plot">
+            {% if plot %}
+                <div class="chart">{{plot.div1 | safe}}</div>
+                
+                <br>
+                <br>
+                <div class="chart">{{plot.div2 | safe}}</div>
+                <br>
+                <br>
+                <div class="chart">{{plot.div3 | safe}}</div>
+            {% endif %}
+        </div>
+    </section>
+
+
+    <div class="backtotop phone-plot">
+        <a href="#top" class="btn btn--backtop">Back to top</a>
     </div>
 
-    <div class="plot">
-        {% if plot %}
-            {{plot.div1 | safe}}
-            <br>
-            <br>
-            {{plot.div2 | safe}}
-            <br>
-            <br>
-            {{plot.div3 | safe}}
-        {% endif %}
-    </div>
+    <footer class="footer phone-plot">
+        <ul class="social">
+            <li> <a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> <i class="fa fa-facebook-square"></i></a></li>
+            <li> <a href="https://github.com/s777610" target="_blank"> <i class="fa fa-github"></i></a></li>
+            <li> <a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> <i class="fa fa-linkedin-square"></i>
+            </a></li>
+        </ul>
+        <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
+    </footer>
 
-</section>
+</body>
 
-
-<div class="backtotop">
-    <a href="#top" class="btn btn--backtop">Back to top</a>
-</div>
-
-{%endblock%}
+</html>

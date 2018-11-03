@@ -7,6 +7,10 @@
     text-align: center;
     transition: all .2s;
 
+    @include respond(phone) {
+      padding: .3rem;
+    }
+
     & li {
       display: inline;
       padding: 0 1rem 0 1rem;

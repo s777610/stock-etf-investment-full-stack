@@ -14,6 +14,7 @@ def candlestick(df):
                                 "layout": layout},
                                include_plotlyjs=False,
                                output_type='div',
+                               auto_open=False,
                                link_text="",
                                show_link="False")
     return div1

@@ -14,21 +14,15 @@ db = SQLAlchemy(application)
 def home():
     return render_template("home.html")
 
-
-@application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
-def plot_security(name, ticker, daily_return, cum_return):
-    plot = Plot(ticker, name)
-    return render_template("plot.html", plot=plot, daily_return=daily_return, cum_return=cum_return)
+@application.route('/about')
+def about():
+    return render_template("about.html")
 
 
 @application.route('/resume')
 def resume():
     return render_template("resume.html")
 
-
-@application.route('/about')
-def about():
-    return render_template("about.html")
 
 
 @application.route('/securitieslist/<string:type>')
@@ -49,6 +43,11 @@ def search():
             return render_template("plot.html", plot=plot)
         except:
             return render_template("plot.html", text="Could not find the security, please enter a valid ticker.")
+
+@application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
+def plot_security(name, ticker, daily_return, cum_return):
+    plot = Plot(ticker, name)
+    return render_template("plot.html", plot=plot, daily_return=daily_return, cum_return=cum_return)
 
 
 if __name__ == "__main__":
