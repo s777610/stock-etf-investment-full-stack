@@ -54,6 +54,7 @@
     position: relative;
     margin-right: 2rem;
     transition: all .2s;
+    cursor: pointer;
 
     &__send {
       background-color: $color-primary;

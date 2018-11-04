@@ -146,10 +146,12 @@ div.container {
   display: inline-block;
   font-weight: bold;
   margin-bottom: 4rem;
-  color: #0b6071; }
+  color: #0b6071;
+  font-size: 4rem; }
   @media (max-width: 37.5em) {
     .heading-green-dark {
-      margin-bottom: 2rem; } }
+      margin-bottom: 2rem;
+      font-size: 2rem; } }
 
 .move-heading {
   font-weight: bold;
@@ -307,7 +309,8 @@ div.barrier {
   display: inline-block;
   position: relative;
   margin-right: 2rem;
-  transition: all .2s; }
+  transition: all .2s;
+  cursor: pointer; }
   .contact__btn__send {
     background-color: #134e91;
     color: #fff; }
