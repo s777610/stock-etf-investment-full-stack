@@ -12,24 +12,6 @@
 }
 
 
-div.table-responsive {
-    margin-bottom: 13rem;
-}
-
-.table-responsive {
-    min-height: .01%;
-    overflow-x: auto;
-}
-
-.table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
-
-
 table {
     background-color: transparent;
     border-spacing: 0;
@@ -43,6 +25,34 @@ table {
         font-size: 1.5rem;
     }
 }
+
+
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+    &-responsive {
+        min-height: .01%;
+        overflow-x: auto;
+        border: $color-main .2rem solid;
+        border-radius: inherit;
+        box-shadow: 1rem 3rem 6rem rgba($color-black, 0.7);
+
+        @include respond(phone) {
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+
+
+
+
+
+
 
 .table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
     border-top: 0;
