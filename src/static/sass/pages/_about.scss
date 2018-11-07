@@ -4,7 +4,7 @@
   background-image: linear-gradient(to right bottom, rgba(189, 239, 223, 0.8), #6cc76c54), url(../image/home-image.jpg);
   background-size: cover;
   transform: skewY(-6deg);
-  margin-top: 26rem;
+  margin-top: 22rem;
   margin-right: 1.5rem;
   margin-left: 1.5rem;
 
@@ -49,3 +49,91 @@
         display: none;
     }
 }
+
+
+
+// terminal
+.terminal {
+    width: 75%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @include respond(phone) {
+        width: 95%;
+    }
+
+    &__bar {
+        height: 3.5rem;
+        background-color: $color-term-bar;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+    
+        &__btn {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            border: .1rem solid $color-black;
+            position: relative;
+            top: .6rem;
+            left: .6rem;
+            display: inline-block;
+            margin-right: .8rem;
+    
+            &-close {
+                background-color: $color-term-btn-close1;
+                border-color: $color-term-btn-close2;
+              }
+    
+            &-minimize {
+                left: 11px;
+                background-color: $color-term-btn-min1;
+                border-color: $color-term-btn-min2;
+            }
+    
+            &-zoom {
+                left: 16px;
+                background-color: $color-term-btn-zoom1;
+                border-color: $color-term-btn-zoom2;
+            }
+        }
+    }
+
+    &__screen {
+        background-color: $color-term-screen;
+        padding: 2rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+
+        &--text {
+            margin: 0 auto;
+            font-size: 2rem;
+            font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+            white-space: normal;
+            
+
+            &-title {
+                color: $color-term-title;
+                font-size: 3rem;
+            }
+
+            &-context {
+                color: $color-term-context;
+            }
+
+            &-cursor1 {
+                color: $color-white;
+            }
+
+            &-cursor2 {
+                color: $color-white;
+                font-weight: bold;
+                -webkit-animation: blink 1s .5s infinite;
+                -moz-animation: blink 1s .5s infinite;
+                -o-animation: blink 1s .5s infinite;
+                animation: blink 1s .5s infinite;
+            }   
+        }    
+    }
+}
+
+  
