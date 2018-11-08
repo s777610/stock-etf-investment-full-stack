@@ -105,6 +105,17 @@
   animation-fill-mode: backwards;
   /* 0% will not be applied before animation starts */ }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem black; }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
 *,
 *::after,
 *::before {
@@ -227,6 +238,9 @@ div.barrier {
   border-radius: .7rem;
   transition: all 0.2s;
   margin: 1rem 1rem; }
+
+.btn-pulsate {
+  animation: pulsate 1s infinite; }
 
 .btn--green {
   background-color: #7ed56f;

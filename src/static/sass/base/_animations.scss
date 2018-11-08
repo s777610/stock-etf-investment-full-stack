@@ -129,3 +129,21 @@
   animation-timing-function: ease-out;
   animation-fill-mode: backwards; /* 0% will not be applied before animation starts */
 }
+
+// explore btn
+@keyframes pulsate {
+  0% {
+      transform: scale(1);
+      box-shadow: none;
+  }
+
+  50% {
+      transform: scale(1.05);
+      box-shadow: 0 1rem 4rem rgba($color-black, 3.25);
+  }
+
+  100% {
+      transform: scale(1);
+      box-shadow: none;
+  }
+}

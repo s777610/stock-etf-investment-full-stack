@@ -9,7 +9,10 @@
     border-radius: .7rem;
     transition: all 0.2s;
     margin: 1rem 1rem;
+  }
 
+  &-pulsate {
+    animation: pulsate 1s infinite;
   }
   
   &--green {
