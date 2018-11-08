@@ -11,7 +11,6 @@
 
 
 .welcome {
-  font-family: "Arial Black", Gadget, sans-serif;
   text-align: center;
   color: $color-white;
   font-size: 2rem; 
@@ -30,6 +29,8 @@
     left: 50%; 
     transform: translate(-50%, -50%); 
     text-align: center;
+    letter-spacing: .1rem;
+    font-size: 2.2rem;
 
     @include respond(phone) {
       transform: translate(-50%, -30%); 

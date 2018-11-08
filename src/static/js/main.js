@@ -40,3 +40,30 @@ $( function() {
     });
 });
 
+
+
+// IEX API 
+
+// info
+// const Http = new XMLHttpRequest();
+// const url='https://api.iextrading.com/1.0/stock/AAPL/company';
+// Http.open("GET", url);
+// Http.send();
+// Http.onreadystatechange=(e)=>{
+// console.log(Http.responseText)
+// }
+// (e)=>{
+// console.log(Http.responseText)
+// }
+
+// logo
+// const Http = new XMLHttpRequest();
+// const url='https://api.iextrading.com/1.0//stock/AAPL/logo';
+// Http.open("GET", url);
+// Http.send();
+// Http.onreadystatechange=(e)=>{
+// console.log(Http.responseText)
+// }
+// (e)=>{
+// console.log(Http.responseText)
+// }
