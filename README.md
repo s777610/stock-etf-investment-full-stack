@@ -1,11 +1,4 @@
 # Personal Investment App
 ## Link: https://weichenghung.com
 
-This Web-App shows some of my investment.  
-I used Flask as framework to build the web.  
-First of all, it uses "IEX" API and datareader to extract financial data.  
-Next, it analyzes data by using pandas, and store data into DataFrame.  
-Then, it uses plotly to plot interative chart on the web and shows some information.  
-In addition, it allow users to search the chart of any security.  
-I used beautifulsoup4 to scrape the company name for the users.  
-All securities data are store in SQLite database.
+This Web-App shows some of my investment. I used Flask as framework to build the web and deployed it on AWS. It retrieves data from "IEX" API and scrapes data from some financial site by Beautifulsoup4. It analyzes data and makes interactive charts on the site by using Pandas and Plotly. It allows users to search any security in the US market. All data are stored in SQLite. I use this App very often to check my portfolio. (Python, SQL, JS, SCSS, HTML5, AWS).
