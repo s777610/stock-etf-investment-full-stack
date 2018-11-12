@@ -37,10 +37,8 @@
         </ul>
     </header>
 
-    <script src="/static/js/main.js"></script>
-
     <section class="container-plot">
-        <div class="plot-info">
+        <div class="plot-info" id="top">
             {% if text %}
                 <div style="text-align: center; font-size: 20px; margin-bottom: 900px;" class="alert alert-danger" role="alert">{{ text }}</div>
             {% endif %}
@@ -50,7 +48,7 @@
                     <h1 class="move-heading margin-bottom-medium">{{ plot.name }}</h1>
                 {% endif %}
 
-                <p id="top">NYSEARCA: {{ plot.ticker }}</p>
+                <p id="ticker">NYSEARCA: {{ plot.ticker }}</p>
                 {% if plot.today_status == 'Increase' %}
                     <h1 class="fa fa-arrow-up" style="color: {{plot.name_color}};font-size:48px">{{ plot.current_price }} <small>USD</small></h1>
                 {% else %}
@@ -93,6 +91,12 @@
         </ul>
         <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
     </footer>
+
+    <script src="/static/js/main.js"></script>
+    <!-- <script>
+        const ticker = {{ plot.ticker|tojson }}
+        console.log(ticker)
+    </script> -->
 
 </body>
 

@@ -1,69 +1,44 @@
 
-// layout.html
-$(".draggable").draggable();
+///////// IEX API ////////
+// const ticker = {{ plot.ticker|tojson }}
+// console.log(ticker)
 
+let ticker = document.getElementById("ticker").innerHTML;
+ticker = ticker.split(" ")[1];
+console.log(ticker)
 
-
-
-// securities_list.html
-$( function() {
-  var state = true;
-  $( "#button" ).on( "click", function() {
-    if ( state ) {
-      $( "#effect" ).animate({
-        backgroundColor: "#5E5E5E",
-        color: "#fff",
-        width: 900,
-        height: 150
-      }, 1000 );
-    } else {
-      $( "#effect" ).animate({
-        backgroundColor: "#fff",
-        color: "#000",
-        width: 900,
-        height: 100
-      }, 1000 );
-    }
-    state = !state;
-  });
-} );
-
-$( function() {
-    var state = true;
-    $("#button").on("click", function () {
-      if ( state ) {
-          $("#effect").addClass("newClass");
-      } else {
-          $( "#effect" ).removeClass( "newClass" );
-      }
-      state = !state;
-    });
-});
-
-
-
-// IEX API 
 
 // info
-// const Http = new XMLHttpRequest();
-// const url='https://api.iextrading.com/1.0/stock/AAPL/company';
-// Http.open("GET", url);
-// Http.send();
-// Http.onreadystatechange=(e)=>{
-// console.log(Http.responseText)
-// }
-// (e)=>{
-// console.log(Http.responseText)
-// }
+get_info = (ticker) => {
+  
+  let Http = new XMLHttpRequest();
+  let url_info=`https://api.iextrading.com/1.0/stock/${ticker}/company`;
+  Http.open("GET", url_info);
+  Http.send();
+  Http.onreadystatechange = (e) => {
+    console.log(Http.responseText)
+  }
+  (e) => {
+    console.log(Http.responseText)
+  }
+}
+
+
 
 // logo
-// const Http = new XMLHttpRequest();
-// const url='https://api.iextrading.com/1.0//stock/AAPL/logo';
-// Http.open("GET", url);
-// Http.send();
-// Http.onreadystatechange=(e)=>{
-// console.log(Http.responseText)
-// }
-// (e)=>{
-// console.log(Http.responseText)
-// }
+get_logo = (ticker) => {
+  
+  let Http = new XMLHttpRequest();
+  let url_logo=`https://api.iextrading.com/1.0//stock/${ticker}/logo`;
+  Http.open("GET", url_logo);
+  Http.send();
+  Http.onreadystatechange = (e) => {
+    console.log(Http.responseText)
+  }
+  (e) => {
+    console.log(Http.responseText)
+  }
+}
+
+get_info(ticker)
+get_logo(ticker)
