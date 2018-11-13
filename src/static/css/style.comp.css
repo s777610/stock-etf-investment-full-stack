@@ -285,14 +285,6 @@ div.barrier {
       padding: 1rem;
       margin: 0 2rem; } }
 
-.plot {
-  margin-bottom: 12rem;
-  font-size: 110%;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: inline-block; }
-
 .contact__group:not(:last-child) {
   margin-bottom: 2rem; }
 
@@ -817,23 +809,87 @@ img.logo {
         width: 35rem;
         font-size: 2rem; } }
 
-.phone-plot {
-  width: auto; }
-  @media (max-width: 37.5em) {
-    .phone-plot {
-      width: 100rem; } }
+.alert {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 90rem;
+  margin-top: 3rem;
+  color: #f53a43;
+  text-align: center; }
 
-.container-plot {
+.stockInfo {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 3rem; }
+  @media (max-width: 37.5em) {
+    .stockInfo {
+      width: 95%; } }
+  .stockInfo__info {
+    padding: 4rem;
+    display: flex; }
+    @media (max-width: 37.5em) {
+      .stockInfo__info {
+        padding: 0;
+        flex-direction: column; } }
+    .stockInfo__info__box {
+      width: 50%;
+      font-size: 2.5rem;
+      border-right: 0.2rem solid #478996;
+      margin-right: 2rem;
+      padding-right: 2rem;
+      text-align: center; }
+      @media (max-width: 37.5em) {
+        .stockInfo__info__box {
+          width: auto;
+          border-right: none;
+          margin: auto;
+          padding-right: 0; } }
+      .stockInfo__info__box__logo {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 1rem;
+        border: 0.2rem solid #dad6d6;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+        margin-bottom: 1rem; }
+        @media (max-width: 37.5em) {
+          .stockInfo__info__box__logo {
+            margin-right: 1rem;
+            float: left; } }
+      .stockInfo__info__box__desc {
+        font-size: 2.15rem;
+        text-align: -webkit-auto; }
+    .stockInfo__info__text {
+      line-height: 4.5rem;
+      display: flex;
+      flex-direction: column; }
+      .stockInfo__info__text .curGreen {
+        color: green; }
+      .stockInfo__info__text .curRed {
+        color: red; }
+      .stockInfo__info__text__btn, .stockInfo__info__text__btn:link, .stockInfo__info__text__btn:visited {
+        margin-top: auto;
+        cursor: pointer;
+        background-color: #0b6071;
+        border-radius: .5rem;
+        transition: all 0.2s;
+        padding: .5rem;
+        text-align: center;
+        width: 30%; }
+      .stockInfo__info__text__btn:hover {
+        transform: translateY(-0.2rem);
+        /*move up*/
+        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3); }
+      .stockInfo__info__text__btn .company__web__link {
+        text-decoration: none;
+        color: #fff; }
+
+.plot {
   width: 90rem;
   margin: 0 auto;
   font-size: 3rem; }
   @media (max-width: 37.5em) {
-    .container-plot {
-      font-size: 2rem; } }
-  .container-plot .plot-info {
-    padding: 4rem;
-    margin: 0 auto;
-    text-align: center; }
+    .plot {
+      display: none; } }
 
 .section-def {
   padding: 11rem 0;

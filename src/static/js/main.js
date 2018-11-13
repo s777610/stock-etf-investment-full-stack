@@ -1,26 +1,4 @@
-
 ///////// IEX API ////////
-
-
-// info
-// get_info = (ticker) => {
-  
-//   let Http = new XMLHttpRequest();
-//   let url_info=`https://api.iextrading.com/1.0/stock/${ticker}/company`;
-//   Http.open("GET", url_info);
-//   Http.send();
-//   Http.onreadystatechange = (e) => {
-//     //console.log(Http.responseText)
-//   }
-// }
-
-
-
-// get_info(ticker)
-
-
-
-
 
 let ticker = document.getElementById("ticker").innerHTML;
 ticker = ticker.split(" ")[1];
@@ -39,4 +17,30 @@ async function getLogo(ticker) {
   }
 }
 
+async function getInfo(ticker) {
+  try {
+      const result = await fetch(`https://api.iextrading.com/1.0/stock/${ticker}/company`);
+      const data = await result.json(); // wait in background
+      //console.log(data)
+      const ceo = data["CEO"]
+      const desc = data["description"];
+      const industry = data["industry"];
+      const website = data["website"];
+      if (ceo) {
+        document.getElementById("ceo").innerHTML = `CEO: ${ceo}`;
+      };
+      if (industry) {
+        document.getElementById("industry").innerHTML = `Industry: ${industry}`;
+      };
+      document.getElementById("description").innerHTML = `${desc}`;
+      document.getElementById("web").href = `${website}`;
+      return data; // return a promise
+  } catch(error) {
+      console.log(error);
+  }
+}
+
+
+
 getLogo(ticker);
+getInfo(ticker);

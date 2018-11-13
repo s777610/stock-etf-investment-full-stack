@@ -1,60 +1,25 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="shortcut icon" type="image/png" href="../static/image/w.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wilson's Investment</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-</head>
-
-<body>
-
-    <header class="phone-plot">
-        <a href="{{ url_for('home') }}">
-            <img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png" alt="Test Image">
-        </a>
-            
-        <div class="search">
-            <p>Looking for chart?</p>
-            <form action="{{url_for('search')}}" method='POST'>
-                <input class="search__form search__form_input" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
-                <button class="search__form search__form_btn" type="submit"> Search </button>
-            </form>
-        </div>
-
-        <div class="clear-float"></div>
-    
-        <ul class="menu">
-            <li class="fa fa-home"><a href="{{ url_for('home') }}"> Home</a></li>
-            <li class="fa fa-home"><a href="{{ url_for('about') }}"> About</a></li>
-            <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='etf') }}"> ETF</a></li>
-            <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> Stock</a></li>
-            <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> Resume</a></li>
-        </ul>
-    </header>
-
+{%extends "layout.html"%}
+{%block content%}
     {% if text %}
         <div  class="alert" role="alert">{{ text }}</div>
     {% endif %}
 
-    <section class="plot">
-        <div class="plot__info" id="top">
-            <div class="plot__info__box">
-                <img class="plot__info__box__logo" src="" alt="company logo" id="company_logo">
-                <p class="plot__info__box__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi.</p>
+    <section class="stockInfo">
+        <div class="stockInfo__info" id="top">
+            <div class="stockInfo__info__box">
+                <img class="stockInfo__info__box__logo" src="" alt="company logo" id="company_logo">
+                <p class="stockInfo__info__box__desc" id="description"></p>
             </div>
             
-            <div class="plot__info__text">
+            <div class="stockInfo__info__text">
                 {% if plot %}
                     {% if plot.name %}
                         <h1 class="move-heading margin-bottom-medium">{{ plot.name }}</h1>
                     {% endif %}
 
                     <p id="ticker">NYSEARCA: {{ plot.ticker }}</p>
+                    <p id="ceo"></p>
+                    <p id="industry"></p>
 
                     {% if plot.today_status == 'Increase' %}
                         <p class="fa fa-arrow-up curGreen">{{ plot.current_price }} <small>USD</small></p>
@@ -83,42 +48,33 @@
                     {% endif %}
 
                     <p>Last Updated: {{ plot.last_updated }}</p>
+                    <p class="stockInfo__info__text__btn"><a class="company__web__link" id="web" href="#" target="_blank">Website</a></p>
+                    
                 {% endif %}
             </div>
         </div>
-
-        <div class="plot__chart">
-            {% if plot %}
-                <div class="chart">{{plot.div1 | safe}}</div>
-                
-                <br>
-                <br>
-                <div class="chart">{{plot.div2 | safe}}</div>
-                <br>
-                <br>
-                <div class="chart">{{plot.div3 | safe}}</div>
-            {% endif %}
-        </div>
     </section>
 
+    <section class="plot">
+        {% if plot %}
+            <div class="chart">{{plot.div1 | safe}}</div>
+                
+            <br>
+            <br>
+            <div class="chart">{{plot.div2 | safe}}</div>
+            <br>
+            <br>
+            <div class="chart">{{plot.div3 | safe}}</div>
+        {% endif %}
+    </section>
+    
 
-    <div class="backtotop phone-plot">
+
+    <div class="backtotop">
         <a href="#top" class="btn btn--backtop">Back to top</a>
     </div>
-
-    <footer class="footer phone-plot">
-        <ul class="social">
-            <li> <a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> <i class="fa fa-facebook-square"></i></a></li>
-            <li> <a href="https://github.com/s777610" target="_blank"> <i class="fa fa-github"></i></a></li>
-            <li> <a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> <i class="fa fa-linkedin-square"></i>
-            </a></li>
-        </ul>
-        <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
-    </footer>
 
     <script src="/static/js/main.js" type='text/javascript'></script>
     
 
-</body>
-
-</html>
+{%endblock%}
