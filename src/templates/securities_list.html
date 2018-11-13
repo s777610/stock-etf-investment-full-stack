@@ -55,13 +55,13 @@
                 <td>{{ security.open}}</td>
                 <td>{{ security.close}}</td>
                 {% if security.today_status == 'Increase' %}
-                <td style="color: forestgreen">{{ security.today_status}}</td>
+                <td style="color: green">{{ security.today_status}}</td>
                 {% else %}
                 <td style="color: red">{{ security.today_status}}</td>
                 {% endif %}
       
                 {% if security.cum_return > 0 %}
-                <td style="color: forestgreen">{{ security.cum_return}}</td>
+                <td style="color: green">{{ security.cum_return}}</td>
                 {% else %}
                 <td style="color: red">{{ security.cum_return}}</td>
                 {% endif %}

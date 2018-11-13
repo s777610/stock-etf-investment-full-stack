@@ -47,7 +47,7 @@ def search():
 @application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
 def plot_security(name, ticker, daily_return, cum_return):
     plot = Plot(ticker, name)
-    return render_template("plot.html", plot=plot, daily_return=daily_return, cum_return=cum_return)
+    return render_template("plot.html", plot=plot, daily_return=float(daily_return), cum_return=float(cum_return))
 
 
 if __name__ == "__main__":

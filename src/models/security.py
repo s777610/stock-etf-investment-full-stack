@@ -28,9 +28,8 @@ class Security(db.Model):
         self.close = df.iloc[-1]["close"].round(2)
         self.last_updated = df.index[-1]
         self.today_status = self.check_status(df.close[-1], df.open[-1])
-        self.daily_return = (df['close'].pct_change(1)[-1]).round(3)
-        self.cum_return = (
-            ((df.iloc[-1]['close'] / self.purchase_price) - 1) * 100).round(2)
+        self.daily_return = float((df['close'].pct_change(1)[-1]).round(3))
+        self.cum_return = (((df.iloc[-1]['close'] / self.purchase_price) - 1) * 100).round(2)
 
     def json(self):
         return {

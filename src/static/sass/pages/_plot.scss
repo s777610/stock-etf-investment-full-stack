@@ -9,20 +9,85 @@
   // }
 }
 
-.container-plot {
+
+.alert {
+  text-align: center; 
+  font-size: 3rem; 
+  margin-bottom: 90rem;    
+  margin-top: 3rem;
+  color: $color-alert;
+  text-align: center;
+}
+
+
+
+.plot {
     width: 90rem;
     margin: 0 auto;
     font-size: 3rem;
 
-    
-
     @include respond(phone) {
-      font-size: 2rem;
+      font-size: 5rem;
     }
 
-    .plot-info {
+    &__info {
       padding: 4rem;
       margin: 0 auto;
-      text-align: center;
+      display: flex;
+      //align-items: center;
+      //justify-content: space-evenly;
+
+      &__box {
+        width: 40%;
+        font-size: 2.5rem;
+        border-right: 0.2rem solid $color-main-light;
+        margin-right: 1rem;
+
+        &__logo {
+          height: 15rem;
+          width: 15rem;
+          border-radius: 1rem;
+          border: .2rem solid $color-grey-light-3;
+          box-shadow: 0 1.5rem 4rem rgba($color-black, .25);
+          margin-bottom: 1rem;
+        }
+
+        &__desc {
+          font-size: 2.15rem;
+        }
+      }
+
+      
+
+      &__text {
+
+
+        .curGreen {
+          color: $color-green;
+        }
+  
+        .curRed {
+          color: $color-red;
+        }
+
+      }
+      
     }
+
+    &__chart {
+      margin-bottom: 12rem;
+      font-size: 110%;
+      position: relative;
+      // display: flex;
+      // padding: 10px;
+      // flex-wrap: wrap;
+    
+      height: 100%;
+      width: 100%;
+      display: inline-block;
+    }
+
   }
+
+
+

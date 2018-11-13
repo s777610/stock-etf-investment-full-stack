@@ -27,7 +27,7 @@ class Plot(object):
         self.last_updated = df.index[-1]
         self.current_price = df.iloc[-1]["close"].round(2)
         self.today_status = self.check_status(df.close[-1], df.open[-1])
-        self.name_color = self.check_name_color()
+        # self.name_color = self.check_name_color()
         self.name = self.check_name_exist(name)
 
     @staticmethod
@@ -37,12 +37,12 @@ class Plot(object):
         else:
             return name
 
-    def check_name_color(self):
-        if self.today_status == "Increase":
-            name_color = "green"
-        else:
-            name_color = "red"
-        return name_color
+    # def check_name_color(self):
+    #     if self.today_status == "Increase":
+    #         name_color = "green"
+    #     else:
+    #         name_color = "red"
+    #     return name_color
 
     @staticmethod
     def check_status(close, open):

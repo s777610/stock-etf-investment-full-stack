@@ -14,6 +14,7 @@ $color-green-dark: #28b485;
 
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
+$color-grey-light-3: rgb(218, 214, 214);
 
 $color-grey-dark: #777;
 $color-white: #fff;
@@ -21,6 +22,7 @@ $color-black: #000;
 
 $color-text-shadow: rgba(50, 113, 201, 0.55);
 $color-main: #0b6071;
+$color-main-light: #478996;
 
 // font
 $default-font-size: 1.6rem;
@@ -31,9 +33,12 @@ $gutter-vertical: 8rem;
 $gutter-horizontal: 6rem;
 
 
+// alert
+$color-alert: #f53a43;
+$color-red: red;
+$color-green: green;
+
 //terminal
-
-
 $color-term-bar: #bbb;
 $color-term-screen: #151515;
 $color-term-btn-close1: #ff3b47;
