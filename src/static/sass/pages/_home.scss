@@ -30,7 +30,9 @@
     transform: translate(-50%, -50%); 
     text-align: center;
     letter-spacing: .1rem;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
+    font-family: "Josefin Sans", sans-serif;
+    font-style: italic;
 
     @include respond(phone) {
       transform: translate(-50%, -30%); 

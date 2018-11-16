@@ -23,10 +23,10 @@
     </ul>
     <h3>Application & Framework</h3>
     <ul>
-      <li>React, Vue, JQuery, SASS, Git, Flask, MySQL, PostgreSQL, SQLite, MongoDB, Heroku, AWS</li>
+      <li>React, Vue, Jquery, SASS, Git, Flask, MySQL, SQLite, PostgreSQL, MongoDB, Heroku, AWS, MapReduce</li>
     </ul>
 
-    <br>
+    
 
     <h2 class="move-heading" id="education">EDUCATION</h2>
     <hr>
@@ -39,24 +39,24 @@
       <li>Bachelor of Mechanical Engineering</li>
     </ul>
 
-    <br>
+    
 
     <h2 class="move-heading" id="work-experience">WORK EXPERIENCE</h2>
     <hr>
 
-    <h3>Web Scraping Engineer</h2>
-    <h3>Tap Series, Westlake, California</h3>
+    <h3>Web Scraping Engineer Intern - Tap Series, Westlake, California</h2>
     <ul>
-      <li>In charge of scraping financial data from several websites with python.</li><br>
-      <li>Working on data visualization for generating financial report with python.</li><br>
-      <li>Assessment of SQL query.</li><br>
+      <li>In charge of scraping financial data from several financial websites with Python, Beautifulsoup4.</li>
+      <li>Visualizing data, and generating reports with Python, Matplotlib, Seaborn.</li>
+      <li>Working on testing MySQL and SQLite database of online course platform.</li>
+      <li>Testing the online course app with React.js.</li>
     </ul>
 
-    <h3>Back-End Web Developer</h2>
-    <h3>Locomotives, Changhua, Taiwan</h3>
+    <h3>Back-End Web Developer - Locomotives, Changhua, Taiwan</h2>
     <ul>
-      <li>In charge of SQL database and backend website development.</li><br>
-      <li>Working on customer data visualization with python.</li><br>
+      <li>In charge of SQL database and backend development with Python, SQLAlchemy.</li>
+      <li>Work on customer data visualization with Python, Matplotlib, Seaborn.</li>
+      <li>Build front-end with HTML5, SCSS, JS.</li>
     </ul>
 
     <h3>Technical Support</h2>
@@ -65,106 +65,138 @@
       <li>Working on set up audio equipment.</li>
     </ul>
 
-    <br>
+    
 
     <h2 class="move-heading" id="project-experience">PROJECT EXPERIENCE</h2>
     <hr>
 
     <h3><a href="https://github.com/s777610/Flask_RESTful_API_with_SQL" target="_blank">RESTful_API_with_SQL(Back-End
         Development)</a></h3>
-    <ul>
-      <li>This API is built with Flask, Flask_RESTful, Flask_JWT, and Flask-SQLAlchemy.</li><br>
-      <li>This API is deployed on Heroku, provide GET, POST, PUT, DELETE requests.</li><br>
-      <li>Using flask JWT extended to generate fresh token and non-fresh token.</li><br>
-      <li>The data can be stored in SQLite locally or PostgreSQL remotely.</li><br>
-    </ul>
+        <p>This API is deployed on Heroku, provide GET, POST, PUT, DELETE requests. 
+          The data can be stored in SQLite locally or PostgreSQL remotely. 
+          This API allows users to store some online store data in the database. 
+          It can generate access-token and refresh-token for users. 
+          The point of this API is implementing authentication. 
+          <span class="cs-skill">(Python, Flask, Flask_RESTful, Flask-JWT-extended, Flask-SQLAlchemy)</span>.</p>
 
     <h3><a href="https://github.com/s777610/blockchain_cryptocurrency" target="_blank">Half Half Coin System
         (Block-Chain Development)</a></h3>
-    <ul>
-      <li>It allows users to create wallets, send and receive coins.</li><br>
-      <li>The key pair(public key and private key) is generated with wallet.</li><br>
-      <li>Users can start mining the new block in order to get the reward</li><br>
-      <li>The meaning of mining is doing "proof of work".</li><br>
-      <li>Proof of work, which is a processing of guessing the number proof. The users have to hash the combination of
-        open transactions, the hash of previous block and proof. After that, the hashed result must start with "00".
-        The level of difficulty is adjustable.</li><br>
-      <li>All node can make HTTP requests to their peer nodes in order to share their data.</li><br>
-      <li>Majority of the process includes different verifications in order to make sure the system is secure.</li><br>
-    </ul>
-
+    <p>It allows users to create wallets first. The key pair(public key and private key) is generated when creating the wallet. 
+      Then, users can start mining the new block in order to get rewards. 
+      The meaning of mining is doing "proof of work", which is a processing of guessing the number proof.
+      The level of mining difficulty is adjustable. 
+      Users can send cryptocurrency to other users by assigning a public key of the recipient. 
+      All transactions data will be stored in open transactions temporarily. 
+      After mining a new block, the data of open transactions is stored in the new block, 
+      and open transactions will be an empty list. Majority of the process includes different verifications in order to make sure the system is secure.
+      All node can make HTTP requests to their peer nodes in order to share their data. 
+      <span class="cs-skill">(Python, HTML5, CSS, Vue)</span>.</p>
+    
     <h3><a href="https://github.com/s777610/Stock-ETF_investment_web" target="_blank">Stock/ETF investment Web-App
         (Data Analysis and Visualization)</a></h3>
-    <ul>
-      <li>Getting financial data from IEX API.</li><br>
-      <li>Using pandas-datareader to extract data.</li><br>
-      <li>Utilizing pandas to clean data and manipulate data.</li><br>
-      <li>Utilizing bokeh to build Web-Plot for visualizing financial data.</li><br>
-      <li>Utilizing flask as framework to build the web.</li><br>
-    </ul>
+    <P>
+        This Web-App shows some of my investment. 
+        I used Flask as framework to build the web and deployed it on AWS. 
+        It retrieves financial data from "IEX" API and scrapes data from some financial site by Beautifulsoup4. 
+        After that, it uses pandas to clean data and manipulate data.
+        It analyzes data and makes interactive charts on the site by using Pandas and Plotly. 
+        It allows users to search any security in the US market. All data are stored in SQLite. 
+        I use this App very often to check my portfolio. 
+        <span class="cs-skill">(Python, SQL, Javascript, SCSS, HTML5, AWS)</span>.
+    </P>
+    
+    <h3><a href="https://github.com/s777610/Social_Media_Blog" target="_blank">Social Media Blog (Full Stack Development)</a></h3>
+    <P>
+        This App, which was built by flask, allows users to register and login first. 
+        Then, users are able to create the blog post, update the profile picture, edit and delete the blog post. 
+        All data of users are stored in SQLite database for testing only. 
+        This app takes an advantage fo flask-sqlalchemy to create database object. 
+        It uses flask_migrate to upgrade the database in case of needs. 
+        <span class="cs-skill">(Python, Flask, SQL, HTML5, CSS)</span>.
+    </P>
+
+  <h3><a href="https://github.com/s777610/Flask_RESTful_API_with_SQL" target="_blank">RESTful API with SQL (Database & Back End Development)</a></h3>
+  <P>
+      This API is deployed on Heroku, provide GET, POST, PUT, DELETE requests. 
+      The data can be stored in SQLite locally or PostgreSQL remotely. 
+      This API allows users to store some online store data in the database. 
+      It can generate access-token and refresh-token for users. 
+      The point of this API is implementing authentication. 
+      <span class="cs-skill">(Python, Flask, Flask_RESTful, Flask-JWT-extended, Flask-SQLAlchemy)</span>.
+  </P>
+
+  <h3><a href="https://github.com/s777610/price_alert_for_olinestore" target="_blank">Price Alerts for Online Store
+    (Full Stack Development)</a></h3>
+  <p>
+      This Web-App was built by Flask, a microframework of Python. 
+      It is able to track the price of items from the online store. 
+      It can notify users when the prices of items drop. 
+      The way of notifying users is using Mailgun API to send emails to users.
+      The application checks the prices every 10 minutes. 
+      All data is stored in MongoDB. 
+      All passwords of users are encrypted by pbkdf2. 
+      Utilizing RE to find the specific store for users. 
+      The price of item could be found by using beautifulsoup to parse html. 
+      Only admin can add the new store. 
+      <span class="cs-skill">(Python, MongoDB, CSS, Bootstrap, HTML, Mailgun, pbkdf2)</span>.
+  </p>
+
 
 
     <h3><a href="https://github.com/s777610/real_estate_scraping" target="_blank">Real Estate Data Scraping (Website
         Scraping Development)</a></h3>
     <ul>
-      <li>Using BeautifulSoup to parse html and find the items.</li><br>
-      <li>Utilizing pandas to clean data and manipulate data.</li><br>
-      <li>Utilizing pandas pandas to store the data as DataFrame.</li><br>
-      <li>Finally, it stores all data into the csv file and saves it.</li><br>
+      <li>Using BeautifulSoup to parse html and find the items.</li>
+      <li>Utilizing pandas to clean data and manipulate data.</li>
+      <li>Utilizing pandas pandas to store the data as DataFrame.</li>
+      <li>Finally, it stores all data into the csv file and saves it.</li>
     </ul>
 
     <h3><a href="https://github.com/s777610/530_Project_LA_Crime" target="_blank">Crime Statistics in LA (Data Analysis
         and Visualization)</a></h3>
     <ul>
-      <li>Utilizing folium to build Web-Map for visualizing location of crimes.</li><br>
-      <li>Utilizing pandas to clean data and manipulate data.</li><br>
-      <li>Utilizing matplotlib to visualize data in the meaningful way.</li><br>
+      <li>Utilizing folium to build Web-Map for visualizing location of crimes.</li>
+      <li>Utilizing pandas to clean data and manipulate data.</li>
+      <li>Utilizing matplotlib to visualize data in the meaningful way.</li>
     </ul>
 
     <h3><a href="https://github.com/s777610/detect_moving_object_from_camera" target="_blank">Moving Object Detection
         (Image Processing Development)</a></h3>
     <ul>
-      <li>Utilizing OpenCV to process images.</li><br>
-      <li>Utilizing Pandas to manipulate data, store data as CSV file.</li><br>
+      <li>OpenCV to process images.</li>
+      <li>Pandas to manipulate data, store data as CSV file.</li>
     </ul>
 
     <h3><a href="https://github.com/s777610/BookStore_SQLite_DB_Standalone_app" target="_blank">BookStore SQLite
         Standalone App (Database & GUI Development)</a></h3>
     <ul>
-      <li>Utilizing tkinter to build Graphical User Interface.</li><br>
-      <li>Utilizing sqlite3 to build database to store data.</li><br>
+      <li>Utilizing tkinter to build Graphical User Interface.</li>
+      <li>Utilizing sqlite3 to build database to store data.</li>
     </ul>
 
     <h3>Database of CalMed Care (Database Development)</h3>
     <ul>
-      <li>Utilizing MS.SQL and Visio to build database for the hospital.</li><br>
+      <li>Utilizing MS.SQL and Visio to build database for the hospital.</li>
     </ul>
 
     <h3>Database of E-commerce Store (Database Development)</h3>
     <ul>
-      <li>Utilizing MySQL Workbench to build database for the e-commerce store.</li><br>
+      <li>Utilizing MySQL Workbench to build database for the e-commerce store.</li>
     </ul>
 
-    <h3><a href="https://github.com/s777610/price_alert_for_olinestore" target="_blank">Price Alerts for Online Store
-        (Back-End Development)</a></h3>
-    <ul>
-      <li>Utilizing Flask, a microframework for Python, to build backend.</li><br>
-      <li>Utilizing HTML, Bootstrap, CSS to build frontend.</li><br>
-      <li>Utilizing pbkdf2 to encrypt sensitive data of users, all data is store in MongoDB.</li><br>
-      <li>Utilizing Mailgun API to send emails, the API key is stored as environment variable.</li><br>
-      <li>Utilizing regular expression to find the specific store for users.</li><br>
-      <li>The price of item could be found by using beautifulsoup to parse html.</li><br>
-    </ul>
+    
+  
+
 
 
     <h3><a href="https://github.com/s777610/analysis_twitter_data" target="_blank">Tiwitter text analysis (Data
         Visualizaton)</a></h3>
     <ul>
-      <li>Utilizing Python and Twitter streaming API to stream real-time data.</li><br>
-      <li>Loading data into DataFrame and analyzing it, and Utilizing matplotlib to visualize the data.</li><br>
+      <li>Utilizing Python and Twitter streaming API to stream real-time data.</li>
+      <li>Loading data into DataFrame and analyzing it, and Utilizing matplotlib to visualize the data.</li>
     </ul>
 
-    <br>
+    
 
     <h2 class="move-heading" id="pro-development">COMPETITION DEVELOPMENT </h2>
     <hr>

@@ -25,7 +25,8 @@
 }
 
 .margin-top-top {
-  margin-top: 8rem;
+  margin-top: 8rem;    
+  text-align: center;
   @include respond(phone) {
     margin-top: 4rem;
   }

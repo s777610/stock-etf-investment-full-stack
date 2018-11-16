@@ -1,5 +1,6 @@
 ///////// IEX API ////////
 
+
 let ticker = document.getElementById("ticker").innerHTML;
 ticker = ticker.split(" ")[1];
 console.log(ticker)
