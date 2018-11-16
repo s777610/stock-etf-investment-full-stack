@@ -989,13 +989,23 @@ th {
   .resume h3 {
     font-weight: bold;
     font-size: 2.5rem;
-    margin-top: 3rem;
-    margin-bottom: 1rem; }
+    margin-top: 3.5rem;
+    margin-bottom: .6rem; }
+    .resume h3 a {
+      text-decoration: none;
+      color: #0b6071;
+      display: inline-block;
+      transition: all .2s;
+      padding: .2rem; }
+      .resume h3 a:hover {
+        color: #fff;
+        background-color: #0b6071;
+        border-radius: .2rem; }
   .resume ul {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     padding: .5rem 3rem; }
   .resume p {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     padding-right: 18rem;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
