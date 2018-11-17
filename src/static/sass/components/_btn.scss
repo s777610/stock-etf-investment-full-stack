@@ -41,7 +41,8 @@
   
   &:hover {
     transform: translateY(-.3rem); /*move up*/ 
-    box-shadow: 0 2rem 2rem rgba($color-black,0.5);
+    box-shadow: 0 1.5rem 1.5rem rgba($color-black,0.5);
+    cursor: pointer;
   }
 
   &:active,

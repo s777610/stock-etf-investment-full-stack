@@ -269,7 +269,8 @@ div.barrier {
 .btn:hover {
   transform: translateY(-0.3rem);
   /*move up*/
-  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.5);
+  cursor: pointer; }
 
 .btn:active, .btn:focus {
   outline: none;
@@ -332,7 +333,7 @@ div.barrier {
       opacity: 0; }
 
 img.picture {
-  max-width: 200px;
+  max-width: 170px;
   width: 20rem;
   margin-left: auto;
   margin-right: auto;
@@ -349,7 +350,7 @@ img.picture {
   position: fixed;
   right: 1rem;
   bottom: 8rem;
-  max-width: 200px;
+  max-width: 170px;
   width: 20rem;
   z-index: 2;
   padding-left: 0;
@@ -843,9 +844,10 @@ img.logo {
   background-size: cover;
   margin-right: 3rem;
   margin-left: 3rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   margin-top: 3rem;
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  border: #0b6071 0.2rem solid; }
   @media (max-width: 37.5em) {
     .section-def {
       padding: 1rem 0;
@@ -972,6 +974,12 @@ th {
   @media (max-width: 37.5em) {
     .container-resume {
       padding: .2rem; } }
+  .container-resume .resume__btn {
+    border-radius: .4rem;
+    background-color: #0b6071;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600; }
 
 .resume {
   font-family: "Times New Roman", Times, serif; }
@@ -980,7 +988,7 @@ th {
       margin-left: 1rem; } }
   .resume h2 {
     font-size: 3.5rem;
-    margin-top: 5.5rem; }
+    margin-top: 1.5rem; }
     @media (max-width: 37.5em) {
       .resume h2 {
         font-size: 3rem;

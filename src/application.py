@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from models.plot import Plot
 from flask_sqlalchemy import SQLAlchemy
 
@@ -23,6 +23,11 @@ def about():
 def resume():
     return render_template("resume.html")
 
+
+@application.route("/download")
+def download(): 
+    # send new file to users, and allow user to download it instead of opening it on browser
+    return send_file("Hung_Resume.pdf", attachment_filename="Hung_Resume.pdf", as_attachment=True)
 
 
 @application.route('/securitieslist/<string:type>')
