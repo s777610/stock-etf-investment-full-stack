@@ -124,7 +124,8 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  box-sizing: border-box; }
   @media (max-width: 75em) {
     html {
       font-size: 56.25%; } }
@@ -719,15 +720,12 @@ img.logo {
       padding: 1rem;
       margin: 0 2rem; } }
 
-.html-home {
+.body-home {
   background: url("../image/home-image.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-
-.html-home body {
-  background: none; }
 
 .welcome {
   text-align: center;
@@ -793,15 +791,16 @@ img.logo {
           padding-right: 0; } }
       .stockInfo__info__box__logo {
         height: 15rem;
-        width: 15rem;
         border-radius: 1rem;
         border: 0.2rem solid #dad6d6;
         box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        max-width: 40rem; }
         @media (max-width: 37.5em) {
           .stockInfo__info__box__logo {
             margin-right: 1rem;
-            float: left; } }
+            float: left;
+            max-width: 37rem; } }
       .stockInfo__info__box__desc {
         font-size: 2.15rem;
         text-align: -webkit-auto; }

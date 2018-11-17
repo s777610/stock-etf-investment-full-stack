@@ -44,15 +44,16 @@
 
         &__logo {
           height: 15rem;
-          width: 15rem;
           border-radius: 1rem;
           border: .2rem solid $color-grey-light-3;
           box-shadow: 0 1.5rem 4rem rgba($color-black, .25);
           margin-bottom: 1rem;
+          max-width: 40rem;
 
           @include respond(phone) {
             margin-right: 1rem;
             float: left;
+            max-width: 37rem;
           }
           
         }
