@@ -18,6 +18,10 @@ def home():
 def about():
     return render_template("about.html")
 
+@application.route('/project')
+def project():
+    return render_template("project.html")
+
 
 @application.route('/resume')
 def resume():
