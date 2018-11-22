@@ -4,7 +4,8 @@
 
 var ticker = document.getElementById("ticker").innerHTML;
 ticker = ticker.split(" ")[1];
-console.log(ticker);
+//console.log(ticker);
+
 
 async function getLogo(ticker) {
     try {

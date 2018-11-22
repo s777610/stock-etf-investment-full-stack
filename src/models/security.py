@@ -20,23 +20,27 @@ class Security(db.Model):
         self.name = name
         self.ticker = ticker
         self.purchase_price = purchase_price
-        start = datetime.datetime.now() - datetime.timedelta(days=4)
-        end = datetime.datetime.now()
-        df = dataread.DataReader(
-            ticker, data_source='iex', start=start, end=end)
-        self.open = df.iloc[-1]["open"].round(2)
-        self.close = df.iloc[-1]["close"].round(2)
-        self.last_updated = df.index[-1]
-        self.today_status = self.check_status(df.close[-1], df.open[-1])
-        self.daily_return = float((df['close'].pct_change(1)[-1]).round(3))
-        self.cum_return = (((df.iloc[-1]['close'] / self.purchase_price) - 1) * 100).round(2)
+        self.df = self.get_df()
+        self.open = self.df.iloc[-1]["open"].round(2)
+        self.close = self.df.iloc[-1]["close"].round(2)
+        self.last_updated = self.df.index[-1]
+        self.today_status = self.check_status(self.df.close[-1], self.df.open[-1])
+        self.daily_return = (self.df['close'].pct_change(1)[-1]).round(3)
+        self.cum_return = (((self.df.iloc[-1]['close'] / self.purchase_price) - 1) * 100).round(2)
 
+    
     def json(self):
         return {
             'name': self.name,
             'ticker': self.ticker,
             'purchase_price': self.purchase_price
         }
+    
+    def get_df(self):
+        start = datetime.datetime.now() - datetime.timedelta(days=4)
+        end = datetime.datetime.now()
+        df = dataread.DataReader(self.ticker, data_source='iex', start=start, end=end)
+        return df
 
     @classmethod
     def find_securities(cls, type):
