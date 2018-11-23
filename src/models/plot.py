@@ -7,28 +7,41 @@ from common.moving_average_plot import moving_average_plot
 import datetime
 
 
-
-# name, current_price, name_color, today_status, last_updated, div1, div2, div3 = create_plot(ticker, name)
-# return name, current_price, name_color, today_status, last_updated, div1, div2, div3
-
-
 class Plot(object):
     def __init__(self, ticker, name):
         self.ticker = ticker
-        # from 3 months ago to now
+        self.df = self.get_df()
+        self.div1 = candlestick(self.df)
+        self.div2 = moving_average_plot(self.df)
+        self.div3 = plot_volume(self.df)
+        self.last_updated = self.df.index[-1]
+        self.current_price = self.get_current_price
+        self.today_status = self.check_status
+        self.name = self.check_name_exist(name)
+
+
+    # from 3 months ago to now
+    def get_df(self):
         start = datetime.datetime.now() - datetime.timedelta(days=180)
         end = datetime.datetime.now()
-        df = dataread.DataReader(
-            self.ticker, data_source='iex', start=start, end=end)
+        df = dataread.DataReader(self.ticker, data_source='iex', start=start, end=end)
+        return df
 
-        self.div1 = candlestick(df)
-        self.div2 = moving_average_plot(df)
-        self.div3 = plot_volume(df)
-        self.last_updated = df.index[-1]
-        self.current_price = df.iloc[-1]["close"].round(2)
-        self.today_status = self.check_status(df.close[-1], df.open[-1])
-        # self.name_color = self.check_name_color()
-        self.name = self.check_name_exist(name)
+    @property
+    def get_current_price(self):
+        return self.df.iloc[-1]["close"].round(2)
+
+    @property
+    def check_status(self):
+        close = self.df.close[-1]
+        open = self.df.open[-1]
+        if close > open:
+            value = "Increase"
+        elif close < open:
+            value = "Decrease"
+        else:
+            value = "Equal"
+        return value
 
     @staticmethod
     def check_name_exist(name):
@@ -37,19 +50,4 @@ class Plot(object):
         else:
             return name
 
-    # def check_name_color(self):
-    #     if self.today_status == "Increase":
-    #         name_color = "green"
-    #     else:
-    #         name_color = "red"
-    #     return name_color
-
-    @staticmethod
-    def check_status(close, open):
-        if close > open:
-            value = "Increase"
-        elif close < open:
-            value = "Decrease"
-        else:
-            value = "Equal"
-        return value
+    

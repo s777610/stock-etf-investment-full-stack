@@ -1,5 +1,5 @@
 {
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "/anaconda3/envs/stockenv/bin/python"
+    "python.pythonPath": "/anaconda3/bin/python"
 }

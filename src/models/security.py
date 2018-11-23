@@ -12,8 +12,7 @@ class Security(db.Model):
     name = db.Column(db.String(100), unique=True, nullable=False)
     ticker = db.Column(db.String(20), unique=True, nullable=False)
     purchase_price = db.Column(db.Float, unique=False, nullable=False)
-    type = db.Column(db.Integer, unique=False,
-                     nullable=False)  # ETF 1, Stock 2
+    type = db.Column(db.Integer, unique=False, nullable=False)  # ETF 1, Stock 2
 
     # should add type, in order to match database
     def __init__(self, name, ticker, purchase_price):
@@ -24,9 +23,9 @@ class Security(db.Model):
         self.open = self.df.iloc[-1]["open"].round(2)
         self.close = self.df.iloc[-1]["close"].round(2)
         self.last_updated = self.df.index[-1]
-        self.today_status = self.check_status(self.df.close[-1], self.df.open[-1])
-        self.daily_return = (self.df['close'].pct_change(1)[-1]).round(3)
-        self.cum_return = (((self.df.iloc[-1]['close'] / self.purchase_price) - 1) * 100).round(2)
+        self.today_status = self.check_status
+        self.daily_return = self.get_daily_return
+        self.cum_return = self.get_cum_return
 
     
     def json(self):
@@ -54,8 +53,10 @@ class Security(db.Model):
             securities_list.append(Security(**data))
         return securities_list
 
-    @staticmethod
-    def check_status(close, open):
+    @property
+    def check_status(self):
+        open = self.df.open[-1]
+        close = self.df.close[-1]
         if close > open:
             value = "Increase"
         elif close < open:
@@ -63,6 +64,14 @@ class Security(db.Model):
         else:
             value = "Equal"
         return value
+
+    @property
+    def get_daily_return(self):
+        return self.df['close'].pct_change(1)[-1].round(3)
+
+    @property
+    def get_cum_return(self):
+        return (((self.df.iloc[-1]['close'] / self.purchase_price) - 1) * 100).round(2)
 
     @staticmethod
     def scrape_security_name(ticker):
