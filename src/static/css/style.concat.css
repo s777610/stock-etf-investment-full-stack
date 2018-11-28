@@ -708,8 +708,9 @@ img.logo {
 
 .card-box {
   background-color: rgba(255, 255, 255, 0.8);
-  font-size: 2rem;
+  font-size: 2.2rem;
   padding: 2.5rem;
+  line-height: 150%;
   border-radius: 1rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.65);
   transition: transform .3s;
@@ -718,8 +719,10 @@ img.logo {
     transform: translateY(-1.5rem) scale(1.05); }
   @media (max-width: 37.5em) {
     .card-box {
+      font-size: 2rem;
       padding: 1rem;
-      margin: 0 2rem; } }
+      margin: 0 2rem;
+      line-height: 140%; } }
 
 .body-home {
   background: url("../image/home-image.jpg") no-repeat center center fixed;
@@ -1017,7 +1020,9 @@ th {
     font-weight: 600; }
 
 .resume {
-  font-family: "Times New Roman", Times, serif; }
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.2rem;
+  line-height: 150%; }
   @media (max-width: 37.5em) {
     .resume {
       margin-left: 1rem; } }
@@ -1047,7 +1052,6 @@ th {
     font-size: 2.2rem;
     padding: .5rem 3rem; }
   .resume p {
-    font-size: 2.2rem;
     padding-right: 18rem;
     -moz-hyphens: auto;
     -ms-hyphens: auto;

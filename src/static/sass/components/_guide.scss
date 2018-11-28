@@ -29,6 +29,7 @@ img.picture {
 
   @include respond(tab-land) {
     width: 15rem;
+    
     right: 0rem;
   }
 

@@ -24,6 +24,8 @@
   
   .resume {
     font-family: "Times New Roman", Times, serif;
+    font-size: 2.2rem;
+    line-height: 150%;
 
     @include respond(phone) {
       margin-left: 1rem;
@@ -67,7 +69,6 @@
     }
 
     p {
-      font-size: 2.2rem;
       padding-right: 18rem;
       -moz-hyphens: auto;
       -ms-hyphens: auto;
