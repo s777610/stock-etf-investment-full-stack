@@ -938,11 +938,14 @@ th {
 
 .projects {
   width: 100rem;
-  margin: 3rem auto;
+  margin: 9rem auto;
   display: grid;
-  grid-gap: 5rem;
+  grid-gap: 6rem;
   width: 80%;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); }
+  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr)); }
+  @media (max-width: 37.5em) {
+    .projects {
+      margin: 3rem auto; } }
   .projects .project {
     background-color: #f9f7f6;
     display: grid;
