@@ -48,7 +48,7 @@
           border: .2rem solid $color-grey-light-3;
           box-shadow: 0 1.5rem 4rem rgba($color-black, .25);
           margin-bottom: 1rem;
-          max-width: 40rem;
+          max-width: 100%;
 
           @include respond(phone) {
             margin-right: 1rem;
