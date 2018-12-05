@@ -73,6 +73,3 @@ class Security(db.Model):
     def get_cum_return(self):
         return (((self.df.iloc[-1]['close'] / self.purchase_price) - 1) * 100).round(2)
 
-    @staticmethod
-    def scrape_security_name(ticker):
-        return scraper(ticker)

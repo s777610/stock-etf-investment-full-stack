@@ -1,15 +1,19 @@
+import datetime
+from bs4 import BeautifulSoup
+import requests
 import pandas as pd
 pd.core.common.is_list_like = pd.api.types.is_list_like
 from pandas_datareader import data as dataread
 from common.candlestick import candlestick
 from common.daily_volume import plot_volume
 from common.moving_average_plot import moving_average_plot
-import datetime
+
 
 
 class Plot(object):
     def __init__(self, ticker, name):
         self.ticker = ticker
+        self.name = name
         self.df = self.get_df()
         self.div1 = candlestick(self.df)
         self.div2 = moving_average_plot(self.df)
@@ -17,7 +21,6 @@ class Plot(object):
         self.last_updated = self.df.index[-1]
         self.current_price = self.get_current_price
         self.today_status = self.check_status
-        self.name = self.check_name_exist(name)
 
 
     # from 3 months ago to now
@@ -43,11 +46,4 @@ class Plot(object):
             value = "Equal"
         return value
 
-    @staticmethod
-    def check_name_exist(name):
-        if name == None:
-            return ' '
-        else:
-            return name
 
-    

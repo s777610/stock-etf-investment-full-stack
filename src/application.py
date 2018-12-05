@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, send_file
 from models.plot import Plot
 from flask_sqlalchemy import SQLAlchemy
+from common.name_scraper import scraper
+#from common.error.search_error import TickerError
 
 
 application = Flask(__name__)
@@ -9,7 +11,6 @@ application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.url_map.strict_slashes = False
 db = SQLAlchemy(application)
-
 
 @application.route('/')
 def home():
@@ -44,15 +45,14 @@ def securitieslist(type):
 
 @application.route("/search", methods=['POST'])
 def search():
-    if request.method == 'POST':
-        from models.security import Security
-        ticker = request.form["ticker"].upper()
-        security_name = Security.scrape_security_name(ticker)
-        try:
-            plot = Plot(ticker, security_name)
-            return render_template("plot.html", plot=plot)
-        except:
-            return render_template("plot.html", text="Could not find the security, please enter a valid ticker.")
+    ticker = request.form["ticker"].upper()
+    security_name = scraper(ticker) # 'currect name' or ' '
+    try:
+        plot = Plot(ticker, security_name)
+        return render_template("plot.html", plot=plot)
+    except:
+        return render_template("plot.html", text="Could not find the security, please enter a valid ticker.")
+
 
 @application.route('/plot/<string:ticker>/<string:name>/<string:daily_return>/<string:cum_return>')
 def plot_security(name, ticker, daily_return, cum_return):
@@ -61,5 +61,4 @@ def plot_security(name, ticker, daily_return, cum_return):
 
 
 if __name__ == "__main__":
-    #from models.security import Security
     application.run(debug=True, port=4882)

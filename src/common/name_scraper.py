@@ -12,4 +12,4 @@ def scraper(ticker):
         security_name = soup.find("span", {"class": "symbol"}).text
         return security_name
     except:
-        return None
+        return ' '

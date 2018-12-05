@@ -2,7 +2,7 @@
 {%block content%}
     {% if text %}
         <div  class="alert" role="alert">{{ text }}</div>
-    {% endif %}
+    {% else %}
 
     <section class="stockInfo">
         <div class="stockInfo__info" id="top">
@@ -72,6 +72,9 @@
     <div class="backtotop">
         <a href="#top" class="btn btn--backtop">Back to top</a>
     </div>
+    {% endif %}
+
+    
 
     <script src="/static/js/main.bundle.js" type='text/javascript'></script>
     
