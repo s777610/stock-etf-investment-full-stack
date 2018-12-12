@@ -12,21 +12,23 @@
 
 
 <body class="body-home">
-  <a href="{{ url_for('home') }}">
-      <img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png" alt="Logo">
-  </a>
 
+  <div class="header unset_background_color">
+    <div class="header__logo">
+      <a href="{{ url_for('home') }}">
+        <img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png" alt="Logo">
+      </a>
+    </div>
 
-
-  <div class="search">
-    <p>Looking for chart?</p>
-    <form action="{{url_for('search')}}" method='POST'>
-      <input class="search__form search__form_input" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
-      <button class="search__form search__form_btn" type="submit"> Search </button>
-    </form>
+    <div class="header__search">
+      <p>Looking for chart?</p>
+      <form action="{{url_for('search')}}" method='POST'>
+        <input class="search__form search__form_input" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
+        <button class="search__form search__form_btn" type="submit"> Search </button>
+      </form>
+    </div>
   </div>
-
-  <div class="clear-float"></div>
+  
 
   <ul class="menu">
     <li class="fa fa-home"><a href="{{ url_for('home') }}"> HOME</a></li>
@@ -36,25 +38,22 @@
     <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> STOCK</a></li>
     <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> RESUME</a></li>
   </ul>
-  <div class="clear-float"></div>
+
+
 
   <section class="welcome" id="welcome">
-    <div class="welcome__text-box">
+    <div class="welcome__text">
         <h1 class="animation-left"><span class="heading-main" >Wilson's investing blog!</span></h1>
         <p class="animation-right">I am a software developer and a stock investor.</p>
         <p class="animation-left">I list most of stocks and ETFs I am holding on this site.</p>
         <p class="animation-right margin-bottom-home">Feel free to explore my site!</p>
-        <a class="btn btn--blue btn-pulsate" href="{{ url_for('about') }}"> Explore</a>
-        <a class="btn btn--green" href="#popup">Contact Me</a>
+    </div>
+    <div class="welcome__btn">
+      <a class="btn btn--blue btn-pulsate" href="{{ url_for('about') }}"> Explore</a>
+      <a class="btn btn--green" href="#popup">Contact Me</a>
     </div>
   </section>
 
-
-
-  
-
-
-  <div class="clear-float"></div>
 
   <footer class="footer footer-home">
     <ul class="social">
@@ -65,10 +64,6 @@
     </ul>
     <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
   </footer>
-
-
-  
-
 
 
 
@@ -102,6 +97,8 @@
     </div>
     </div>
   </div>
+
+
 
 </body>
 

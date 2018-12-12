@@ -13,23 +13,24 @@
 
 <body>
 
-    <header>
-        <a href="{{ url_for('home') }}">
-            <img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png" alt="Test Image">
-        </a>
+
+    <div class="header">
+        <div class="header__logo">
+            <a href="{{ url_for('home') }}">
+                <img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png" alt="Logo">
+            </a>
+        </div>
             
-        <div class="search">
+        <div class="header__search">
             <p>Looking for chart?</p>
             <form action="{{url_for('search')}}" method='POST'>
                 <input class="search__form search__form_input" type="text" placeholder="Enter symbol/ticker" name="ticker" required>
                 <button class="search__form search__form_btn" type="submit"> Search </button>
             </form>
         </div>
+    </div>
 
-        <div class="clear-float"></div>
-        <br>
-        <br>
-        <ul class="menu">
+        <ul class="menu menu-layout">
             <li class="fa fa-home"><a href="{{ url_for('home') }}"> HOME</a></li>
             <li class="fa fa-address-book"><a href="{{ url_for('about') }}"> ABOUT</a></li>
             <li class="fa fa-code"><a href="{{ url_for('project') }}"> PROJECT</a></li>
@@ -37,7 +38,7 @@
             <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> STOCK</a></li>
             <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> RESUME</a></li>
         </ul>
-    </header>
+
 
 
     

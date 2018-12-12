@@ -146,7 +146,7 @@ div.container {
 
 .heading-main {
   display: block;
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 2.5rem;
   letter-spacing: .2rem; }
   @media (max-width: 37.5em) {
@@ -224,6 +224,9 @@ div.barrier {
   @media (max-width: 37.5em) {
     div.barrier {
       display: none; } }
+
+.unset_background_color {
+  background: unset !important; }
 
 .clear-float {
   clear: both; }
@@ -473,6 +476,12 @@ img.picture {
       background-color: #fff;
       border: 1px solid #eee;
       color: #000; }
+      @media (max-width: 56.25em) {
+        .search__form_input {
+          width: 13rem; } }
+      @media (max-width: 37.5em) {
+        .search__form_input {
+          width: 12rem; } }
     .search__form_btn {
       background-color: #7ed56f;
       border: 1px solid #28b485;
@@ -482,7 +491,7 @@ img.picture {
       .search__form_btn:hover {
         transform: translateY(-0.3rem) scale(1.1);
         /*move up*/
-        box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.5); }
+        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4); }
 
 .footer {
   padding: 2rem 0;
@@ -563,52 +572,51 @@ img.picture {
       .row .col-3-of-4 {
         width: auto; } }
 
-header {
-  text-align: center;
-  /*background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg");*/
-  background: url("../image/home-image.jpg");
-  background-size: cover;
-  color: #fff; }
-
-img.logo {
-  float: left;
-  margin-top: 0;
-  margin-left: 0;
-  width: 30rem;
-  height: 15rem; }
-  @media (max-width: 37.5em) {
-    img.logo {
-      width: 15rem;
-      height: 7.5rem; } }
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(#0b6071, #157410); }
+  .header__logo {
+    width: 30rem; }
+    @media (max-width: 37.5em) {
+      .header__logo {
+        width: 15rem; } }
+    .header__logo a img {
+      width: 100%; }
+  .header__search {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 1rem; }
+    .header__search p {
+      margin: 1rem;
+      text-align: center; }
 
 .menu {
-  padding: 1.3rem;
+  display: flex;
   background: rgba(0, 0, 0, 0.4);
-  margin-top: .8rem;
-  margin-bottom: .3rem;
   color: #fff;
-  text-align: center;
-  transition: all .2s; }
-  @media (max-width: 37.5em) {
-    .menu {
-      padding: .3rem; } }
+  justify-content: center;
+  flex-flow: row wrap; }
   .menu li {
-    display: inline;
-    padding: 0 1rem 0 1rem;
-    font-size: 2.4rem;
+    padding: 1rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
     transition: all .2s; }
-    .menu li:hover {
-      text-decoration: underline;
-      text-shadow: 0 0 0.3rem #fff, 0 0 1rem #fff, 0 0 1.5rem #fff, 0 0 3rem #fff; }
     @media (max-width: 37.5em) {
       .menu li {
-        display: inline-block;
-        padding: 0 1rem 0 1rem;
-        margin-bottom: 0.5rem; } }
+        padding: 1rem 1rem;
+        font-size: 2rem; } }
+    .menu li:hover {
+      text-shadow: 0 0 0.3rem #fff, 0 0 1rem #fff, 0 0 1.5rem #fff, 0 0 3rem #fff;
+      background-color: #113a42; }
+    .menu li a {
+      color: white;
+      text-decoration: none; }
 
-.menu li a {
-  color: #fff;
-  text-decoration: none; }
+.menu-layout {
+  border-bottom: #0b6071 2px solid;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.65); }
 
 .section-card {
   padding: 14rem 0;
@@ -732,31 +740,29 @@ img.logo {
   background-size: cover; }
 
 .welcome {
-  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
   color: #fff;
   font-size: 2rem;
-  position: relative;
-  margin-top: 22vh;
-  font-weight: 400; }
+  text-align: center;
+  margin: 8rem auto; }
   @media (max-width: 37.5em) {
     .welcome {
-      font-size: 1.5rem;
-      margin-top: 19vh; } }
-  .welcome__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    letter-spacing: .1rem;
-    font-size: 2.3rem;
-    font-family: "Josefin Sans", sans-serif;
-    font-style: italic; }
+      margin: 3rem auto; } }
+  .welcome__text {
+    line-height: 4rem; }
     @media (max-width: 37.5em) {
-      .welcome__text-box {
-        transform: translate(-50%, -30%);
-        width: 35rem;
-        font-size: 2rem; } }
+      .welcome__text {
+        line-height: 3rem; } }
+    .welcome__text p {
+      font-size: 3rem; }
+      @media (max-width: 37.5em) {
+        .welcome__text p {
+          font-size: 2.5rem; } }
+  .welcome__btn {
+    display: flex;
+    justify-content: center; }
+    .welcome__btn a {
+      margin: 0 2rem; }
 
 .alert {
   text-align: center;

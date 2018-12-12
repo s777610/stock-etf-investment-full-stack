@@ -24,6 +24,13 @@
         background-color: $color-white;
         border: 1px solid $color-grey-light-2;
         color: $color-black;
+
+        @include respond(tab-port) {
+          width: 13rem;
+        }
+        @include respond(phone) {
+          width: 12rem;
+        }
       }
 
       &_btn {
@@ -35,7 +42,7 @@
 
         &:hover {
           transform: translateY(-.3rem) scale(1.1); /*move up*/ 
-          box-shadow: 0 2rem 2rem rgba($color-black,0.5);
+          box-shadow: 0 1rem 1rem rgba($color-black,0.4);
         }
       }
     }

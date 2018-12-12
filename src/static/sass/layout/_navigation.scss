@@ -1,36 +1,35 @@
+
 .menu {
-    padding: 1.3rem;
-    background: rgba($color-black, .4);
-    margin-top: .8rem;
-    margin-bottom: .3rem;
-    color: $color-white;
-    text-align: center;
+  display: flex;
+  background: rgba($color-black, .4);
+  color: $color-white;
+  justify-content: center;
+  flex-flow: row wrap;
+  li {
+    padding: 1rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
     transition: all .2s;
 
     @include respond(phone) {
-      padding: .3rem;
+      padding: 1rem 1rem;
+      font-size: 2rem; 
     }
 
-    & li {
-      display: inline;
-      padding: 0 1rem 0 1rem;
-      font-size: 2.4rem;
-      transition: all .2s;
-      &:hover {
-        text-decoration: underline;
-        text-shadow: 0 0 .3rem $color-white, 0 0 1rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
-      }
+    &:hover {
+      text-shadow: 0 0 .3rem $color-white, 0 0 1rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
+      background-color: $color-main-dark;
+    }
 
-      @include respond(phone) {
-        display: inline-block;
-        padding: 0 1rem 0 1rem;
-        margin-bottom: 0.5rem;
-      }
+    a {
+      color: white;
+      text-decoration: none;
     }
   }
-  
-  
-  .menu li a {
-    color: $color-white;
-    text-decoration: none;
-  }
+}
+
+.menu-layout {
+  border-bottom: $color-main 2px solid;
+  background: rgba($color-black, .6);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.65);
+}

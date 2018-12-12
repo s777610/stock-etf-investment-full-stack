@@ -1,26 +1,24 @@
-header {
-  text-align: center;
-  /*background: url("https://user-images.githubusercontent.com/35472776/44134963-dbe22ad0-a01b-11e8-9335-8d2d6ab520f1.jpg");*/
-  background: url("../image/home-image.jpg");
-  background-size: cover;
-  color: $color-white;
-}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient($color-main, #157410);
 
-img.logo {
-  float: left;
-  margin-top: 0;
-  margin-left: 0;
-  width: 30rem;
-  height: 15rem;
-
-  @include respond(phone) {
-    width: 15rem;
-    height: 7.5rem;
+  &__logo {
+    width: 30rem;
+    @include respond(phone) {
+      width: 15rem;
+    }
+    a img {
+      width: 100%;
+    }
   }
-
-
+  &__search {
+    color: $color-white;
+    font-size: 2rem;
+    margin: 0 1rem;
+    p {
+      margin: 1rem;
+      text-align: center;
+    }
+  }
 }
-
-
-
-
