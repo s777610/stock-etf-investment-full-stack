@@ -5,20 +5,22 @@ from flask_sqlalchemy import SQLAlchemy
 
 from models.plot import Plot
 from common.name_scraper import scraper
-from config import Config
+
 
 
 application = Flask(__name__)
-application.config.from_object(Config)
-# application.config['SECRET_KEY'] = 'mysecretkey'
-# application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-# application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+application.config['SECRET_KEY'] = 'mysecretkey'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.url_map.strict_slashes = False
-# application.config['MAIL_SERVER']='smtp.gmail.com'
-# application.config['MAIL_PORT'] = 587
+application.config['MAIL_SERVER']='smtp.gmail.com'
+application.config['MAIL_PORT'] = 587
+application.config['MAIL_USE_TLS'] = True
+# application.config['MAIL_PORT'] = 465
+# application.config['MAIL_USE_SSL'] = True
 application.config['MAIL_USERNAME'] = os.environ['EMAIL_USERNAME']
 application.config['MAIL_PASSWORD'] = os.environ['EMAIL_PASSWORD']
-# application.config['MAIL_USE_TLS'] = True
+
 db = SQLAlchemy(application)
 mail = Mail(application)
 
