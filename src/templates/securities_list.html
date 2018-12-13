@@ -56,7 +56,8 @@
                         <td style="color: green">{{ security.today_status}}</td>
                         {% else %}
                         <td style="color: red">{{ security.today_status}}</td>
-
+                        {% endif %}
+                        
                         {% if security.cum_return > 0 %}
                         <td style="color: green">{{ security.cum_return}}</td>
                         {% else %}

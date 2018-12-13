@@ -493,6 +493,16 @@ img.picture {
         /*move up*/
         box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4); }
 
+.error {
+  height: 90vh;
+  margin: 10rem auto;
+  text-align: center;
+  font-size: 2rem; }
+  .error h1 {
+    color: #f53a43; }
+  .error a {
+    font-size: 4rem; }
+
 .footer {
   padding: 2rem 0;
   position: relative;

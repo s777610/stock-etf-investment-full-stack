@@ -223,22 +223,22 @@
 <div class="popup" id="popup">
     <div class="popup__content">
   <div class="popup__form">
-    <form class="contact" action="https://formspree.io/s777610@gmail.com" method="POST">
+    <form class="contact" action="{{url_for('send_email')}}" method="POST">
       <h2 class="heading-green-dark">Contact Me</h2>
       <a href="#welcome" class="popup__close">&times;</a>
   
         <div class="contact__group">
           <label class="contact__label" for="sender_email">Email address</label>
-          <input class="contact__input" type="email"  id="sender_email" placeholder="example@gmail.com" name="_replyto" required>
+          <input class="contact__input" type="email"  id="sender_email" placeholder="example@gmail.com" name="sender_email" required>
         </div>
   
         <div class="contact__group">
-          <label class="contact__label" for="sender_email">Subject</label>
-          <input class="contact__input" type="text"  name="_subject" required>
+          <label class="contact__label" for="sender_subject">Subject</label>
+          <input class="contact__input" type="text"  name="sender_subject" required>
         </div>
   
         <div class="contact__group">
-          <label class="contact__label" for="textarea">Content</label>
+          <label class="contact__label" for="message">Content</label>
           <textarea class="contact__input"  id="textarea" rows="3" name="message" required></textarea>
         </div>
   
@@ -249,7 +249,7 @@
     </form>
   </div>
   </div>
-</div>
+  </div>
 
 
 <div class="backtotop">
