@@ -16,8 +16,8 @@ application.config.from_object(Config)
 application.url_map.strict_slashes = False
 # application.config['MAIL_SERVER']='smtp.gmail.com'
 # application.config['MAIL_PORT'] = 587
-# application.config['MAIL_USERNAME'] = '2018singcolor@gmail.com'
-# application.config['MAIL_PASSWORD'] = 'singcolor2018'
+application.config['MAIL_USERNAME'] = os.environ['EMAIL_USERNAME']
+application.config['MAIL_PASSWORD'] = os.environ['EMAIL_PASSWORD']
 # application.config['MAIL_USE_TLS'] = True
 db = SQLAlchemy(application)
 mail = Mail(application)
