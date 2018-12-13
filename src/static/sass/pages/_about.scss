@@ -32,7 +32,7 @@
     text-align: center;
     font-size: 3rem;
 
-    @include respond(phone) {
+    @include respond(tab-port) {
         display: none;
     }
 
@@ -43,7 +43,7 @@
 }
 
 .map-item {
-    @include respond(phone) {
+    @include respond(tab-port) {
         display: none;
     }
 }

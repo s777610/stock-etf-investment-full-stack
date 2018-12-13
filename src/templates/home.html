@@ -30,14 +30,21 @@
   </div>
   
 
-  <ul class="menu">
-    <li class="fa fa-home"><a href="{{ url_for('home') }}"> HOME</a></li>
-    <li class="fa fa-address-book"><a href="{{ url_for('about') }}"> ABOUT</a></li>
-    <li class="fa fa-code"><a href="{{ url_for('project') }}"> PROJECT</a></li>
-    <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='etf') }}"> ETF</a></li>
-    <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> STOCK</a></li>
-    <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> RESUME</a></li>
-  </ul>
+  <div class="menu">
+      <span class="menu__toggle" id="js-navbar-toggle">
+          <i class="fa fa-navicon"></i>
+      </span>
+      <div class="menu__navbar" id="js-menu">
+          <ul class="menu__navbar__flex-box">
+              <li class="fa fa-home"><a href="{{ url_for('home') }}"> HOME</a></li>
+              <li class="fa fa-address-book"><a href="{{ url_for('about') }}"> ABOUT</a></li>
+              <li class="fa fa-code"><a href="{{ url_for('project') }}"> PROJECT</a></li>
+              <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='etf') }}"> ETF</a></li>
+              <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> STOCK</a></li>
+              <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> RESUME</a></li>
+          </ul>
+      </div>
+  </div>
 
 
 
@@ -97,6 +104,15 @@
     </div>
     </div>
   </div>
+
+  <script>
+      let mainNav = document.getElementById('js-menu');
+      let navBarToggle = document.getElementById('js-navbar-toggle');
+
+      navBarToggle.addEventListener('click', function () {
+          mainNav.classList.toggle('active');
+      });
+  </script>
 
 
 

@@ -7,7 +7,8 @@
     background-color: rgba($color-black, .7);
     z-index: 9999;
     opacity: 0;
-    visibility: hidden;
+    //visibility: hidden;
+    display: none;
     transition: all .5s;
 
     
@@ -47,7 +48,8 @@
     // click #popup, popup wll be a target
     &:target {
         opacity: 1;
-        visibility: visible;
+        //visibility: visible;
+        display: unset;
         
     }
 
