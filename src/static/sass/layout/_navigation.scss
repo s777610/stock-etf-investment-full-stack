@@ -42,8 +42,9 @@
         transition: all .2s;
   
         &:hover {
-          text-shadow: 0 0 .3rem $color-white, 0 0 1rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
+          text-shadow: 0 0 1rem $color-white, 0 0 1.5rem $color-white;
           background-color: $color-main-dark;
+          box-shadow: 0 0 .3rem $color-white, 0 0 1rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
         }
   
         a {
@@ -64,8 +65,8 @@
 
 
 .menu-layout {
-  border-bottom: $color-main 2px solid;
-  background: rgba($color-black, .6);
+  border-bottom: $color-grey-darkest 2px solid;
+  background: linear-gradient(#94948ff3, #333331b5);
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.65);
 }
 
