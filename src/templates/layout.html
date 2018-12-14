@@ -24,7 +24,7 @@
         <div class="header__search">
             <p>Looking for chart?</p>
             <form action="{{url_for('search')}}" method='POST'>
-                <input class="search__form search__form_input" type="text" placeholder="Enter symbol/ticker" name="ticker" required autocomplete="off">
+                <input class="search__form search__form_input" type="text" placeholder="symbol/ticker" name="ticker" required autocomplete="off">
                 <button class="search__form search__form_btn" type="submit"> Search </button>
             </form>
         </div>
@@ -61,8 +61,8 @@
     </footer>
 
     <script>
-        let mainNav = document.getElementById('js-menu');
-        let navBarToggle = document.getElementById('js-navbar-toggle');
+        var mainNav = document.getElementById('js-menu');
+        var navBarToggle = document.getElementById('js-navbar-toggle');
 
         navBarToggle.addEventListener('click', function () {
             mainNav.classList.toggle('active');

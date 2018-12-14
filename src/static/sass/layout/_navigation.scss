@@ -21,14 +21,21 @@
 
 
   &__navbar {
+    
 
     @include respond(tab-port) {
-      display: none;
+      //display: none;
+
+      //test
+      //transition: max-height .4s;
+      overflow: hidden;
+      max-height: 0;
     }
 
     &__flex-box {
       display: flex;
       justify-content: center;
+      
 
       @include respond(tab-port) {
         flex-direction: column;
@@ -59,7 +66,9 @@
 }
 
 .active {
-  display: block;
+  //display: block;
+  
+  max-height: 100%;
 }
 
 
