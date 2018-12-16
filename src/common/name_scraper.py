@@ -13,3 +13,5 @@ def scraper(ticker):
         return security_name
     except:
         return ' '
+
+

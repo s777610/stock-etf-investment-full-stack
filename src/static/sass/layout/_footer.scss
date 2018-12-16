@@ -10,14 +10,13 @@
   text-align: center;
   z-index: 1;
   font-size: 1.7rem;
-  border-top: .2rem solid $color-black;
-  
+  border-top: 0.2rem solid $color-black;
 
   &-home {
     position: fixed;
 
     @include respond(phone) {
-      padding: .5rem 0;
+      padding: 0.5rem 0;
       font-size: 1.5rem;
     }
   }
@@ -30,22 +29,13 @@
       & a i {
         color: $color-white;
         padding: 0 1rem;
-        transition: all .2s;
+        transition: all 0.2s;
 
         &:hover {
-          text-shadow: 0 0 .3rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
+          text-shadow: 0 0 0.3rem $color-white, 0 0 1.5rem $color-white,
+            0 0 3rem $color-white;
         }
-      }  
+      }
     }
-  } 
+  }
 }
-
-
-
-
-
-
-
-
-
-

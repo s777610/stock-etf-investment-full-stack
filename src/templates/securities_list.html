@@ -1,75 +1,87 @@
-{%extends "layout.html"%}
-{%block content%}
+{%extends "layout.html"%} {%block content%}
 
 <section class="section-def">
-    <div class="def">
-        <div class="def__text">
-            {% if type == 'stock' %}
-            <h3 class="heading-tertiary u-margin-bottom-small">Definition of 'Stock'</h3>
-            <p>A stock (also known as "shares" and "equity) is a type of security that signifies ownership in a corporation
-                and represents a claim on part of the corporation's assets and earnings. There are two main types of stock:
-                common and preferred. I keep roughly 10% of my portfolio in the individual stock.</p>
+  <div class="def">
+    <div class="def__text">
+      {% if type == 'stock' %}
+      <h3 class="heading-tertiary u-margin-bottom-small">
+        Definition of 'Stock'
+      </h3>
+      <p>
+        A stock (also known as "shares" and "equity) is a type of security that
+        signifies ownership in a corporation and represents a claim on part of
+        the corporation's assets and earnings. There are two main types of
+        stock: common and preferred. I keep roughly 10% of my portfolio in the
+        individual stock.
+      </p>
+      {% else %}
+      <h3 class="heading-tertiary u-margin-bottom-small">
+        Definition of 'ETF'
+      </h3>
+      <p>
+        ETF stand for exchange-traded fund. ETF is a marketable security that
+        tracks an index, a commodity, bonds, or a basket of assets like an index
+        fund. Unlike mutual funds, an ETF trades like a common stock on a stock
+        exchange. ETFs experience price changes throughout the day as they are
+        bought and sold. ETFs typically have higher daily liquidity and lower
+        fees than mutual fund shares, making them an attractive alternative for
+        individual investors.
+      </p>
+      {% endif %}
+    </div>
+  </div>
+
+  <h1 class="margin-top-top">
+    {% if type == 'stock' %}
+    <span class="heading-main__white">My Stock Investment</span> {% else %}
+    <span class="heading-main__white">My ETF Investment</span> {% endif %}
+  </h1>
+
+  <div class="list">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Chart</th>
+            <th>Name</th>
+            <th>Open</th>
+            <th>Close</th>
+            <th>Status</th>
+            <th>P/L %</th>
+            <th>Last Updated</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for security in securitys %}
+          <tr>
+            <td>{{ security.ticker }}</td>
+            <td>
+              <a
+                href="{{ url_for('plot_security', name=security.name, ticker=security.ticker, daily_return=security.daily_return, cum_return=security.cum_return) }}"
+                >Click here</a
+              >
+            </td>
+            <td>{{ security.name }}</td>
+            <td>{{ security.open }}</td>
+            <td>{{ security.close }}</td>
+            {% if security.today_status == 'Increase' %}
+            <td style="color: green">{{ security.today_status }}</td>
             {% else %}
-            <h3 class="heading-tertiary u-margin-bottom-small">Definition of 'ETF'</h3>
-            <p>ETF stand for exchange-traded fund. ETF is a marketable security that tracks an index, a commodity, bonds, or a basket of assets like an index
-                fund. Unlike mutual funds, an ETF trades like a common stock on a stock exchange. ETFs experience price changes
-                throughout the day as they are bought and sold. ETFs typically have higher daily liquidity and lower fees than
-                mutual fund shares, making them an attractive alternative for individual investors.</p>
+            <td style="color: red">{{ security.today_status }}</td>
+            {% endif %} {% if security.cum_return > 0 %}
+            <td style="color: green">{{ security.cum_return }}</td>
+            {% else %}
+            <td style="color: red">{{ security.cum_return }}</td>
             {% endif %}
-        </div>
+
+            <td>{{ security.last_updated }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-
-    <h1 class="margin-top-top">
-        {% if type == 'stock' %}
-            <span class="heading-main__white">My Stock Investment</span>
-        {% else %}
-            <span class="heading-main__white">My ETF Investment</span>
-        {% endif %}
-    </h1>
-
-    <div class="list">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Ticker</th>
-                        <th>Chart</th>
-                        <th>Name</th>
-                        <th>Open</th>
-                        <th>Close</th>
-                        <th>Status</th>
-                        <th>P/L %</th>
-                        <th>Last Updated</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                {% for security in securitys %}
-                    <tr>
-                        <td>{{ security.ticker}}</td>
-                        <td><a href="{{ url_for('plot_security', name=security.name, ticker=security.ticker, daily_return=security.daily_return, cum_return=security.cum_return) }}">Click
-                            here</a></td>
-                        <td>{{ security.name}}</td>
-                        <td>{{ security.open}}</td>
-                        <td>{{ security.close}}</td>
-                        {% if security.today_status == 'Increase' %}
-                        <td style="color: green">{{ security.today_status}}</td>
-                        {% else %}
-                        <td style="color: red">{{ security.today_status}}</td>
-                        {% endif %}
-                        
-                        {% if security.cum_return > 0 %}
-                        <td style="color: green">{{ security.cum_return}}</td>
-                        {% else %}
-                        <td style="color: red">{{ security.cum_return}}</td>
-                        {% endif %}
-
-                        <td>{{ security.last_updated }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
+  </div>
 </section>
 {%endblock%}

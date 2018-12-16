@@ -6,7 +6,7 @@
     text-decoration: none;
     padding: 1rem 1rem;
     display: inline-block;
-    border-radius: .7rem;
+    border-radius: 0.7rem;
     transition: all 0.2s;
     margin: 1rem 1rem;
   }
@@ -14,7 +14,7 @@
   &-pulsate {
     animation: pulsate 1s infinite;
   }
-  
+
   &--green {
     background-color: $color-green-light;
     color: $color-white;
@@ -38,10 +38,10 @@
       background-color: $color-white;
     }
   }
-  
+
   &:hover {
-    transform: translateY(-.3rem); /*move up*/ 
-    box-shadow: 0 1.5rem 1.5rem rgba($color-black,0.5);
+    transform: translateY(-0.3rem); /*move up*/
+    box-shadow: 0 1.5rem 1.5rem rgba($color-black, 0.5);
     cursor: pointer;
   }
 
@@ -49,9 +49,6 @@
   &:focus {
     outline: none;
     transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba($color-black,0.3);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.3);
   }
-
 }
-
-

@@ -1,115 +1,177 @@
-{%extends "layout.html"%}
-{%block content%}
+{%extends "layout.html"%} {%block content%}
 
 <div class="content-guide">
-  <img class="picture" src="https://user-images.githubusercontent.com/35472776/42259943-5b241fea-7f17-11e8-861c-412becf1d44b.jpg">
+  <img
+    class="picture"
+    src="https://user-images.githubusercontent.com/35472776/42259943-5b241fea-7f17-11e8-861c-412becf1d44b.jpg"
+  />
   <a class="content-guide-item" href="#about_me">About Me</a>
   <a class="content-guide-item" href="#invest">Investment</a>
   <a class="content-guide-item map-item" href="#gdp_div">GDP Map</a>
   <a class="content-guide-item" href="#popup">Contact Me</a>
 </div>
 
-
-
-
-  <section class="section-card">
-        <div class="row">
-            <div class="terminal">
-              <div class="terminal__bar">
-                  <div class="terminal__bar__btn terminal__bar__btn-close"></div>
-                  <div class="terminal__bar__btn terminal__bar__btn-minimize"></div>
-                  <div class="terminal__bar__btn terminal__bar__btn-zoom"></div>
-              </div>
-              <div class="terminal__screen" id="about_me">
-                <div class="terminal__screen--text">
-                  <p class="terminal__screen--text-title">$ About Me</p>
-                  <p class="terminal__screen--text-context">Currently, I am a graduate student of IT department at California Lutheran University. I have experience of web development, SQL database, NoSQL database, data analysis, and data visualization. I usually spend most of my spare time for taking the online course to improve my coding skills. On the other hand, I am crazy about stock markets. Normally, I read financial books and do research on stock/ETF investments every single day. I have been investing in Taiwan stock market for a while. However, I decided to allocate my asset widely by investing in low-cost ETFs a few years ago. Therefore, I consistently invest in ETFs launched by Vanguard Group. Feel free to take a look at my investments.</p>
-                  <p class="terminal__screen--text-cursor1">><span class="terminal__screen--text-cursor2">_</span></p>
-                </div>
-              </div>
-            </div>
+<section class="section-card">
+  <div class="row">
+    <div class="terminal">
+      <div class="terminal__bar">
+        <div class="terminal__bar__btn terminal__bar__btn-close"></div>
+        <div class="terminal__bar__btn terminal__bar__btn-minimize"></div>
+        <div class="terminal__bar__btn terminal__bar__btn-zoom"></div>
+      </div>
+      <div class="terminal__screen" id="about_me">
+        <div class="terminal__screen--text">
+          <p class="terminal__screen--text-title">$ About Me</p>
+          <p class="terminal__screen--text-context">
+            Currently, I am a graduate student of IT department at California
+            Lutheran University. I have experience of web development, SQL
+            database, NoSQL database, data analysis, and data visualization. I
+            usually spend most of my spare time for taking the online course to
+            improve my coding skills. On the other hand, I am crazy about stock
+            markets. Normally, I read financial books and do research on
+            stock/ETF investments every single day. I have been investing in
+            Taiwan stock market for a while. However, I decided to allocate my
+            asset widely by investing in low-cost ETFs a few years ago.
+            Therefore, I consistently invest in ETFs launched by Vanguard Group.
+            Feel free to take a look at my investments.
+          </p>
+          <p class="terminal__screen--text-cursor1">
+            ><span class="terminal__screen--text-cursor2">_</span>
+          </p>
         </div>
-    
-          <div class="row">
-                <div class="col-3-of-4">
-                  <div class="card-box">
-                      <h3 class="heading-tertiary u-margin-bottom-small" id="invest">&ldquo;My Conception of Stock Investment&rdquo;</h3>
-                      <p class="card-box__text">
-                          Basically, I am an index investor. Index investing is a strategy which is designed to match a market instead of beating it. I believe that after costs and taxes, index investors are able to beat average active investors in a market. Therefore, the majority of my investments are ETFs launched by Vanguard Group. I think that Vanguard Group provides high-quality, low-cost ETFs. Typically, I investing in ETFs is more interested in a diversified portfolio and want to keep my investment for a long period of time. However, I keep roughly 10% of my portfolio in the individual stock, which I am familiar with.
-                      </p>
-                  </div>
-                </div>
-              </div>
-          <div class="row">
-                <div class="col-2-of-3">
-              <div class="card-box">
-                  <h3 class="heading-tertiary u-margin-bottom-small">&ldquo;Cost of Investment&rdquo;</h3>
-                  <p class="card-box__text">
-                      I think that costs can effects investment returns significantly even though the costs seem low. Investors cannot ignore the power of compounding of costs along with investment returns. In addition, no matter investors' assets increase or decrease, they must pay an annual fee. In other words, investors not only lose the annual fee they pay but also lose growing money might have had for years into the future. In short, investors should not ignore costs because the costs of investment are extremely harmful to investments.
-                  </p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-              <div class="card-box">
-                  <h3 class="heading-tertiary u-margin-bottom-small">&ldquo;Asset allocation&rdquo;</h3>
-                  <p class="card-box__text">
-                      The purpose of the implement of asset allocation is to balance risk versus reward by adjusting the percentage of each asset in the portfolio. In my opinion, there is no "perfect" asset allocation for everyone. It depends on what your goal is and what kind of asset you familiar with. In short, you have to start with the big picture instead of details. For me, I am allocating my assets by continent. If your screen is width enough, there is an interactive-app for world GDP below, feel free to play around with it. We can see United States have highest GDP. There is why I allocate most of my asset within United States.
-                  </p>
-              </div>
-          </div>
-  </section>
+      </div>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-3-of-4">
+      <div class="card-box">
+        <h3 class="heading-tertiary u-margin-bottom-small" id="invest">
+          &ldquo;My Conception of Stock Investment&rdquo;
+        </h3>
+        <p class="card-box__text">
+          Basically, I am an index investor. Index investing is a strategy which
+          is designed to match a market instead of beating it. I believe that
+          after costs and taxes, index investors are able to beat average active
+          investors in a market. Therefore, the majority of my investments are
+          ETFs launched by Vanguard Group. I think that Vanguard Group provides
+          high-quality, low-cost ETFs. Typically, I investing in ETFs is more
+          interested in a diversified portfolio and want to keep my investment
+          for a long period of time. However, I keep roughly 10% of my portfolio
+          in the individual stock, which I am familiar with.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2-of-3">
+      <div class="card-box">
+        <h3 class="heading-tertiary u-margin-bottom-small">
+          &ldquo;Cost of Investment&rdquo;
+        </h3>
+        <p class="card-box__text">
+          I think that costs can effects investment returns significantly even
+          though the costs seem low. Investors cannot ignore the power of
+          compounding of costs along with investment returns. In addition, no
+          matter investors' assets increase or decrease, they must pay an annual
+          fee. In other words, investors not only lose the annual fee they pay
+          but also lose growing money might have had for years into the future.
+          In short, investors should not ignore costs because the costs of
+          investment are extremely harmful to investments.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card-box">
+      <h3 class="heading-tertiary u-margin-bottom-small">
+        &ldquo;Asset allocation&rdquo;
+      </h3>
+      <p class="card-box__text">
+        The purpose of the implement of asset allocation is to balance risk
+        versus reward by adjusting the percentage of each asset in the
+        portfolio. In my opinion, there is no "perfect" asset allocation for
+        everyone. It depends on what your goal is and what kind of asset you
+        familiar with. In short, you have to start with the big picture instead
+        of details. For me, I am allocating my assets by continent. If your
+        screen is width enough, there is an interactive-app for world GDP below,
+        feel free to play around with it. We can see United States have highest
+        GDP. There is why I allocate most of my asset within United States.
+      </p>
+    </div>
+  </div>
+</section>
 
 <div class="clear-float"></div>
 
-
 <section class="section-map" id="gdp_div">
-  <h2 class="move-heading">Here is an interactive map for world GDP<br>(Gross Domestic Product).</h2>
-  <iframe class="map" frameborder="0" src="https://s777610.github.io/2017_world_GDP_map/">
+  <h2 class="move-heading">
+    Here is an interactive map for world GDP<br />(Gross Domestic Product).
+  </h2>
+  <iframe
+    class="map"
+    frameborder="0"
+    src="https://s777610.github.io/2017_world_GDP_map/"
+  >
     <p>Your browser does not support iframes.</p>
   </iframe>
 </section>
 
-
-
-
 <div class="backtotop">
-    <a href="#top" class="btn btn--backtop">Back to top</a>
+  <a href="#top" class="btn btn--backtop">Back to top</a>
 </div>
 
-
-
 <div class="popup" id="popup">
-    <div class="popup__content">
-  <div class="popup__form">
-    <form class="contact" action="{{url_for('send_email')}}" method="POST">
-      <h2 class="heading-green-dark">Contact Me</h2>
-      <a href="#welcome" class="popup__close">&times;</a>
-  
+  <div class="popup__content">
+    <div class="popup__form">
+      <form class="contact" action="{{url_for('send_email')}}" method="POST">
+        <h2 class="heading-green-dark">Contact Me</h2>
+        <a href="#welcome" class="popup__close">&times;</a>
+
         <div class="contact__group">
           <label class="contact__label" for="sender_email">Email address</label>
-          <input class="contact__input" type="email"  id="sender_email" placeholder="example@gmail.com" name="sender_email" required>
+          <input
+            class="contact__input"
+            type="email"
+            id="sender_email"
+            placeholder="example@gmail.com"
+            name="sender_email"
+            required
+          />
         </div>
-  
+
         <div class="contact__group">
           <label class="contact__label" for="sender_subject">Subject</label>
-          <input class="contact__input" type="text"  name="sender_subject" required>
+          <input
+            class="contact__input"
+            type="text"
+            name="sender_subject"
+            required
+          />
         </div>
-  
+
         <div class="contact__group">
           <label class="contact__label" for="message">Content</label>
-          <textarea class="contact__input"  id="textarea" rows="3" name="message" required></textarea>
+          <textarea
+            class="contact__input"
+            id="textarea"
+            rows="3"
+            name="message"
+            required
+          ></textarea>
         </div>
-  
-        <div class="contact__group">
-          <input class="contact__btn contact__btn__send" type="submit" value="Send">
-          <input class="contact__btn contact__btn__reset" type="reset">
-        </div>
-    </form>
-  </div>
-  </div>
-  </div>
 
+        <div class="contact__group">
+          <input
+            class="contact__btn contact__btn__send"
+            type="submit"
+            value="Send"
+          />
+          <input class="contact__btn contact__btn__reset" type="reset" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 {%endblock%}

@@ -1,116 +1,105 @@
-
 .alert {
-  text-align: center; 
-  font-size: 3rem; 
-  margin-bottom: 90rem;    
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 90rem;
   margin-top: 3rem;
   color: $color-alert;
   text-align: center;
 }
 
-
-
 .stockInfo {
-    width: 80%;
-    margin: 0 auto;
-    font-size: 3rem;
-    @include respond(phone) {
-      width: 95%;
-    }
-
-    &__info {
-      padding: 4rem;
-      display: flex;
-      @include respond(phone) {
-        padding: 0;
-        flex-direction: column;
-      }
-      //align-items: center;
-      //justify-content: space-evenly;
-
-      &__box {
-        width: 50%;
-        font-size: 2.5rem;
-        border-right: 0.2rem solid $color-main-light;
-        margin-right: 2rem;
-        padding-right: 2rem;
-        text-align: center;
-        @include respond(phone) {
-          width: auto;
-          border-right: none;
-          margin: auto;
-          padding-right: 0;
-        }
-
-        &__logo {
-          height: 15rem;
-          border-radius: 1rem;
-          border: .2rem solid $color-grey-light-3;
-          box-shadow: 0 1.5rem 4rem rgba($color-black, .25);
-          margin-bottom: 1rem;
-          max-width: 100%;
-
-          @include respond(phone) {
-            margin-right: 1rem;
-            float: left;
-            max-width: 37rem;
-          }
-          
-        }
-
-        &__desc {
-          font-size: 2.15rem;
-          text-align: -webkit-auto;
-        }
-      }
-
-      
-
-      &__text {
-        line-height: 4.5rem;
-        display: flex;
-        flex-direction: column;
-
-        .curGreen {
-          color: $color-green;
-        }
-  
-        .curRed {
-          color: $color-red;
-        }
-
-        &__btn {
-
-          &,
-          &:link,
-          &:visited {
-            margin-top: auto;
-            cursor: pointer;
-            background-color: $color-main;
-            border-radius: .5rem;
-            transition: all 0.2s;
-            padding: .5rem;
-            text-align: center;
-            width: 30%;
-          }
-          
-
-          &:hover {
-            transform: translateY(-.2rem); /*move up*/ 
-            box-shadow: 0 1rem 1rem rgba($color-black,0.3);
-          }
-
-          .company__web__link{
-            text-decoration: none;
-            color: $color-white;
-          }
-        }
-
-      }
-      
-    }
+  width: 80%;
+  margin: 0 auto;
+  font-size: 3rem;
+  @include respond(phone) {
+    width: 95%;
   }
 
+  &__info {
+    padding: 4rem;
+    display: flex;
+    @include respond(phone) {
+      padding: 0;
+      flex-direction: column;
+    }
+    //align-items: center;
+    //justify-content: space-evenly;
+
+    &__box {
+      width: 50%;
+      font-size: 2.5rem;
+      border-right: 0.2rem solid $color-main-light;
+      margin-right: 2rem;
+      padding-right: 2rem;
+      text-align: center;
+      @include respond(phone) {
+        width: auto;
+        border-right: none;
+        margin: auto;
+        padding-right: 0;
+      }
+
+      &__logo {
+        height: 15rem;
+        border-radius: 1rem;
+        border: 0.2rem solid $color-grey-light-3;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.25);
+        margin-bottom: 1rem;
+        max-width: 100%;
+
+        @include respond(phone) {
+          margin-right: 1rem;
+          float: left;
+          max-width: 37rem;
+        }
+      }
+
+      &__desc {
+        font-size: 2.15rem;
+        text-align: -webkit-auto;
+      }
+    }
+
+    &__text {
+      line-height: 4.5rem;
+      display: flex;
+      flex-direction: column;
+
+      .curGreen {
+        color: $color-green;
+      }
+
+      .curRed {
+        color: $color-red;
+      }
+
+      &__btn {
+        &,
+        &:link,
+        &:visited {
+          margin-top: auto;
+          cursor: pointer;
+          background-color: $color-main;
+          border-radius: 0.5rem;
+          transition: all 0.2s;
+          padding: 0.5rem;
+          text-align: center;
+          width: 30%;
+        }
+
+        &:hover {
+          transform: translateY(-0.2rem); /*move up*/
+          box-shadow: 0 1rem 1rem rgba($color-black, 0.3);
+        }
+
+        .company__web__link {
+          text-decoration: none;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
 
 .plot {
   width: 90rem;

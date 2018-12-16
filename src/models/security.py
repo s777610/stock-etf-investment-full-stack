@@ -12,7 +12,10 @@ class Security(db.Model):
     name = db.Column(db.String(100), unique=True, nullable=False)
     ticker = db.Column(db.String(20), unique=True, nullable=False)
     purchase_price = db.Column(db.Float, unique=False, nullable=False)
-    type = db.Column(db.Integer, unique=False, nullable=False)  # ETF 1, Stock 2
+    type = db.Column(db.Integer, unique=False,
+                    nullable=False)  # ETF 1, Stock 2
+
+
 
     # should add type, in order to match database
     def __init__(self, name, ticker, purchase_price):
@@ -27,18 +30,18 @@ class Security(db.Model):
         self.daily_return = self.get_daily_return
         self.cum_return = self.get_cum_return
 
-    
     def json(self):
         return {
             'name': self.name,
             'ticker': self.ticker,
             'purchase_price': self.purchase_price
         }
-    
+
     def get_df(self):
         start = datetime.datetime.now() - datetime.timedelta(days=4)
         end = datetime.datetime.now()
-        df = dataread.DataReader(self.ticker, data_source='iex', start=start, end=end)
+        df = dataread.DataReader(
+            self.ticker, data_source='iex', start=start, end=end)
         return df
 
     @classmethod
@@ -72,4 +75,3 @@ class Security(db.Model):
     @property
     def get_cum_return(self):
         return (((self.df.iloc[-1]['close'] / self.purchase_price) - 1) * 100).round(2)
-

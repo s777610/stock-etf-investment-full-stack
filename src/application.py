@@ -1,4 +1,4 @@
-import os 
+import os
 from flask_mail import Mail
 from flask import Flask, render_template, request, send_file, url_for
 from flask_sqlalchemy import SQLAlchemy
@@ -7,13 +7,12 @@ from models.plot import Plot
 from common.name_scraper import scraper
 
 
-
 application = Flask(__name__)
 application.config['SECRET_KEY'] = 'mysecretkey'
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.url_map.strict_slashes = False
-application.config['MAIL_SERVER']='smtp.gmail.com'
+application.config['MAIL_SERVER'] = 'smtp.gmail.com'
 application.config['MAIL_PORT'] = 587
 application.config['MAIL_USE_TLS'] = True
 # application.config['MAIL_PORT'] = 465
@@ -24,13 +23,16 @@ application.config['MAIL_PASSWORD'] = os.environ['EMAIL_PASSWORD']
 db = SQLAlchemy(application)
 mail = Mail(application)
 
+
 @application.route('/')
 def home():
     return render_template("home.html")
 
+
 @application.route('/about')
 def about():
     return render_template("about.html")
+
 
 @application.route('/project')
 def project():
@@ -43,7 +45,7 @@ def resume():
 
 
 @application.route("/download")
-def download(): 
+def download():
     # send new file to users, and allow user to download it instead of opening it on browser
     return send_file("Hung_Resume.pdf", attachment_filename="Hung_Resume.pdf", as_attachment=True)
 
@@ -58,7 +60,7 @@ def securitieslist(type):
 @application.route("/search", methods=['POST'])
 def search():
     ticker = request.form["ticker"].upper()
-    security_name = scraper(ticker) # 'currect name' or ' '
+    security_name = scraper(ticker)  # 'currect name' or ' '
     try:
         plot = Plot(ticker, security_name)
         return render_template("plot.html", plot=plot)

@@ -3,7 +3,7 @@ img.picture {
   width: 18rem;
   margin-left: auto;
   margin-right: auto;
-  border: .7rem solid $color-main;
+  border: 0.7rem solid $color-main;
   border-radius: 2rem;
 
   @include respond(tab-land) {
@@ -29,13 +29,13 @@ img.picture {
 
   @include respond(tab-land) {
     width: 15rem;
-    
+
     right: 0rem;
   }
 
   @include respond(phone) {
     border: solid $color-main;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     width: 10rem;
     right: 0rem;
   }
@@ -68,18 +68,14 @@ img.picture {
     display: block;
     padding: 1rem 1.5rem;
     background-color: $color-white;
-    border: .1rem solid $color-primary-dark;
-    transition: all .2s;
+    border: 0.1rem solid $color-primary-dark;
+    transition: all 0.2s;
 
     &:focus,
-    &:hover, {
+    &:hover {
       color: $color-main;
       text-decoration: none;
       background-color: $color-white;
     }
   }
 }
-
-
-
-

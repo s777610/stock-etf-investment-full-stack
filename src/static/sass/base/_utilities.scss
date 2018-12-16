@@ -25,7 +25,7 @@
 }
 
 .margin-top-top {
-  margin-top: 8rem;    
+  margin-top: 8rem;
   text-align: center;
   @include respond(phone) {
     margin-top: 4rem;
@@ -47,7 +47,6 @@ div.barrier {
 .unset_background_color {
   background: unset !important;
 }
-
 
 .clear-float {
   clear: both;

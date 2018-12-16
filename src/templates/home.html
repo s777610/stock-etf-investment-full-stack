@@ -1,121 +1,192 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wilson's Investment</title>
+    <link rel="shortcut icon" type="image/png" href="../static/image/w.png" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/main.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wilson's Investment</title>
-  <link rel="shortcut icon" type="image/png" href="../static/image/w.png">
-  <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
-</head>
+  <body class="body-home">
+    <div class="header unset_background_color">
+      <div class="header__logo">
+        <a href="{{ url_for('home') }}">
+          <img
+            class="logo"
+            src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png"
+            alt="Logo"
+          />
+        </a>
+      </div>
 
-
-<body class="body-home">
-
-  <div class="header unset_background_color">
-    <div class="header__logo">
-      <a href="{{ url_for('home') }}">
-        <img class="logo" src="https://user-images.githubusercontent.com/35472776/44683038-eb093480-a9f9-11e8-84ca-4fdfe1499ee8.png" alt="Logo">
-      </a>
+      <div class="header__search">
+        <p>Looking for chart?</p>
+        <form action="{{url_for('search')}}" method="POST">
+          <input
+            class="search__form search__form_input"
+            type="text"
+            placeholder="symbol/ticker"
+            name="ticker"
+            required
+            autocomplete="off"
+          />
+          <button class="search__form search__form_btn" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
     </div>
 
-    <div class="header__search">
-      <p>Looking for chart?</p>
-      <form action="{{url_for('search')}}" method='POST'>
-        <input class="search__form search__form_input" type="text" placeholder="symbol/ticker" name="ticker" required autocomplete="off">
-        <button class="search__form search__form_btn" type="submit"> Search </button>
-      </form>
-    </div>
-  </div>
-  
-
-  <div class="menu">
+    <div class="menu">
       <span class="menu__toggle" id="js-navbar-toggle">
-          <i class="fa fa-navicon"></i>
+        <i class="fa fa-navicon"></i>
       </span>
       <div class="menu__navbar" id="js-menu">
-          <ul class="menu__navbar__flex-box">
-              <li class="fa fa-home"><a href="{{ url_for('home') }}"> HOME</a></li>
-              <li class="fa fa-address-book"><a href="{{ url_for('about') }}"> ABOUT</a></li>
-              <li class="fa fa-code"><a href="{{ url_for('project') }}"> PROJECT</a></li>
-              <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='etf') }}"> ETF</a></li>
-              <li class="fa fa-line-chart"><a href="{{ url_for('securitieslist', type='stock') }}"> STOCK</a></li>
-              <li class="fa fa-file-text-o"><a href="{{ url_for('resume') }}"> RESUME</a></li>
-          </ul>
+        <ul class="menu__navbar__flex-box">
+          <li class="fa fa-home"><a href="{{ url_for('home') }}"> HOME</a></li>
+          <li class="fa fa-address-book">
+            <a href="{{ url_for('about') }}"> ABOUT</a>
+          </li>
+          <li class="fa fa-code">
+            <a href="{{ url_for('project') }}"> PROJECT</a>
+          </li>
+          <li class="fa fa-line-chart">
+            <a href="{{ url_for('securitieslist', type='etf') }}"> ETF</a>
+          </li>
+          <li class="fa fa-line-chart">
+            <a href="{{ url_for('securitieslist', type='stock') }}"> STOCK</a>
+          </li>
+          <li class="fa fa-file-text-o">
+            <a href="{{ url_for('resume') }}"> RESUME</a>
+          </li>
+        </ul>
       </div>
-  </div>
-
-
-
-  <section class="welcome" id="welcome">
-    <div class="welcome__text">
-        <h1 class="animation-left"><span class="heading-main" >Wilson's investing blog!</span></h1>
-        <p class="animation-right">I am a software developer and a stock investor.</p>
-        <p class="animation-left">I list most of stocks and ETFs I am holding on this site.</p>
-        <p class="animation-right margin-bottom-home">Feel free to explore my site!</p>
     </div>
-    <div class="welcome__btn">
-      <a class="btn btn--blue btn-pulsate" href="{{ url_for('about') }}"> Explore</a>
-      <a class="btn btn--green" href="#popup">Contact Me</a>
-    </div>
-  </section>
 
+    <section class="welcome" id="welcome">
+      <div class="welcome__text">
+        <h1 class="animation-left">
+          <span class="heading-main">Wilson's investing blog!</span>
+        </h1>
+        <p class="animation-right">
+          I am a software developer and a stock investor.
+        </p>
+        <p class="animation-left">
+          I list most of stocks and ETFs I am holding on this site.
+        </p>
+        <p class="animation-right margin-bottom-home">
+          Feel free to explore my site!
+        </p>
+      </div>
+      <div class="welcome__btn">
+        <a class="btn btn--blue btn-pulsate" href="{{ url_for('about') }}">
+          Explore</a
+        >
+        <a class="btn btn--green" href="#popup">Contact Me</a>
+      </div>
+    </section>
 
-  <footer class="footer footer-home">
-    <ul class="social">
-      <li> <a href="https://www.facebook.com/profile.php?id=100000339745920" target="_blank"> <i class="fa fa-facebook-square"></i></a></li>
-      <li> <a href="https://github.com/s777610" target="_blank"> <i class="fa fa-github"></i></a></li>
-      <li> <a href="https://www.linkedin.com/in/weichenghung/" target="_blank"> <i class="fa fa-linkedin-square"></i>
-        </a></li>
-    </ul>
-    <p> Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
-  </footer>
+    <footer class="footer footer-home">
+      <ul class="social">
+        <li>
+          <a
+            href="https://www.facebook.com/profile.php?id=100000339745920"
+            target="_blank"
+          >
+            <i class="fa fa-facebook-square"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://github.com/s777610" target="_blank">
+            <i class="fa fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/weichenghung/" target="_blank">
+            <i class="fa fa-linkedin-square"></i>
+          </a>
+        </li>
+      </ul>
+      <p>Copyright &copy; Wei Cheng Hung 2018 All Rights Reserved</p>
+    </footer>
 
-
-
-  <div class="popup" id="popup">
+    <div class="popup" id="popup">
       <div class="popup__content">
-    <div class="popup__form">
-      <form class="contact" action="{{url_for('send_email')}}" method="POST">
-        <h2 class="heading-green-dark">Contact Me</h2>
-        <a href="#welcome" class="popup__close">&times;</a>
-    
-          <div class="contact__group">
-            <label class="contact__label" for="sender_email">Email address</label>
-            <input class="contact__input" type="email"  id="sender_email" placeholder="example@gmail.com" name="sender_email" required>
-          </div>
-    
-          <div class="contact__group">
-            <label class="contact__label" for="sender_subject">Subject</label>
-            <input class="contact__input" type="text"  name="sender_subject" required>
-          </div>
-    
-          <div class="contact__group">
-            <label class="contact__label" for="message">Content</label>
-            <textarea class="contact__input"  id="textarea" rows="3" name="message" required></textarea>
-          </div>
-    
-          <div class="contact__group">
-            <input class="contact__btn contact__btn__send" type="submit" value="Send">
-            <input class="contact__btn contact__btn__reset" type="reset">
-          </div>
-      </form>
-    </div>
-    </div>
+        <div class="popup__form">
+          <form
+            class="contact"
+            action="{{url_for('send_email')}}"
+            method="POST"
+          >
+            <h2 class="heading-green-dark">Contact Me</h2>
+            <a href="#welcome" class="popup__close">&times;</a>
+
+            <div class="contact__group">
+              <label class="contact__label" for="sender_email"
+                >Email address</label
+              >
+              <input
+                class="contact__input"
+                type="email"
+                id="sender_email"
+                placeholder="example@gmail.com"
+                name="sender_email"
+                required
+              />
+            </div>
+
+            <div class="contact__group">
+              <label class="contact__label" for="sender_subject">Subject</label>
+              <input
+                class="contact__input"
+                type="text"
+                name="sender_subject"
+                required
+              />
+            </div>
+
+            <div class="contact__group">
+              <label class="contact__label" for="message">Content</label>
+              <textarea
+                class="contact__input"
+                id="textarea"
+                rows="3"
+                name="message"
+                required
+              ></textarea>
+            </div>
+
+            <div class="contact__group">
+              <input
+                class="contact__btn contact__btn__send"
+                type="submit"
+                value="Send"
+              />
+              <input class="contact__btn contact__btn__reset" type="reset" />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
 
-  <script>
-      let mainNav = document.getElementById('js-menu');
-      let navBarToggle = document.getElementById('js-navbar-toggle');
+    <script>
+      let mainNav = document.getElementById("js-menu");
+      let navBarToggle = document.getElementById("js-navbar-toggle");
 
-      navBarToggle.addEventListener('click', function () {
-          mainNav.classList.toggle('active');
+      navBarToggle.addEventListener("click", function() {
+        mainNav.classList.toggle("active");
       });
-  </script>
-
-
-
-</body>
-
+    </script>
+  </body>
 </html>

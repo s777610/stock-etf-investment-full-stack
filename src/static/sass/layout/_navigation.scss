@@ -1,10 +1,8 @@
-
 .menu {
   font-size: 2rem;
-  background: rgba($color-black, .4);
+  background: rgba($color-black, 0.4);
   color: $color-white;
 
-  
   &__toggle {
     cursor: pointer;
     color: $color-white;
@@ -19,10 +17,7 @@
     }
   }
 
-
   &__navbar {
-    
-
     @include respond(tab-port) {
       //display: none;
 
@@ -35,7 +30,6 @@
     &__flex-box {
       display: flex;
       justify-content: center;
-      
 
       @include respond(tab-port) {
         flex-direction: column;
@@ -46,19 +40,28 @@
         padding: 1rem 2rem;
         font-size: 3rem;
         cursor: pointer;
-        transition: all .2s;
-  
+        transition: all 0.2s;
+        display: inherit;
+        @include respond(tab-land) {
+          padding: 1rem 1.2rem;
+        }
+
+        @include respond(tab-port) {
+          display: unset;
+        }
+
         &:hover {
           text-shadow: 0 0 1rem $color-white, 0 0 1.5rem $color-white;
           background-color: $color-main-dark;
-          box-shadow: 0 0 .3rem $color-white, 0 0 1rem $color-white, 0 0 1.5rem $color-white, 0 0 3rem $color-white;
+          box-shadow: 0 0 0.3rem $color-white, 0 0 1rem $color-white,
+            0 0 1.5rem $color-white, 0 0 3rem $color-white;
         }
-  
+
         a {
           color: white;
           text-decoration: none;
           display: inline-flex;
-          margin-left: .5rem;
+          margin-left: 0.5rem;
         }
       }
     }
@@ -67,15 +70,12 @@
 
 .active {
   //display: block;
-  
+
   max-height: 100%;
 }
-
-
 
 .menu-layout {
   border-bottom: $color-grey-darkest 2px solid;
   background: linear-gradient(#94948ff3, #333331b5);
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.65);
 }
-

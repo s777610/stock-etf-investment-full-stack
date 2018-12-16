@@ -34,7 +34,6 @@
   }
 }
 
-
 // terminal
 @-webkit-keyframes blink {
   0% {
@@ -108,13 +107,6 @@
   }
 }
 
-
-
-
-
-
-
-
 .animation-left {
   animation-name: moveInLeft;
   animation-duration: 2s;
@@ -133,17 +125,17 @@
 // explore btn
 @keyframes pulsate {
   0% {
-      transform: scale(1);
-      box-shadow: none;
+    transform: scale(1);
+    box-shadow: none;
   }
 
   50% {
-      transform: scale(1.05);
-      box-shadow: 0 1rem 4rem rgba($color-black, 3.25);
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba($color-black, 3.25);
   }
 
   100% {
-      transform: scale(1);
-      box-shadow: none;
+    transform: scale(1);
+    box-shadow: none;
   }
 }

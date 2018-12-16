@@ -1,7 +1,11 @@
 .section-def {
-
   padding: 11rem 0;
-  background-image: linear-gradient(to right bottom, rgba(189, 239, 223, 0.8), #6cc76c54), url(../image/home-image.jpg);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(189, 239, 223, 0.8),
+      #6cc76c54
+    ),
+    url(../image/home-image.jpg);
   background-size: cover;
   margin-right: 3rem;
   margin-left: 3rem;
@@ -16,14 +20,12 @@
     margin-right: 0;
     margin-left: 0;
     border-radius: 0;
-    margin-top: -.4rem;
+    margin-top: -0.4rem;
     margin-bottom: 0;
     height: 110%;
     padding-bottom: 3rem;
+  }
 }
-
-} 
-
 
 .def {
   width: 75%;
@@ -38,30 +40,28 @@
   transform: skewX(-12deg);
 
   &__text {
-      transform: skewX(12deg);
+    transform: skewX(12deg);
   }
 
   @include respond(phone) {
-  width: 80%;
-  padding: 3rem;
-  padding-left: auto;
-  font-size: 2rem;
+    width: 80%;
+    padding: 3rem;
+    padding-left: auto;
+    font-size: 2rem;
   }
 }
 
 .list {
-  background-color: rgba($color-white, .8);
+  background-color: rgba($color-white, 0.8);
   margin: 5rem auto;
   width: 65%;
   border-radius: 1rem;
 
-
   @include respond(phone) {
-      margin: 2rem auto;
-      width: 96%;
+    margin: 2rem auto;
+    width: 96%;
   }
 }
-
 
 table {
   background-color: transparent;
@@ -73,11 +73,9 @@ table {
   font-size: 1.7rem;
 
   @include respond(phone) {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 }
-
-
 
 .table {
   width: 100%;
@@ -86,42 +84,44 @@ table {
   margin-top: 1rem;
 
   &-responsive {
-      min-height: .01%;
-      overflow-x: auto;
-      border: $color-main .2rem solid;
-      border-radius: inherit;
-      box-shadow: 1rem 3rem 6rem rgba($color-black, 0.7);
+    min-height: 0.01%;
+    overflow-x: auto;
+    border: $color-main 0.2rem solid;
+    border-radius: inherit;
+    box-shadow: 1rem 3rem 6rem rgba($color-black, 0.7);
 
-      @include respond(phone) {
-          margin-bottom: 0 !important;
-      }
+    @include respond(phone) {
+      margin-bottom: 0 !important;
+    }
   }
 }
 
-
-
-
-
-
-
-
-.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
+.table > caption + thead > tr:first-child > td,
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > td,
+.table > thead:first-child > tr:first-child > th {
   border-top: 0;
 }
 
-.table>thead>tr>th {
+.table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: .2rem solid $color-grey-dark;
+  border-bottom: 0.2rem solid $color-grey-dark;
 }
 
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-  padding: .8rem;
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  padding: 0.8rem;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: .1rem solid $color-grey-dark;
+  border-top: 0.1rem solid $color-grey-dark;
 }
 
 th {
   text-align: left;
 }
-

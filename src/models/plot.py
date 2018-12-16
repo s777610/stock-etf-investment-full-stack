@@ -1,12 +1,15 @@
+
 import datetime
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 pd.core.common.is_list_like = pd.api.types.is_list_like
-from pandas_datareader import data as dataread
-from common.candlestick import candlestick
-from common.daily_volume import plot_volume
 from common.moving_average_plot import moving_average_plot
+from common.daily_volume import plot_volume
+from common.candlestick import candlestick
+from pandas_datareader import data as dataread
+
+
 
 
 
@@ -22,12 +25,13 @@ class Plot(object):
         self.current_price = self.get_current_price
         self.today_status = self.check_status
 
-
     # from 3 months ago to now
+
     def get_df(self):
         start = datetime.datetime.now() - datetime.timedelta(days=180)
         end = datetime.datetime.now()
-        df = dataread.DataReader(self.ticker, data_source='iex', start=start, end=end)
+        df = dataread.DataReader(
+            self.ticker, data_source='iex', start=start, end=end)
         return df
 
     @property
@@ -45,5 +49,3 @@ class Plot(object):
         else:
             value = "Equal"
         return value
-
-

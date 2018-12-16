@@ -1,82 +1,92 @@
-{%extends "layout.html"%}
-{%block content%}
-    {% if text %}
-        <div  class="alert" role="alert">{{ text }}</div>
-    {% else %}
+{%extends "layout.html"%} {%block content%} {% if text %}
+<div class="alert" role="alert">{{ text }}</div>
+{% else %}
 
-    <section class="stockInfo">
-        <div class="stockInfo__info" id="top">
-            <div class="stockInfo__info__box">
-                <img class="stockInfo__info__box__logo" src="" alt="company logo" id="company_logo">
-                <p class="stockInfo__info__box__desc" id="description"></p>
-            </div>
-            
-            <div class="stockInfo__info__text">
-                {% if plot %}
-                    {% if plot.name %}
-                        <h1 class="move-heading margin-bottom-medium">{{ plot.name }}</h1>
-                    {% endif %}
-
-                    <p id="ticker">NYSEARCA: {{ plot.ticker }}</p>
-                    <p id="ceo"></p>
-                    <p id="industry"></p>
-
-                    {% if plot.today_status == 'Increase' %}
-                        <p class="fa fa-arrow-up curGreen">{{ plot.current_price }} <small>USD</small></p>
-                    {% elif plot.today_status == 'Decrease' %}
-                        <p class="fa fa-arrow-down curRed">{{ plot.current_price }} <small>USD</small></p>
-                    {% else %}
-                        <p class="fa fa-arrow-down">{{ plot.current_price }} <small>USD</small></p>
-                    {% endif %}
-    
-                    {% if daily_return %}
-                        {% if daily_return > 0 %}
-                            <p>Daily Return: <span class="curGreen">{{ daily_return }} %</span></p>
-                        {% elif daily_return < 0 %}
-                            <p>Daily Return: <span class="curRed">{{ daily_return }} %</span></p>
-                        {% else %}
-                            <p>Daily Return: {{ daily_return }} %</p>
-                        {% endif %}
-    
-                        {% if cum_return > 0 %}
-                            <p>Cumulative Return: <span class="curGreen">{{ cum_return }} %</span></p>
-                        {% elif cum_return < 0 %}
-                            <p>Cumulative Return: <span class="curRed">{{ cum_return }} %</span></p>
-                        {% else %}
-                            <p>Cumulative Return: {{ cum_return }} %</p>
-                        {% endif %}
-                    {% endif %}
-
-                    <p>Last Updated: {{ plot.last_updated }}</p>
-                    <p class="stockInfo__info__text__btn"><a class="company__web__link" id="web" href="#" target="_blank">Website</a></p>
-                    
-                {% endif %}
-            </div>
-        </div>
-    </section>
-
-    <section class="plot">
-        {% if plot %}
-            <div class="chart">{{plot.div1 | safe}}</div>
-                
-            <br>
-            <br>
-            <div class="chart">{{plot.div2 | safe}}</div>
-            <br>
-            <br>
-            <div class="chart">{{plot.div3 | safe}}</div>
-        {% endif %}
-    </section>
-    
-
-    <div class="backtotop">
-        <a href="#top" class="btn btn--backtop">Back to top</a>
+<section class="stockInfo">
+  <div class="stockInfo__info" id="top">
+    <div class="stockInfo__info__box">
+      <img
+        class="stockInfo__info__box__logo"
+        src=""
+        alt="company logo"
+        id="company_logo"
+      />
+      <p class="stockInfo__info__box__desc" id="description"></p>
     </div>
-    {% endif %}
 
-    
+    <div class="stockInfo__info__text">
+      {% if plot %} {% if plot.name %}
+      <h1 class="move-heading margin-bottom-medium">{{ plot.name }}</h1>
+      {% endif %}
 
-    <script src="/static/js/main.bundle.js" type='text/javascript'></script>
-    
+      <p id="ticker">NYSEARCA: {{ plot.ticker }}</p>
+      <p id="ceo"></p>
+      <p id="industry"></p>
+
+      {% if plot.today_status == 'Increase' %}
+      <p class="fa fa-arrow-up curGreen">
+        {{ plot.current_price }} <small>USD</small>
+      </p>
+      {% elif plot.today_status == 'Decrease' %}
+      <p class="fa fa-arrow-down curRed">
+        {{ plot.current_price }} <small>USD</small>
+      </p>
+      {% else %}
+      <p class="fa fa-arrow-down">
+        {{ plot.current_price }} <small>USD</small>
+      </p>
+      {% endif %} {% if daily_return %} {% if daily_return > 0 %}
+      <p>
+        Daily Return: <span class="curGreen">{{ daily_return }} %</span>
+      </p>
+      {% elif daily_return < 0 %}
+      <p>
+        Daily Return: <span class="curRed">{{ daily_return }} %</span>
+      </p>
+      {% else %}
+      <p>Daily Return: {{ daily_return }} %</p>
+      {% endif %} {% if cum_return > 0 %}
+      <p>
+        Cumulative Return: <span class="curGreen">{{ cum_return }} %</span>
+      </p>
+      {% elif cum_return < 0 %}
+      <p>
+        Cumulative Return: <span class="curRed">{{ cum_return }} %</span>
+      </p>
+      {% else %}
+      <p>Cumulative Return: {{ cum_return }} %</p>
+      {% endif %} {% endif %}
+
+      <p>Last Updated: {{ plot.last_updated }}</p>
+      <p class="stockInfo__info__text__btn">
+        <a class="company__web__link" id="web" href="#" target="_blank"
+          >Website</a
+        >
+      </p>
+
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="plot">
+  {% if plot %}
+  <div class="chart">{{ plot.div1 | safe }}</div>
+
+  <br />
+  <br />
+  <div class="chart">{{ plot.div2 | safe }}</div>
+  <br />
+  <br />
+  <div class="chart">{{ plot.div3 | safe }}</div>
+  {% endif %}
+</section>
+
+<div class="backtotop">
+  <a href="#top" class="btn btn--backtop">Back to top</a>
+</div>
+{% endif %}
+
+<script src="/static/js/main.bundle.js" type="text/javascript"></script>
 
 {%endblock%}

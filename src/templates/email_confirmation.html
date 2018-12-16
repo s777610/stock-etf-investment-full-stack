@@ -1,9 +1,7 @@
-{%extends "layout.html"%}
-{%block content%}
-
+{%extends "layout.html"%} {%block content%}
 
 <div class="confirmation">
-    <h1>{{ text }}</h1>
-    <a class="btn btn--green" href="{{ url_for('home') }}">go back home page!</a>
+  <h1>{{ text }}</h1>
+  <a class="btn btn--green" href="{{ url_for('home') }}">go back home page!</a>
 </div>
 {%endblock%}
