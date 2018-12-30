@@ -23,13 +23,6 @@ class Security(db.Model):
         self.name = name
         self.ticker = ticker
         self.purchase_price = purchase_price
-        # self.df = self.get_df()
-        # self.open = self.df.iloc[-1]["open"].round(2)
-        # self.close = self.df.iloc[-1]["close"].round(2)
-        # self.last_updated = self.df.index[-1]
-        # self.today_status = self.check_status
-        # self.daily_return = self.get_daily_return
-        # self.cum_return = self.get_cum_return
 
     def json(self):
         return {
@@ -60,13 +53,13 @@ class Security(db.Model):
             securities = cls.query.filter_by(type=2).all()  # 2 is stock
         else:
             securities = cls.query.filter_by(type=1).all()  # 1 is etf
-        
-        for security in securities:
-            data = security.json()
-            security = Security(**data)
-            security.get_df()
-            securities_list.append(security)
-        return securities_list
+        with ThreadPoolExecutor(max_workers=5) as pool:
+            for security in securities:
+                data = security.json()
+                security = Security(**data)
+                pool.submit(security.get_df)
+                securities_list.append(security)
+            return securities_list
 
     @property
     def check_status(self):
