@@ -4,6 +4,7 @@ import datetime
 from pandas_datareader import data as dataread
 import pandas as pd
 pd.core.common.is_list_like = pd.api.types.is_list_like
+from concurrent.futures import ThreadPoolExecutor
 
 
 class Security(db.Model):
@@ -22,13 +23,13 @@ class Security(db.Model):
         self.name = name
         self.ticker = ticker
         self.purchase_price = purchase_price
-        self.df = self.get_df()
-        self.open = self.df.iloc[-1]["open"].round(2)
-        self.close = self.df.iloc[-1]["close"].round(2)
-        self.last_updated = self.df.index[-1]
-        self.today_status = self.check_status
-        self.daily_return = self.get_daily_return
-        self.cum_return = self.get_cum_return
+        # self.df = self.get_df()
+        # self.open = self.df.iloc[-1]["open"].round(2)
+        # self.close = self.df.iloc[-1]["close"].round(2)
+        # self.last_updated = self.df.index[-1]
+        # self.today_status = self.check_status
+        # self.daily_return = self.get_daily_return
+        # self.cum_return = self.get_cum_return
 
     def json(self):
         return {
@@ -42,7 +43,15 @@ class Security(db.Model):
         end = datetime.datetime.now()
         df = dataread.DataReader(
             self.ticker, data_source='iex', start=start, end=end)
-        return df
+        self.df = df
+        self.open = self.df.iloc[-1]["open"].round(2)
+        self.close = self.df.iloc[-1]["close"].round(2)
+        self.last_updated = self.df.index[-1]
+        self.today_status = self.check_status
+        self.daily_return = self.get_daily_return
+        self.cum_return = self.get_cum_return
+        return
+        
 
     @classmethod
     def find_securities(cls, type):
@@ -51,9 +60,12 @@ class Security(db.Model):
             securities = cls.query.filter_by(type=2).all()  # 2 is stock
         else:
             securities = cls.query.filter_by(type=1).all()  # 1 is etf
+        
         for security in securities:
             data = security.json()
-            securities_list.append(Security(**data))
+            security = Security(**data)
+            security.get_df()
+            securities_list.append(security)
         return securities_list
 
     @property
