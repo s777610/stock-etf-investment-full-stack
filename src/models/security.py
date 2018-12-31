@@ -17,7 +17,6 @@ class Security(db.Model):
                     nullable=False)  # ETF 1, Stock 2
 
 
-
     # should add type, in order to match database
     def __init__(self, name, ticker, purchase_price):
         self.name = name
@@ -44,7 +43,6 @@ class Security(db.Model):
         self.daily_return = self.get_daily_return
         self.cum_return = self.get_cum_return
         return
-        
 
     @classmethod
     def find_securities(cls, type):

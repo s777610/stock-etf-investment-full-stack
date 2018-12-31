@@ -32,7 +32,7 @@
 
       <div class="header__search">
         <p>Looking for chart?</p>
-        <form action="{{url_for('search')}}" method="POST">
+        <form action="{{ url_for('search') }}" method="POST">
           <input
             class="search__form search__form_input"
             type="text"
@@ -97,7 +97,54 @@
       </div>
     </section>
 
-    <footer class="footer footer-home">
+    <section class="intro">
+      <div class="intro__title"><h2 class="move-heading">About Me</h2></div>
+      <div class="row intro__box">
+        <div class="col-1-of-2">
+          <h3 class="paragraph__title heading-tertiary margin-bottom-small">
+            Life of Coding<span
+              class="terminal__screen--text-cursor2 text-block"
+              >_</span
+            >
+          </h3>
+          <p class="paragraph__text">
+            I am a full-stack developer. On the front-end, I mainly use a
+            combination of JavaScript, React, HTML, and CSS to build interactive
+            web pages. On the back-end, I develop the application by using
+            Python and Node.js.
+          </p>
+          <h3 class="paragraph__title heading-tertiary margin-bottom-small">
+            Life of Investing
+          </h3>
+          <p class="paragraph__text">
+            I am crazy about US stock market. I have been investing in ETF for
+            several years. My long-term strategy of investing is allocating my
+            assets widely..
+          </p>
+        </div>
+        <div class="col-1-of-2 intro__box__pic">
+          <div class="composition">
+            <img
+              src="{{url_for('static',filename='image/home01.png')}}"
+              alt="Photo 1"
+              class="composition__photo composition__photo--p1"
+            />
+            <img
+              src="{{url_for('static',filename='image/home02.png')}}"
+              alt="Photo 2"
+              class="composition__photo composition__photo--p2"
+            />
+            <img
+              src="{{url_for('static',filename='image/home03.png')}}"
+              alt="Photo 3"
+              class="composition__photo composition__photo--p3"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
       <ul class="social">
         <li>
           <a
@@ -126,7 +173,7 @@
         <div class="popup__form">
           <form
             class="contact"
-            action="{{url_for('send_email')}}"
+            action="{{ url_for('send_email') }}"
             method="POST"
           >
             <h2 class="heading-green-dark">Contact Me</h2>

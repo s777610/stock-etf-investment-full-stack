@@ -1,5 +1,5 @@
 .footer {
-  padding: 2rem 0;
+  padding: 6rem 0;
   position: relative;
   left: 0;
   right: 0;
@@ -12,14 +12,14 @@
   font-size: 1.7rem;
   border-top: 0.2rem solid $color-black;
 
-  &-home {
-    position: fixed;
+  // &-home {
+  //   position: fixed;
 
-    @include respond(phone) {
-      padding: 0.5rem 0;
-      font-size: 1.5rem;
-    }
-  }
+  //   @include respond(phone) {
+  //     padding: 0.5rem 0;
+  //     font-size: 1.5rem;
+  //   }
+  // }
 
   ul.social {
     padding-bottom: 1rem;
