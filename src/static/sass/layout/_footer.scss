@@ -9,7 +9,7 @@
   color: $color-white;
   text-align: center;
   z-index: 1;
-  font-size: 1.7rem;
+  font-size: 2rem;
   border-top: 0.2rem solid $color-black;
 
   // &-home {
@@ -25,7 +25,10 @@
     padding-bottom: 1rem;
     & li {
       display: inline;
-      font-size: 3rem;
+      font-size: 5rem;
+      @include respond(phone) {
+        font-size: 3rem;
+      }
       & a i {
         color: $color-white;
         padding: 0 1rem;

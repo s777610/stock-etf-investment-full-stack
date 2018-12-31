@@ -547,13 +547,16 @@ img.picture {
   color: #fff;
   text-align: center;
   z-index: 1;
-  font-size: 1.7rem;
+  font-size: 2rem;
   border-top: 0.2rem solid #000; }
   .footer ul.social {
     padding-bottom: 1rem; }
     .footer ul.social li {
       display: inline;
-      font-size: 3rem; }
+      font-size: 5rem; }
+      @media (max-width: 37.5em) {
+        .footer ul.social li {
+          font-size: 3rem; } }
       .footer ul.social li a i {
         color: #fff;
         padding: 0 1rem;
