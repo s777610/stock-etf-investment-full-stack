@@ -836,6 +836,29 @@ img.picture {
     .welcome__btn a {
       margin: 0 2rem; }
 
+@keyframes typing {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent; }
+  50% {
+    border-color: orange; } }
+
+.typing__welcome {
+  padding: 0 2rem;
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden;
+  margin: 0 auto;
+  letter-spacing: 0.15rem;
+  animation: typing 3.5s steps(180, end), blink-caret 0.5s step-end infinite; }
+
 .intro {
   background-color: #f7f7f7;
   padding: 25rem 0;

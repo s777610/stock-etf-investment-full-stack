@@ -1,5 +1,0 @@
-{
-    "python.jediEnabled": false,
-    "python.linting.pylintEnabled": true,
-    "python.pythonPath": "/anaconda3/bin/python"
-}

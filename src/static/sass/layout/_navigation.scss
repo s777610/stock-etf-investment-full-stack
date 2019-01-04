@@ -19,10 +19,6 @@
 
   &__navbar {
     @include respond(tab-port) {
-      //display: none;
-
-      //test
-      //transition: max-height .4s;
       overflow: hidden;
       max-height: 0;
     }
