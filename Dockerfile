@@ -4,8 +4,8 @@ RUN apt-get update \
     && cd /usr/local/bin \
     && ln -s /usr/bin/python3 python \
     && pip3 install --upgrade pip
-ENV EMAIL_USERNAME=
-ENV EMAIL_PASSWORD=
+ENV EMAIL_USERNAME=2018singcolor@gmail.com
+ENV EMAIL_PASSWORD=singcolor2018
 WORKDIR "/app"
 COPY ./requirements.txt ./
 RUN pip install -r requirements.txt
