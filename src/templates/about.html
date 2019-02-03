@@ -24,12 +24,10 @@
           <p class="terminal__screen--text-title">$ About Me</p>
           <p class="terminal__screen--text-context">
             Currently, I am a graduate student of IT department at California
-            Lutheran University. I have experience of web development, SQL
-            database, NoSQL database, data analysis, and data visualization. I
-            usually spend most of my spare time for taking the online course to
-            improve my coding skills. On the other hand, I am crazy about stock
-            markets. Normally, I read financial books and do research on
-            stock/ETF investments every single day. I have been investing in
+            Lutheran University. I specialize in web development with Node,
+            Python, JavaScript, React, Redux, HTML5, CSS3, SQL, MongoDB, Redis,
+            AWS and CI tool. This web-app is what I made for myself to check my
+            investing. I am crazy about stock markets. I have been investing in
             Taiwan stock market for a while. However, I decided to allocate my
             asset widely by investing in low-cost ETFs a few years ago.
             Therefore, I consistently invest in ETFs launched by Vanguard Group.
@@ -124,7 +122,7 @@
 <div class="popup" id="popup">
   <div class="popup__content">
     <div class="popup__form">
-      <form class="contact" action="{{url_for('send_email')}}" method="POST">
+      <form class="contact" action="{{ url_for('send_email') }}" method="POST">
         <h2 class="heading-green-dark">Contact Me</h2>
         <a href="#welcome" class="popup__close">&times;</a>
 
