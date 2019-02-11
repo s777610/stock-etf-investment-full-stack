@@ -3,12 +3,11 @@ import "@babel/polyfill";
 
 let ticker = document.getElementById("ticker").innerHTML;
 ticker = ticker.split(" ")[1];
-// console.log(ticker)
 
 async function getLogo(ticker) {
   try {
     const result = await fetch(
-      `https://api.iextrading.com/1.0//stock/${ticker}/logo`
+      `https://api.iextrading.com/1.0/stock/${ticker}/logo`
     );
     const data = await result.json(); // wait in background
     const url = data["url"];
