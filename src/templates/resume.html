@@ -1,64 +1,88 @@
-{%extends "layout.html"%}
-{%block content%}
+{%extends "layout.html"%} {%block content%}
 
 <div class="content-guide">
-  <img class="picture" src="https://user-images.githubusercontent.com/35472776/42259943-5b241fea-7f17-11e8-861c-412becf1d44b.jpg" alt="picture">
+  <img
+    class="picture"
+    src="https://user-images.githubusercontent.com/35472776/42259943-5b241fea-7f17-11e8-861c-412becf1d44b.jpg"
+    alt="picture"
+  />
   <a class="content-guide-item" href="#computer-skill">Computer Skills</a>
   <a class="content-guide-item" href="#education">Education</a>
   <a class="content-guide-item" href="#work-experience">Work Experience</a>
-  <a class="content-guide-item" href="#project-experience">Project Experience</a>
+  <a class="content-guide-item" href="#project-experience"
+    >Project Experience</a
+  >
   <a class="content-guide-item" href="#pro-development">Competition</a>
   <a class="content-guide-item" href="#popup">Contact Me</a>
 </div>
 
-
-
 <div class="container-resume">
-    <a href={{ url_for('download') }} target="blank"> <button class="btn resume__btn btn-pulsate"> Download Resume</button></a>
+  <a href={{ url_for('download') }} target="blank">
+    <button class="btn resume__btn btn-pulsate">Download Resume</button></a
+  >
   <div class="resume">
     <h2 class="move-heading" id="computer-skill">COMPUTER SKILLS</h2>
-    <hr>
+    <hr />
     <h3>Programming Skills</h3>
     <ul>
-      <li>Python(Advanced), Javascript(Advanced), React, Redux, Node, CSS3, HTML5, PHP, R</li>
+      <li>
+        Python(Advanced), Javascript(Advanced), React, Redux, Node, CSS3, HTML5,
+        PHP, R, JAVA
+      </li>
     </ul>
     <h3>Database, Tool & Framework</h3>
     <ul>
-      <li>MySQL, SQLite, PostgreSQL, MongoDB, Redis, Flask, Express, SASS, Git, Heroku, AWS, Docker, Travis CI, Jest</li>
+      <li>
+        MySQL, SQLite, PostgreSQL, MongoDB, Redis, Flask, Express, SASS, Git,
+        Heroku, AWS, Docker, Travis CI, Jest
+      </li>
     </ul>
 
-    
-
     <h2 class="move-heading" id="education">EDUCATION</h2>
-    <hr>
+    <hr />
     <h3>California Lutheran University, Thousand Oaks, CA</h3>
     <ul>
-      <li>Master of Science in Information Technology (current GPA: 3.8/4.0)</li>
+      <li>
+        Master of Science in Information Technology (current GPA: 3.8/4.0)
+      </li>
     </ul>
     <h3>Chung Yuan Christian University, Taoyuan, Taiwan</h3>
     <ul>
       <li>Bachelor of Mechanical Engineering</li>
     </ul>
 
-    
-
     <h2 class="move-heading" id="work-experience">WORK EXPERIENCE</h2>
-    <hr>
+    <hr />
 
     <h3>Web Scraping Engineer Intern - Tap Series, Westlake, California</h3>
     <ul>
-      <li>In charge of scraping financial data, visualizing data, and generating reports with Python/Selenium.</li>
-      <li>Visualize data, and generate reports with Python, Matplotlib, Seaborn.</li>
+      <li>
+        In charge of scraping financial data, visualizing data, and generating
+        reports with Python/Selenium.
+      </li>
+      <li>
+        Visualize data, and generate reports with Python, Matplotlib, Seaborn.
+      </li>
       <li>Maintain front-end of online course websites with JavaScript.</li>
-      <li>Work on testing MySQL and SQLite database of online course platform.</li>
+      <li>
+        Work on testing MySQL and SQLite database of online course platform.
+      </li>
       <li>Test the mobile app of online course with React</li>
     </ul>
 
     <h3>Full-Stack Web Developer - Locomotives, Changhua, Taiwan</h3>
     <ul>
-        <li>Increased rental rate by building email service for sending promotion code by Python/Flask</li>
-        <li>Increased rental rate on a weekday by 15% by analyzing customer data through Python/Plotly.</li>
-      <li>Maintain PostgreSQL and backend development with Python, SQLAlchemy.</li>
+      <li>
+        Increased rental rate by building email service for sending promotion
+        code by Python/Flask
+      </li>
+      <li>
+        Increased rental rate on a weekday by 15% by analyzing customer data
+        through Python/Plotly.
+      </li>
+      <li>
+        Maintain PostgreSQL and backend development with Python, SQLAlchemy.
+      </li>
       <li>Build front-end with HTML5, SCSS, JavaScript.</li>
     </ul>
 
@@ -67,219 +91,362 @@
       <li>Working on set up audio equipment.</li>
     </ul>
 
-    
-
     <h2 class="move-heading" id="project-experience">PROJECT EXPERIENCE</h2>
-    <hr>
+    <hr />
 
-    <h3><a href="https://github.com/s777610/Stock-ETF_investment_web" target="_blank" rel="noopener noreferrer">Stock/ETF investment Web-App
-      (Data Analysis and Visualization)</a></h3>
-  <P>
-      Built back-end by Flask and deployed it on AWS. Use CSS3 and SASS to style front-end. 
-      Retrieves data from "IEX" API and scrapes data from financial sites. Analyzes data 
-      and makes interactive charts on the site by Pandas and Plotly. Allows users to search 
-      securities in the US market. All data are stored in SQLite. Reduced waiting time of 
-      network request by 84% by utilizing multithreading to handle multiple API calls in a 
-      short period of time. 
+    <h3>
+      <a
+        href="https://github.com/s777610/Stock-ETF_investment_web"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Stock/ETF investment Web-App (Data Analysis and Visualization)</a
+      >
+    </h3>
+    <P>
+      Built back-end by Flask and deployed it on AWS. Use CSS3 and SASS to style
+      front-end. Retrieves data from "IEX" API and scrapes data from financial
+      sites. Analyzes data and makes interactive charts on the site by Pandas
+      and Plotly. Allows users to search securities in the US market. All data
+      are stored in SQLite. Reduced waiting time of network request by 84% by
+      utilizing multithreading to handle multiple API calls in a short period of
+      time.
 
-      <span class="cs-skill">(Python, SQL, Javascript, SCSS, HTML5, AWS, Docker, Multithreading)</span>.
-  </P>
+      <span class="cs-skill"
+        >(Python, SQL, Javascript, SCSS, HTML5, AWS, Docker,
+        Multithreading)</span
+      >.
+    </P>
 
+    <h3>
+      <a
+        href="https://github.com/s777610/sing-color-with-payment"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Sing-Color(Full Stack Development)</a
+      >
+    </h3>
+    <p>
+      I built this online store application for my friends to sell their
+      products. This is a handicraft online store. I used Flask, which is a
+      framework of Python, to build the back-end for this application. The
+      front-end was built by HTML5, CSS3, SASS, and Javascript . This online
+      store allows users to make payments and receive the email confirmation. On
+      the other hand, the seller will receive the order email as well. The order
+      data are stored in SQLite locally or PostgreSQL remotely.
+      <span class="cs-skill"
+        >(Python, Flask, HTML5, CSS3, Javascript, Stript, SQL)</span
+      >.
+    </p>
 
-    <h3><a href="https://github.com/s777610/sing-color-with-payment" target="_blank" rel="noopener noreferrer">Sing-Color(Full Stack Development)</a></h3>
-      <p>I built this online store application for my friends to sell their products. 
-        This is a handicraft online store. I used Flask, which is a framework of Python, 
-        to build the back-end for this application. 
-        The front-end was built by HTML5, CSS3, SASS, and Javascript . 
-        This online store allows users to make payments and receive the email confirmation. 
-        On the other hand, the seller will receive the order email as well. 
-        The order data are stored in SQLite locally or PostgreSQL remotely.
-      <span class="cs-skill">(Python, Flask, HTML5, CSS3, Javascript, Stript, SQL)</span>.</p>
+    <h3>
+      <a
+        href="https://github.com/s777610/blockchain-node-react-fullstack"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Half Half Coin 2.0.(Full Stack Development)</a
+      >
+    </h3>
+    <p>
+      This full-stack application is about cryptocurrency. The back-end was built by Node/Express. 
+      The front-end was built by React, React-Bootstrap, and CSS3. This app allows users to conduct 
+      transactions, which is sending and receiving cryptocurrency. In addition, users can mine 
+      the new block in order to receive the reward. Feel free to clone it and play around with it.
+      <span class="cs-skill"
+        >(Node, React, Bootstrap, CSS, Redis)</span
+      >.
+    </p>
 
-      <h3><a href="https://github.com/s777610/Social-Blog-Full-Stack" target="_blank" rel="noopener noreferrer">Social Media Blog (Full Stack Development)</a></h3>
-      <P>
-          This App, which was built by flask, allows users to register and login first. 
-          Then, users are able to create the blog post, update the profile picture, edit and delete the blog post. 
-          All data of users are stored in SQLite database for testing only. 
-          This app takes an advantage fo flask-sqlalchemy to create database object. 
-          It uses flask_migrate to upgrade the database in case of needs. 
-          <span class="cs-skill">(Python, Flask, SQL, HTML5, CSS)</span>.
-      </P>
+    <h3>
+      <a
+        href="https://github.com/s777610/loan-manager"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Loan Manager(Full Stack Development)</a
+      >
+    </h3>
+    <p>
+      This application(Loan Manager) was mainly built by React, Redux and Firebase. 
+      One the back-end, it uses firebase service to create the serverless application. 
+      The data is stored on firebase and the app is hosted on firebase. On the front end, 
+      I use react and redux to create an interactive web page. It uses react-redux-firebase
+       as the library to manipulate the state. It is very useful for me to remember who own me money..
+      <span class="cs-skill"
+        >(React, Redux, Bootstrap, Firebase)</span
+      >.
+    </p>
 
+    <h3>
+      <a
+        href="https://github.com/s777610/Social-Blog-Full-Stack"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Social Media Blog (Full Stack Development)</a
+      >
+    </h3>
+    <P>
+      This App, which was built by flask, allows users to register and login
+      first. Then, users are able to create the blog post, update the profile
+      picture, edit and delete the blog post. All data of users are stored in
+      SQLite database for testing only. This app takes an advantage fo
+      flask-sqlalchemy to create database object. It uses flask_migrate to
+      upgrade the database in case of needs.
+      <span class="cs-skill">(Python, Flask, SQL, HTML5, CSS)</span>.
+    </P>
 
+    <h3>
+      <a
+        href="https://github.com/s777610/node-react-redis-mongodb-ci"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Scalable Blog wile Redis (Full Stack Development)</a
+      >
+    </h3>
+    <P>
+      This application was built by Node, MongoDB, Redis and react. On the
+      back-end, the restful-API was built by express, which is a framework. On
+      the front-end, it was built by React. In addition, I used Redis to cache
+      the data in order to improve the performance of this app. All data is
+      stored on MongoDB. All images are stored on AWS S3. For testing, I used
+      jest to implement the unit test. Whenever I push code to GitHub, Travis CI
+      will pull my code and build testing environment in order to run the test.
+      <span class="cs-skill">(Node, React, Redis, MongoDB, CI)</span>.
+    </P>
 
-
-      <h3><a href="https://github.com/s777610/node-react-redis-mongodb-ci" target="_blank" rel="noopener noreferrer">Scaleable Blog wile Redis (Full Stack Development)</a></h3>
-      <P>
-        This application was built by Node, MongoDB, Redis and react. 
-        On the back-end, the restful-API was built by express, which is a framework. 
-        On the front-end, it was built by React. In addition, 
-        I used Redis to cache the data in order to improve the performance of this app. 
-        All data is stored on MongoDB. All images are stored on AWS S3. For testing, 
-        I used jest to implement the unit test. 
-        Whenever I push code to GitHub, Travis CI will pull my code and build testing environment in order to run the test.
-          <span class="cs-skill">(Node, React, Redis, MongoDB, CI)</span>.
-      </P>
-
-
-      <h3><a href="https://github.com/s777610/connectly-node-react" target="_blank" rel="noopener noreferrer">Connectly (Full Stack Development)</a></h3>
-      <P>
-        The back-end was built by express, which is a light-weight framework of Node.js. 
-        The data is stored on MongoDB and hosted on mLab. 
-        The client-side of this application was built by React and Redux. 
-        I used create-react-app to set up my configuration and workflow. 
-        In addition, it uses redux-thunk as middleware for dispatching actions in order to make HTTP requests to express server properly.
-          <span class="cs-skill">(Node, Express, React, Redux, MongoDB)</span>.
-      </P>
-
-
-
-      <h3><a href="https://github.com/s777610/Flask_RESTful_API_with_SQL" target="_blank" rel="noopener noreferrer" >RESTful_API_with_SQL(Back-End
-        Development)</a></h3>
-        <p>This API is deployed on Heroku, provide GET, POST, PUT, DELETE requests. 
-          The data can be stored in SQLite locally or PostgreSQL remotely. 
-          This API allows users to store some online store data in the database. 
-          It can generate access-token and refresh-token for users. 
-          The point of this API is implementing authentication. 
-          <span class="cs-skill">(Python, Flask, Flask_RESTful, Flask-JWT-extended, Flask-SQLAlchemy)</span>.</p>
-
-
-
-      <h3><a href="https://github.com/s777610/BurgerBuilder-React" target="_blank" rel="noopener noreferrer">Burger Builder (Front End Development)</a></h3>
-      <P>
-          I took a complete react course on Udemy and came up with this mobile-friendly app. 
-          The app was built by React and Redux. It stores data of users on Firebase, 
-          which provide services of back-end and database. It allows users to register, 
-          login, order, and so on. The link of the demo application is on my Github page.
-          <span class="cs-skill">(React, Redux, CSS, HTML, Firebase, JWT, AJAX, UNIT TESTING)</span>.
-      </P>
-
-
-      <h3><a href="https://github.com/s777610/streamly-front-end" target="_blank" rel="noopener noreferrer">Streamly (Front End Development)</a></h3>
-      <P>
-        This application was mainly built by React and Redux. I used redux-thunk as middleware to handle HTTP requests properly. 
-        In addition, it uses redux-form to simplify the workflow of development.
-          <span class="cs-skill">(React, Redux, OAuth, RTMP, JSON server)</span>.
-      </P>
-
-    <h3><a href="https://github.com/s777610/blockchain_cryptocurrency" target="_blank" rel="noopener noreferrer">Half Half Coin System
-        (Block-Chain Development)</a></h3>
-    <p>It allows users to create wallets first. The key pair(public key and private key) is generated when creating the wallet. 
-      Then, users can start mining the new block in order to get rewards. 
-      The meaning of mining is doing "proof of work", which is a processing of guessing the number proof.
-      The level of mining difficulty is adjustable. 
-      Users can send cryptocurrency to other users by assigning a public key of the recipient. 
-      All transactions data will be stored in open transactions temporarily. 
-      After mining a new block, the data of open transactions is stored in the new block, 
-      and open transactions will be an empty list. Majority of the process includes different verifications in order to make sure the system is secure.
-      All node can make HTTP requests to their peer nodes in order to share their data. 
-      <span class="cs-skill">(Python, HTML5, CSS, Vue)</span>.</p>
-    
-    
-    
-    
-
-  <h3><a href="https://github.com/s777610/Flask_RESTful_API_with_SQL" target="_blank" rel="noopener noreferrer">RESTful API with SQL (Database & Back End Development)</a></h3>
-  <P>
-      This API is deployed on Heroku, provide GET, POST, PUT, DELETE requests. 
-      The data can be stored in SQLite locally or PostgreSQL remotely. 
-      This API allows users to store some online store data in the database. 
-      It can generate access-token and refresh-token for users. 
-      The point of this API is implementing authentication. 
-      <span class="cs-skill">(Python, Flask, Flask_RESTful, Flask-JWT-extended, Flask-SQLAlchemy)</span>.
-  </P>
-
-
-
-
-  <h3><a href="https://github.com/s777610/surveyly-full-stack" target="_blank" rel="noopener noreferrer">Surveyly (Full Stack Development)</a></h3>
-  <P>
-    The back-end was built by express, which is a light-weight framework of Node.js. 
-    The data is stored on MongoDB and hosted on mLab. 
-    The client-side of this application was built by React and Redux. 
-    I used create-react-app to set up my configuration and workflow. 
-    It uses redux-thunk as middleware for dispatching actions in order to make HTTP requests to express server properly.
+    <h3>
+      <a
+        href="https://github.com/s777610/connectly-node-react"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Connectly (Full Stack Development)</a
+      >
+    </h3>
+    <P>
+      The back-end was built by express, which is a light-weight framework of
+      Node.js. The data is stored on MongoDB and hosted on mLab. The client-side
+      of this application was built by React and Redux. I used create-react-app
+      to set up my configuration and workflow. In addition, it uses redux-thunk
+      as middleware for dispatching actions in order to make HTTP requests to
+      express server properly.
       <span class="cs-skill">(Node, Express, React, Redux, MongoDB)</span>.
-  </P>
+    </P>
 
+    <h3>
+      <a
+        href="https://github.com/s777610/Flask_RESTful_API_with_SQL"
+        target="_blank"
+        rel="noopener noreferrer"
+        >RESTful_API_with_SQL(Back-End Development)</a
+      >
+    </h3>
+    <p>
+      This API is deployed on Heroku, provide GET, POST, PUT, DELETE requests.
+      The data can be stored in SQLite locally or PostgreSQL remotely. This API
+      allows users to store some online store data in the database. It can
+      generate access-token and refresh-token for users. The point of this API
+      is implementing authentication.
+      <span class="cs-skill"
+        >(Python, Flask, Flask_RESTful, Flask-JWT-extended,
+        Flask-SQLAlchemy)</span
+      >.
+    </p>
 
+    <h3>
+      <a
+        href="https://github.com/s777610/BurgerBuilder-React"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Burger Builder (Front End Development)</a
+      >
+    </h3>
+    <P>
+      I took a complete react course on Udemy and came up with this
+      mobile-friendly app. The app was built by React and Redux. It stores data
+      of users on Firebase, which provide services of back-end and database. It
+      allows users to register, login, order, and so on. The link of the demo
+      application is on my Github page.
+      <span class="cs-skill"
+        >(React, Redux, CSS, HTML, Firebase, JWT, AJAX, UNIT TESTING)</span
+      >.
+    </P>
 
-  <h3><a href="https://github.com/s777610/price_alert_for_olinestore" target="_blank" rel="noopener noreferrer">Price Alerts for Online Store
-    (Full Stack Development)</a></h3>
-  <p>
-      This Web-App was built by Flask, a microframework of Python. 
-      It is able to track the price of items from the online store. 
-      It can notify users when the prices of items drop. 
-      The way of notifying users is using Mailgun API to send emails to users.
-      The application checks the prices every 10 minutes. 
-      All data is stored in MongoDB. 
-      All passwords of users are encrypted by pbkdf2. 
-      Utilizing RE to find the specific store for users. 
-      The price of item could be found by using beautifulsoup to parse html. 
-      Only admin can add the new store. 
-      <span class="cs-skill">(Python, MongoDB, CSS, Bootstrap, HTML, Mailgun, pbkdf2)</span>.
-  </p>
+    <h3>
+      <a
+        href="https://github.com/s777610/streamly-front-end"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Streamly (Front End Development)</a
+      >
+    </h3>
+    <P>
+      This application was mainly built by React and Redux. I used redux-thunk
+      as middleware to handle HTTP requests properly. In addition, it uses
+      redux-form to simplify the workflow of development.
+      <span class="cs-skill">(React, Redux, OAuth, RTMP, JSON server)</span>.
+    </P>
 
-    
+    <h3>
+      <a
+        href="https://github.com/s777610/blockchain_cryptocurrency"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Half Half Coin System (Block-Chain Development)</a
+      >
+    </h3>
+    <p>
+      It allows users to create wallets first. The key pair(public key and
+      private key) is generated when creating the wallet. Then, users can start
+      mining the new block in order to get rewards. The meaning of mining is
+      doing "proof of work", which is a processing of guessing the number proof.
+      The level of mining difficulty is adjustable. Users can send
+      cryptocurrency to other users by assigning a public key of the recipient.
+      All transactions data will be stored in open transactions temporarily.
+      After mining a new block, the data of open transactions is stored in the
+      new block, and open transactions will be an empty list. Majority of the
+      process includes different verifications in order to make sure the system
+      is secure. All node can make HTTP requests to their peer nodes in order to
+      share their data. <span class="cs-skill">(Python, HTML5, CSS, Vue)</span>.
+    </p>
 
-    <h2 class="move-heading" id="pro-development">HACKATHON EXPERIENCE </h2>
-    <hr>
+    <h3>
+      <a
+        href="https://github.com/s777610/Flask_RESTful_API_with_SQL"
+        target="_blank"
+        rel="noopener noreferrer"
+        >RESTful API with SQL (Database & Back End Development)</a
+      >
+    </h3>
+    <P>
+      This API is deployed on Heroku, provide GET, POST, PUT, DELETE requests.
+      The data can be stored in SQLite locally or PostgreSQL remotely. This API
+      allows users to store some online store data in the database. It can
+      generate access-token and refresh-token for users. The point of this API
+      is implementing authentication.
+      <span class="cs-skill"
+        >(Python, Flask, Flask_RESTful, Flask-JWT-extended,
+        Flask-SQLAlchemy)</span
+      >.
+    </P>
+
+    <h3>
+      <a
+        href="https://github.com/s777610/surveyly-full-stack"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Surveyly (Full Stack Development)</a
+      >
+    </h3>
+    <P>
+      The back-end was built by express, which is a light-weight framework of
+      Node.js. The data is stored on MongoDB and hosted on mLab. The client-side
+      of this application was built by React and Redux. I used create-react-app
+      to set up my configuration and workflow. It uses redux-thunk as middleware
+      for dispatching actions in order to make HTTP requests to express server
+      properly.
+      <span class="cs-skill">(Node, Express, React, Redux, MongoDB)</span>.
+    </P>
+
+    <h3>
+      <a
+        href="https://github.com/s777610/price_alert_for_olinestore"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Price Alerts for Online Store (Full Stack Development)</a
+      >
+    </h3>
+    <p>
+      This Web-App was built by Flask, a microframework of Python. It is able to
+      track the price of items from the online store. It can notify users when
+      the prices of items drop. The way of notifying users is using Mailgun API
+      to send emails to users. The application checks the prices every 10
+      minutes. All data is stored in MongoDB. All passwords of users are
+      encrypted by pbkdf2. Utilizing RE to find the specific store for users.
+      The price of item could be found by using beautifulsoup to parse html.
+      Only admin can add the new store.
+      <span class="cs-skill"
+        >(Python, MongoDB, CSS, Bootstrap, HTML, Mailgun, pbkdf2)</span
+      >.
+    </p>
+
+    <h2 class="move-heading" id="pro-development">HACKATHON EXPERIENCE</h2>
+    <hr />
 
     <h3>Mentor of Hackathon by the Sea, Ventura County</h3>
-      <ul>
-        <li>Helped participants to solve web development problems including JavaScript, Python, Node and React.</li>
-        <li>Assisted participants in understanding Restful API and OAuth 2.0.</li>
-        <li>Helped participants to solve CSS3 layout problems.</li>
-      </ul>
+    <ul>
+      <li>
+        Helped participants to solve web development problems including
+        JavaScript, Python, Node and React.
+      </li>
+      <li>Assisted participants in understanding Restful API and OAuth 2.0.</li>
+      <li>Helped participants to solve CSS3 layout problems.</li>
+    </ul>
     <h3>Major League Hacking, Long Beach Hackathon 2018</h3>
-      
-    <h3>Major League Hacking, SF Hackathon 2018</h3>
-      <ul>
-        <li>Built RESTful API with Python Flask framework.</li>
-        <li>Designed database and implemented with SQLite.</li>
-      </ul>
-  </div>
 
+    <h3>Major League Hacking, SF Hackathon 2018</h3>
+    <ul>
+      <li>Built RESTful API with Python Flask framework.</li>
+      <li>Designed database and implemented with SQLite.</li>
+    </ul>
+  </div>
 
   <div class="clear-float"></div>
   <div class="barrier"></div>
-
 </div>
 
 <div class="popup" id="popup">
-    <div class="popup__content">
-  <div class="popup__form">
-    <form class="contact" action="{{url_for('send_email')}}" method="POST">
-      <h2 class="heading-green-dark">Contact Me</h2>
-      <a href="#welcome" class="popup__close">&times;</a>
-  
+  <div class="popup__content">
+    <div class="popup__form">
+      <form class="contact" action="{{ url_for('send_email') }}" method="POST">
+        <h2 class="heading-green-dark">Contact Me</h2>
+        <a href="#welcome" class="popup__close">&times;</a>
+
         <div class="contact__group">
           <label class="contact__label" for="sender_email">Email address</label>
-          <input class="contact__input" type="email"  id="sender_email" placeholder="example@gmail.com" name="sender_email" required>
+          <input
+            class="contact__input"
+            type="email"
+            id="sender_email"
+            placeholder="example@gmail.com"
+            name="sender_email"
+            required
+          />
         </div>
-  
+
         <div class="contact__group">
           <label class="contact__label" for="sender_subject">Subject</label>
-          <input class="contact__input" type="text"  name="sender_subject" required>
+          <input
+            class="contact__input"
+            type="text"
+            name="sender_subject"
+            required
+          />
         </div>
-  
+
         <div class="contact__group">
           <label class="contact__label" for="message">Content</label>
-          <textarea class="contact__input"  id="textarea" rows="3" name="message" required></textarea>
+          <textarea
+            class="contact__input"
+            id="textarea"
+            rows="3"
+            name="message"
+            required
+          ></textarea>
         </div>
-  
-        <div class="contact__group">
-          <input class="contact__btn contact__btn__send" type="submit" value="Send">
-          <input class="contact__btn contact__btn__reset" type="reset">
-        </div>
-    </form>
-  </div>
-  </div>
-  </div>
 
+        <div class="contact__group">
+          <input
+            class="contact__btn contact__btn__send"
+            type="submit"
+            value="Send"
+          />
+          <input class="contact__btn contact__btn__reset" type="reset" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <div class="backtotop">
-    <a href="#top" class="btn btn--backtop">Back to top</a>
+  <a href="#top" class="btn btn--backtop">Back to top</a>
 </div>
 
 {%endblock%}

@@ -47,7 +47,7 @@ def resume():
 @application.route("/download")
 def download():
     # send new file to users, and allow user to download it instead of opening it on browser
-    return send_file("Hung_Resume.pdf", attachment_filename="Hung_Resume.pdf", as_attachment=True)
+    return send_file("hung_resume.pdf", attachment_filename="Hung_Resume.pdf", as_attachment=True)
 
 
 @application.route('/securitieslist/<string:type>')
